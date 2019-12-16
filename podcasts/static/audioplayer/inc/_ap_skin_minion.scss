@@ -1,0 +1,110 @@
+
+$color_bg: #111111;
+$color_main: #aaaaaa;
+$color_main_hover: #dddddd;
+$color_highlight: #db4343;
+$color_highlight_2: #007bff;
+$font_highlight: "Open Sans", "Helvetica Neue", "Helvetica", Arial, sans-serif;
+$classmain: ".audioplayer.skin-minion";
+
+.audioplayer.skin-minion{
+  .ap-controls {
+
+    height:14px;
+    .con-playpause .playbtn-canvas{
+      width:100%;
+      height:100%;
+    }
+
+    .the-bg{
+      background-color: transparent;
+    }
+
+    .con-controls{
+      height:auto;
+      position: relative;
+    }
+
+    .con-playpause{
+      top: 0px;
+      left:0px;
+      width:14px;
+      height:14px;
+      -webkit-tap-highlight-color:rgba(0,0,0,0);
+      position: relative;
+      margin: 0 auto;
+
+      .playbtn{
+
+        background-position: center center;
+        background-repeat: no-repeat;
+        width:100%;
+        height:100%;
+
+        content: " ";
+        border: solid transparent;
+        border-color: rgba(136, 183, 213, 0);
+        border-left-color: none;
+        border-width: 0px;
+        border-left-width: 0px;
+        background-size: cover;
+        background-image: url(img/skin_minion_pausebtn.png);
+
+      }
+    }
+  }
+
+  .scrubbar{
+    display: none;
+  }
+}
+
+
+
+
+#{$classmain} .ap-controls .con-playpause .pausebtn{
+
+  background-position: center center;
+  background-repeat: no-repeat;
+  width:100%;
+  height:100%;
+
+  content: " ";
+  border: solid transparent;
+  border-color: rgba(136, 183, 213, 0);
+  border-left-color: none;
+  border-width: 0px;
+  border-left-width: 0px;
+  background-size: cover;
+  background-image: url(img/skin_minion_playbtn.png);
+}
+
+#{$classmain} .the-artist{
+  font-weight: bold;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+
+$transition-property: transform;
+$transition-duration: 0.3s;
+$transition-timing: ease-out;
+
+
+
+#{$classmain}.is-playing .prev-btn, #{$classmain}.is-playing .next-btn{
+
+  transform: translateX(0px);
+  -webkit-transform: translateX(0px);
+  opacity:1;
+}
+
+
+
+#{$classmain} .ap-controls .con-playpause .pausebtn > div{
+  display: none;
+}
+#{$classmain} .ap-controls .con-pausebtn .pausebtn-canvas{
+  width:100%;
+  height:100%;
+}

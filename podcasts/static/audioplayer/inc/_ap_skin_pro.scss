@@ -1,0 +1,186 @@
+
+.audioplayer.skin-pro{
+
+  &.under-500{
+    .the-artist{
+      display: none;
+    }
+  }
+  .audioplayer-inner{
+    height:60px;
+    .the-thumb-con{
+      display: none;
+    }
+  }
+  .prev-btn, .next-btn{
+    display: none;
+  }
+
+  $color_bg: #ffffff;
+
+
+  .meta-artist-con{
+
+    color: #000;
+    font-size: 16px;
+    bottom: auto;
+    top: 20px;
+    left: 58px;
+    pointer-events: none;
+
+
+    overflow: hidden;
+
+    >*{
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  .the-artist{
+    font-weight: bold;
+
+    margin-right: 10px;
+  }
+  .the-name{
+    font-weight: 300;
+  }
+
+  .ap-controls{
+
+    &,.con-controls{
+
+      height: 100%;
+    }
+
+    .con-controls--right{
+      margin-left: auto;
+      margin-right: 20px;
+
+      white-space: nowrap;
+    }
+
+    .scrubbar{
+      position: absolute;
+      top:0; left:0;
+      width: 100%; height: 100%;
+      .scrub-bg{
+
+        background-color: $color_bg;
+      }
+
+      .scrub-prog{
+
+        background-color: rgba(138,25,25,.5);
+      }
+    }
+
+    .con-playpause{
+
+      $size: 20px;
+
+      position: relative;
+      width: $size;
+      height: $size;
+
+      top:0;
+      left:0;
+
+      margin-left: 20px;
+
+
+      .playbtn{
+        border-width: 0;
+        width: auto;
+        height: auto;
+
+        svg{
+          width: $size;
+          height: $size;
+          path{
+            fill: #444444;
+          }
+        }
+      }
+      .pausebtn{
+        border-width: 0px;
+        border-left-width: 00px;
+
+        width: 20px;
+        height: 20px;
+        .pause-part-1, .pause-part-2{
+          display: none;
+        }
+        .pause-icon{
+          left: -1px;
+        }
+        svg{
+          width: $size;
+          height: $size;
+          path{
+            fill: #444444;
+          }
+        }
+      }
+
+
+    }
+
+    .con-controls{
+      position: static;
+      width: auto;
+      display: flex;
+      align-items: center;
+      .the-bg{
+        background: transparent;
+        display: none;
+      }
+    }
+
+
+    .con-controls--right{
+      white-space: nowrap;
+      >*{
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .extrahtml-in-float-right{
+        color: #444343;
+        font-size: 13px;
+        position: relative;
+      }
+    }
+
+    .curr-time, .total-time{
+      color: #000;
+      font-size: 16px;
+      top: 0;
+      pointer-events: none;
+
+      position: relative;
+      top:0;left:0;
+
+      display: inline-block;
+    }
+
+    .curr-time{
+      opacity: 0.3;
+    }
+
+    .controls-volume{
+      top: 25px;
+      bottom: auto;
+      right: 60px;
+      .volumeicon{
+        background-color: #000000;
+      }
+      .volumeicon:before{
+        border-right-color: #000000;
+      }
+    }
+
+
+  }
+
+}

@@ -1,0 +1,639 @@
+
+
+$height: 80px;
+
+
+.audioplayer.skin-steel{
+  width: auto;
+  .audioplayer-inner{
+    display: inline-block;
+
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    background-color: #dddddd;
+
+
+
+    $transition-property: background;
+    $transition-duration: .3s;
+    $transition-timing: linear;
+    @include apply_transition($transition-property, $transition-duration, $transition-timing);
+
+    .the-thumb-con{
+      display: inline-block;
+    }
+
+
+    .the-thumb{
+      height: ($height - 1px);
+      width: 80px;
+
+      background-size: cover;
+    }
+  }
+  .ap-controls{
+
+    text-align: center;
+    width: auto;
+
+    .playbtn{
+      border:0;
+
+
+      .dzsap-play-icon{
+
+        border: solid transparent;
+        border-width: 12px;
+        border-left-width: 20px;
+        border-left-color: #FFFFFF;
+
+
+      }
+    }
+
+
+
+    > .the-bg{
+      display: none;
+    }
+    height: 100%;
+    .ap-controls-left{
+      width: auto;
+      height: 100%;
+      position: relative;
+
+
+      white-space: nowrap;
+
+      display: inline-block;
+      vertical-align: middle;
+
+
+      .prev-btn,.con-playpause,.next-btn{
+
+        width: 80px;
+        height: $height;
+
+        background-color: #5A555A;
+
+        position: relative;
+
+        display: inline-block;
+
+        vertical-align: top;
+
+      }
+
+      .prev-btn,.next-btn{
+        svg{
+          transform: translate(-50%,-50%);
+          position: absolute;
+          top:50%;
+          left:50%;
+
+
+          $transition-property: all;
+          $transition-duration: .2s;
+          $transition-timing: ease-out;
+          @include apply_transition($transition-property, $transition-duration, $transition-timing);
+
+
+          path{
+            $color: #444444;
+            fill: $color;
+          }
+        }
+
+        .svg1{
+          margin-left: -4px;
+
+          width: 8px;
+        }
+        .svg2{
+          margin-left: 4px;
+        }
+      }
+
+      .next-btn{
+        .svg1{
+          width: auto;
+        }
+
+        .svg2{
+          width: 8px;
+        }
+      }
+
+      .prev-btn:hover, .next-btn:hover{
+        svg{
+          margin-left:0;
+          opacity: 0.8;
+
+
+          transform: translate(-50%,-50%) scale(1.3);
+        }
+      }
+
+      .con-playpause,.next-btn{
+        border-left: 1px solid rgba(255,255,255,0.1);
+      }
+
+      .con-playpause{
+
+        top:0;
+        left:0;
+        position: relative;
+
+        background-color: #5A555A;
+
+
+        $transition-property: background;
+        $transition-duration: .2s;
+        $transition-timing: ease-out;
+        @include apply_transition($transition-property, $transition-duration, $transition-timing);
+
+
+        .playbtn{
+
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top:0;
+          left:0;
+
+
+          $transition-property: left,width;
+          $transition-duration: 0.3s;
+          $transition-timing: linear;
+          @include apply_transition($transition-property, $transition-duration, $transition-timing);
+
+          overflow: hidden;
+          .dzsap-play-icon{
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -7px;
+            margin-top: -12px;
+            width: auto;height:auto;
+
+            $transition-property: border,margin;
+            $transition-duration: .3s;
+            $transition-timing: linear;
+            @include apply_transition($transition-property, $transition-duration, $transition-timing);
+
+          }
+
+          path{
+            fill: #fff;
+          }
+          //display: none!important;
+        }
+        .pausebtn{
+
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          margin-left: -10px;
+          margin-top: -13px;
+
+          width: 20px;height:25px;
+          border: 0px solid #191d21;
+
+          //display: block!important;
+
+          path{
+            fill: #e1d9ca;
+          }
+        }
+        .pausebtn:before,.pausebtn:after{
+          content: "";
+          position: absolute;
+          width: 6px;
+          height: 100%;
+
+          left:0;
+
+          background-color: #ffffff;
+
+
+          $transition-property: background;
+          $transition-duration: .3s;
+          $transition-timing: linear;
+          @include apply_transition($transition-property, $transition-duration, $transition-timing);
+        }
+
+        .pausebtn:after{
+
+          left: auto; right:7px;
+          top:0%;
+
+          height: 100%;
+
+
+          $transition-property: right, top, height,background;
+          $transition-duration: .3s;
+          $transition-timing: ease-out;
+          @include apply_transition($transition-property, $transition-duration, $transition-timing);
+
+
+        }
+      }
+
+      .con-playpause:hover, .prev-btn:hover,.next-btn:hover{
+        background-color: $color_highlight;
+
+        .pausebtn:before,.pausebtn:after{
+          content: "";
+          position: absolute;
+          width: 6px;
+          height: 100%;
+
+          background-color: #FFFFFF;
+        }
+      }
+    }
+
+
+    .controls-right{
+      float:none;
+      display: inline-block;
+      width: auto;
+      min-width: 40%;
+
+      text-align: right;
+
+      padding: 10px 10px 5px 0;
+    }
+    .ap-controls-right{
+      float:none;
+      display: inline-block;
+      overflow: hidden;
+      background-color: transparent;
+      height: auto;
+
+      vertical-align: middle;
+
+      position: relative;
+
+      border-radius: 0 3px 3px 0;
+
+      padding-top: 0px;
+      padding-left: 13px;
+
+      padding-right: 13px;
+
+      text-align: left;
+
+
+      margin-left: 10px;
+
+      >*{
+        float:none;
+      }
+
+      .meta-artist{
+        overflow: hidden;
+
+        white-space: nowrap;
+      }
+
+      .meta-artist-con{
+        position: relative;
+        top:0;
+        left:0;
+        white-space: nowrap;
+        max-width: none;
+
+        width: 160px;
+        margin-bottom: 3px;
+
+
+
+        .the-artist{
+          font-weight: bold;
+
+          display: block;
+
+          font-family: "Lato", "Open Sans", sans-serif;
+
+          color: inherit;
+          margin-right: 10px;
+
+          margin-bottom: 4px;
+
+          font-size: 10px;
+          font-weight: bold;
+          text-transform: uppercase;
+
+          color: #222;
+        }
+
+
+        .the-name{
+          font-size: 15px;
+
+          color: $color_highlight;
+
+          display: block;
+          margin-bottom: 5px;
+          font-weight: bold;
+
+          overflow: hidden;
+          text-overflow: ellipsis;
+
+          a{
+
+            color: $color_highlight;
+          }
+        }
+      }
+
+      .controls-volume{
+
+        width: 57px;
+        height: 12px;
+
+
+        position: absolute;
+        float: none;
+        bottom: auto;
+        left: auto;
+        right: 15px;
+        top: 14px;
+
+        .volume_static{
+          width: auto;
+          height: auto;
+          background: transparent;
+          top:0;
+
+          rect{
+            fill: #a9a9a9;
+          }
+        }
+
+        .volumeicon, .volume_static, .volume_cut{
+          position: relative;
+          left:0;
+        }
+        .volume_active{
+          position: absolute;
+          height: auto;
+          background: transparent;
+          width: auto;
+
+          overflow: hidden;
+
+
+          top:0;
+
+          left:0;
+
+
+          rect{
+            fill: #222222;
+          }
+
+        }
+
+        .volumeicon{
+          display: none;
+        }
+      }
+
+      .scrubbar{
+        margin-top: 7px;
+        height: 10px;
+
+        > .scrub-bg{
+          border-radius: 0px;
+          height: 10px;
+          background-color: #FFFFFF;
+          border: 1px solid #222222;
+        }
+
+        >.scrub-prog{
+
+          border-radius: 0px;
+          height: 6px;
+          top:2px;
+          left: 2px;
+          max-width: calc(100% - 4px);
+          background-color: #222222;
+        }
+      }
+
+
+
+      .curr-time,.total-time{
+        position: relative;
+        display: inline-block;
+
+        color: inherit;
+
+        font-size: 14px;
+        top:0;
+        bottom: auto;
+
+        padding:0;
+
+        font-size: 10px;
+
+      }
+
+      .separator-slash{
+        opacity: 0.2;
+
+        display: inline-block;
+        vertical-align: middle;
+
+        font-size: 16px;
+      }
+      .curr-time{
+        padding-left: 2px;
+        opacity: 0.5;
+      }
+    }
+  }
+
+}
+
+
+
+.audioplayer.skin-steel.curved-buttons{
+  .con-playpause{
+    border-radius:50%;
+  }
+}
+
+.audioplayer.skin-steel.theme-light{
+
+  .ap-controls-left{
+    .con-playpause{
+      background-color: #EEEEEE;
+      .dzsap-play-icon{
+        border-left-color: #222222;
+      }
+      .pausebtn:before,  .pausebtn:after{
+        background-color: #222222;
+      }
+    }
+    .con-playpause:hover{
+
+      .dzsap-play-icon{
+        border-left-color: #ffffff;
+      }
+      .pausebtn:before,  .pausebtn:after{
+        background-color: #ffffff;
+      }
+    }
+  }
+}
+
+
+
+.audioplayer.skin-steel.is-playing {
+  .audioplayer-inner {
+
+    .con-playpause{
+
+
+      .playbtn{
+
+        width: 12%;
+        left:40%;
+
+        .dzsap-play-icon{
+
+          border-width: 14px;
+          border-left-width: 35px;
+          margin-left:-8px;
+
+          margin-top: -15px;
+
+
+
+        }
+      }
+
+
+      .pausebtn:after{
+        right:0;
+      }
+
+    }
+  }
+}
+
+.audioplayer.skin-steel.size-mini{
+  $size: 40px;
+
+  .ap-controls{
+    .ap-controls-left{
+      .playbtn{
+        .dzsap-play-icon{
+          border-width: 6px;
+          border-left-width: 10px;
+
+
+          margin-left: -4px;
+          margin-top: -6px;
+        }
+      }
+
+      .pausebtn{
+        height: 12px;
+        margin-top: -6px;
+        margin-left: -11px;
+      }
+      .pausebtn:before,.pausebtn:after{
+        width: 4px;
+      }
+      .pausebtn:before{
+        left:3px;
+      }
+      .pausebtn:after{
+        right:4px;
+      }
+      .con-playpause:hover{
+        .pausebtn:before, .pausebtn:after{
+          width: 4px;
+        }
+      }
+    }
+
+  }
+
+  .ap-controls-left{
+    .prev-btn,.con-playpause,.next-btn{
+      width: $size;
+      height: $size;
+    }
+
+    .prev-btn{
+      .svg1{
+        width: 5px;
+        margin-left: -3px;
+      }
+      .svg2{
+        width: 7px;
+      }
+    }
+
+    .next-btn{
+      .svg2{
+        width: 5px;
+        margin-left: 3px;
+      }
+      .svg1{
+        width: 7px;
+      }
+    }
+
+  }
+
+  .audioplayer-inner{
+    .the-thumb{
+      width: $size;
+      height: $size;
+    }
+  }
+
+  .ap-controls-right{
+
+    vertical-align: middle;
+
+    .meta-artist{
+      .the-artist:first-child{
+        margin-top: 3px;
+        margin-bottom: 2px;
+      }
+    }
+
+    .meta-artist-con{
+      .the-name{
+        margin-bottom: 0;
+      }
+    }
+
+    .curr-time, .separator-slash, .total-time{
+      display: none;
+    }
+  }
+
+}
+
+.audioplayer.skin-steel.under-400{
+
+  .controls-right{
+    display: none;
+  }
+}
+
+.slider-clipper{
+  .audioplayer.skin-steel, .audioplayer-tobe.skin-steel{
+    width: 100%;
+  }
+}

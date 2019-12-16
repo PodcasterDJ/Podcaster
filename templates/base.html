@@ -1,0 +1,51 @@
+{% load static %}
+{% load i18n %}
+{% load l10n %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Gelernt.online</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1,
+      shrink-to-fit=no">     
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Podcasts webpage">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="{% static 'styles/bootstrap-4.1.2/bootstrap.min.css' %}" rel="stylesheet" type="text/css" >
+        <link href="{% static 'styles/main_styles.css' %}" rel="stylesheet" type="text/css" >
+        <link href="{% static 'styles/responsive.css' %}" rel="stylesheet" type="text/css" >
+        <link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'plugins/colorbox/colorbox.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'audioplayer/audioplayer.css' %}" rel='stylesheet' />
+    </head>
+
+    <body>
+    <!-- SuperContainer Beginner-->
+    <div class="super_container">
+    {% include 'header.html' %}
+    {% include 'navbar.html' %}
+    {% include 'home.html' %}
+    {% include 'footer.html' %}
+    <!-- SuperContainer End-->
+    </div>
+        <!-- Audioplayer settings -->
+        <script src="{% static 'audioplayer/audioplayer.js' %}"></script>
+        <script src="{% static 'audioplayer/audioplayer.dev.js' %}"></script>
+        <script src="{% static 'audioplayer/settings.js' %}"></script>
+        <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+        <script src="{% static 'styles/bootstrap-4.1.2/popper.js' %}"></script>
+        <script src="{% static 'styles/bootstrap-4.1.2/bootstrap.min.js' %}"></script>
+        <script src="{% static 'plugins/greensock/TweenMax.min.js' %}"></script>
+        <script src="{% static 'plugins/greensock/TimelineMax.min.js' %}"></script>
+        <script src="{% static 'plugins/scrollmagic/ScrollMagic.min.js' %}"></script>
+        <script src="{% static 'plugins/greensock/animation.gsap.min.js' %}"></script>
+        <script src="{% static 'plugins/greensock/ScrollToPlugin.min.js' %}"></script>
+        <script src="{% static 'plugins/easing/easing.js' %}"></script>
+        <script src="{% static 'plugins/colorbox/jquery.colorbox-min.js' %}"></script>
+        <script src="{% static 'plugins/progressbar/progressbar.min.js' %}"></script>
+        <script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
+        <script src="{% static 'js/custom.js' %}"></script>
+    </body>
+
+</html>

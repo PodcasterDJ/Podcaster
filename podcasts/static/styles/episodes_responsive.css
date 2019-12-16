@@ -1,0 +1,309 @@
+@charset "utf-8";
+/* CSS Document */
+
+/******************************
+
+[Table of Contents]
+
+1. 1600px
+2. 1440px
+3. 1280px
+4. 1199px
+5. 1024px
+6. 991px
+7. 959px
+8. 880px
+9. 768px
+10. 767px
+11. 539px
+12. 479px
+13. 400px
+
+******************************/
+
+/************
+1. 1600px
+************/
+
+@media only screen and (max-width: 1600px)
+{
+	.header_content
+	{
+		padding-left: 200px;
+	}
+}
+
+/************
+2. 1440px
+************/
+
+@media only screen and (max-width: 1440px)
+{
+	
+}
+
+/************
+3. 1380px
+************/
+
+@media only screen and (max-width: 1380px)
+{
+	
+}
+
+/************
+3. 1280px
+************/
+
+@media only screen and (max-width: 1280px)
+{
+	
+}
+
+/************
+4. 1199px
+************/
+
+@media only screen and (max-width: 1199px)
+{
+	.main_nav
+	{
+		display: none;
+	}
+	.hamburger
+	{
+		display: block;
+	}
+}
+
+/************
+4. 1100px
+************/
+
+@media only screen and (max-width: 1100px)
+{
+	
+}
+
+/************
+5. 1024px
+************/
+
+@media only screen and (max-width: 1024px)
+{
+	
+}
+
+/************
+6. 991px
+************/
+
+@media only screen and (max-width: 991px)
+{
+	.submit
+	{
+		display: none;
+	}
+	.menu_submit
+	{
+		display: block;
+	}
+	.episodes_col
+	{
+		margin-top: 100px;
+	}
+	.footer_content_row > div[class^='col']:not(:last-child)
+	{
+		margin-bottom: 80px;
+	}
+}
+
+/************
+7. 959px
+************/
+
+@media only screen and (max-width: 959px)
+{
+	
+}
+
+/************
+8. 880px
+************/
+
+@media only screen and (max-width: 880px)
+{
+	
+}
+
+/************
+9. 768px
+************/
+
+@media only screen and (max-width: 768px)
+{
+	
+}
+
+/************
+10. 767px
+************/
+
+@media only screen and (max-width: 767px)
+{
+	.home_title h1
+	{
+		font-size: 48px;
+	}
+	.show_info
+	{
+		display: none !important;
+	}
+	.episode_name a
+	{
+		font-size: 16px;
+	}
+	.episode_date
+	{
+		margin-top: 4px;
+	}
+	.episode_date a
+	{
+		font-size: 12px;
+		font-weight: 400;
+	}
+	.single_player
+	{
+		height: auto;
+	}
+	.episode_image
+	{
+		width: 93px;
+	}
+	.episode_content
+	{
+		padding-left: 25px;
+		padding-right: 25px;
+	}
+}
+
+/************
+11. 575px
+************/
+
+@media only screen and (max-width: 575px)
+{
+	p
+	{
+		font-size: 13px;
+	}
+	.logo
+	{
+		left: 15px;
+		height: 41px;
+	}
+	.logo a
+	{
+		font-size: 24px;
+	}
+	.header_right
+	{
+		right: 15px;
+	}
+	.social
+	{
+		display: none;
+	}
+	.hamburger i
+	{
+		font-size: 24px;
+	}
+	.header_content
+	{
+		height: 70px;
+	}
+	.menu_nav_list li a
+	{
+		font-size: 36px;
+	}
+	.menu .social
+	{
+		display: block;
+	}
+	.home_container
+	{
+		top: 55%;
+		-webkit-transform: translateY(-50%);
+		-moz-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		-o-transform: translateY(-50%);
+		transform: translateY(-50%);
+	}
+	.home_title
+	{
+		margin-top: 10px;
+	}
+	.home_title h1
+	{
+		font-size: 30px;
+	}
+	.button_fill,
+	.button_border
+	{
+		height: 38px;
+	}
+	.button_border a
+	{
+		font-size: 12px;
+		line-height: 36px;
+	}
+	.button_fill a
+	{
+		font-size: 12px;
+		line-height: 38px;
+	}
+	.season_links ul li
+	{
+		font-size: 14px;
+	}
+	.sidebar_list ul li a
+	{
+		font-size: 14px;
+	}
+}
+
+/************
+11. 539px
+************/
+
+@media only screen and (max-width: 539px)
+{
+	
+}
+
+/************
+12. 480px
+************/
+
+@media only screen and (max-width: 480px)
+{
+	
+}
+
+/************
+13. 479px
+************/
+
+@media only screen and (max-width: 479px)
+{
+	
+}
+
+/************
+14. 400px
+************/
+
+@media only screen and (max-width: 400px)
+{
+	
+}
