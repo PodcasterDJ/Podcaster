@@ -2,29 +2,32 @@
 
 This is a Heroku-ready website for Developing your own podcasts.
 
+## Default Heroku URL
+
+<PROJECT_NAME>.herokuapp.com
 
 ## Development
 
-python manage.py collectstatic
-python manage.py makemigrations
-python manage.py migrate
+    python manage.py collectstatic
+    python manage.py makemigrations
+    python manage.py migrate
 
 ## Prod
 
-heroku run -a gelernt python manage.py compilemessages -l en
-heroku run -a gelernt python manage.py collectstatic
-heroku run -a gelernt python manage.py makemigrations
-heroku run -a gelernt python manage.py migrate
-heroku run -a gelernt python manage.py createsuperuser
+    heroku run -a <PROJECT_NAME> python manage.py compilemessages -l en
+    heroku run -a <PROJECT_NAME> python manage.py collectstatic
+    heroku run -a <PROJECT_NAME> python manage.py makemigrations
+    heroku run -a <PROJECT_NAME> python manage.py migrate
+    heroku run -a <PROJECT_NAME> python manage.py createsuperuser
 
 ## Logs
 
-heroku logs --tail -a gelernt
+    heroku logs --tail -a <PROJECT_NAME>
 
 ## DB
 
-heroku pg:copy gelernt::DATABASE_URL HEROKU_POSTGRESQL_GOLD_URL -a gelernt
-heroku pg:info -a gelernt
+    heroku pg:copy <PROJECT_NAME>::DATABASE_URL HEROKU_POSTGRESQL_GOLD_URL -a <PROJECT_NAME>
+    heroku pg:info -a <PROJECT_NAME>
 
 
 ## Config vars
@@ -53,7 +56,7 @@ Remove a config var
 
 
 Before making translation
-heroku buildpacks:set https://github.com/grauwoelfchen/heroku-buildpack-gettext.git -a gelernt
+heroku buildpacks:set https://github.com/grauwoelfchen/heroku-buildpack-gettext.git -a <PROJECT_NAME>
 
 How to make and update new translations
 
