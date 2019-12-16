@@ -31,10 +31,13 @@ ROOT_FOLDER = os.path.dirname(BASE_DIR + '/podcasts/')
 try:
     if(os.environ['ENV'] == "prod"):
         DEBUG = False
+        print("Using PRODUCTION configuration.")
     else:
         DEBUG = True
+        print("Using DEBUG configuration.")
 except:
     DEBUG = True
+    print("Using DEBUG configuration.")
 
 
 # Application definition
@@ -127,16 +130,18 @@ if not DEBUG:
     }
 
     # s3 static settings
-    PUBLIC_STATIC_LOCATION = 'static'
-    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_STATIC_LOCATION}/'
-    STATICFILES_STORAGE = 'podcasts.storage_backends.StaticStorage'
-    # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+    # PUBLIC_STATIC_LOCATION = 'static'
+    #STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_STATIC_LOCATION}/'
+    #STATICFILES_STORAGE = 'podcasts.storage_backends.StaticStorage'
+    # Simplified static file serving.
+    # https://warehouse.python.org/project/whitenoise/
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
     # s3 public media settings
     PUBLIC_MEDIA_LOCATION = 'media'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
     DEFAULT_FILE_STORAGE = 'podcasts.storage_backends.PublicMediaStorage'
 
-    SECURE_SSL_REDIRECT = True
+    # SECURE_SSL_REDIRECT = True
     DATABASES['default'] = dj_database_url.config(
         conn_max_age=600, ssl_require=True)
 
@@ -214,11 +219,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 # Media files
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = '/media/'
-
-# Simplified static file serving.
-# https://warehouse.python.org/project/whitenoise/
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
 
 # list of activated languages
 LANGUAGES = (
