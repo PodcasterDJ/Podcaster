@@ -135,9 +135,9 @@ if not DEBUG:
 
         }
     }
-    SECURE_SSL_REDIRECT = True
-    DATABASES['default'] = dj_database_url.config(
-        conn_max_age=600, ssl_require=True)
+    # SECURE_SSL_REDIRECT = True
+    # DATABASES['default'] = dj_database_url.config(
+    #     conn_max_age=600, ssl_require=True)
 
 ROOT_URLCONF = 'podcasts.urls'
 
