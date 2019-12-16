@@ -1,6 +1,6 @@
 venv
 *.pyc
-staticfiles
+
 podcasts/.env
 .env
 *.sqlite3

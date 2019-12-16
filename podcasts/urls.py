@@ -23,12 +23,11 @@ from home.views import redirectHome
 urlpatterns = [
     #url(r'^(?P<filename>(robots.txt)|(humans.txt))$',
     #   home_files, name='home-files'),
+    path('admin/', admin.site.urls),
 ]
 urlpatterns += i18n_patterns(
     #path('', redirectHome),
     path('', include("home.urls", namespace='home')),
-    path('admin/', admin.site.urls),
-
 )
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL,

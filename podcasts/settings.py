@@ -81,8 +81,6 @@ ALLOWED_HOSTS = os.environ['ALLOWED_HOSTS']
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ['SECRET_KEY']
 
-ALLOWED_HOSTS = os.environ['ALLOWED_HOSTS']
-
 
 if DEBUG:
     SECURE_SSL_REDIRECT = False
@@ -138,9 +136,9 @@ if not DEBUG:
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
     DEFAULT_FILE_STORAGE = 'podcasts.storage_backends.PublicMediaStorage'
 
-    # SECURE_SSL_REDIRECT = True
-    # DATABASES['default'] = dj_database_url.config(
-    #     conn_max_age=600, ssl_require=True)
+    SECURE_SSL_REDIRECT = True
+    DATABASES['default'] = dj_database_url.config(
+        conn_max_age=600, ssl_require=True)
 
 ROOT_URLCONF = 'podcasts.urls'
 
@@ -271,4 +269,4 @@ LOGGING = {
 }
 
 # Activate Django-Heroku.
-django_heroku.settings(locals())
+django_heroku.settings(locals(), logging=False)
