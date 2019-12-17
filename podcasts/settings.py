@@ -40,7 +40,8 @@ except:
     DEBUG = True
     print("Using DEBUG configuration.")
 
-
+# DEBUG = False
+# DEBUG_PROPAGATE_EXCEPTIONS = True
 # Application definition
 
 INSTALLED_APPS = [
@@ -142,7 +143,7 @@ if not DEBUG:
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
     DEFAULT_FILE_STORAGE = 'podcasts.storage_backends.PublicMediaStorage'
 
-    # SECURE_SSL_REDIRECT = True
+    SECURE_SSL_REDIRECT = True
     DATABASES['default'] = dj_database_url.config(
         conn_max_age=600, ssl_require=True)
 
