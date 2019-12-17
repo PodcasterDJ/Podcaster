@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import SocialMediaLink, PageBackground
 
-# Register your models here.
+admin.site.register(SocialMediaLink)
+
+admin.site.register(PageBackground)

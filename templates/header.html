@@ -7,7 +7,7 @@
 
 		<!-- Logo -->
 		<div class="logo">
-			<a href="#"><span>gelernt</span>online</a>
+			<a href="/"><span>gelernt</span>online</a>
 		</div>
 
 		<div class="container">
@@ -32,15 +32,14 @@
 		<div class="header_right d-flex flex-row align-items-start justify-content-start">
 
 			<!-- Submit -->
-			<div class="submit"><a href="#">Register</a></div>
+			{% comment %} <div class="submit"><a href="#">Register</a></div> {% endcomment %}
 			
 			<!-- Social -->
 			<div class="social">
 				<ul class="d-flex flex-row align-items-start justify-content-start">
-					<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-					<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-					<li><a href="#"><i class="fa fa-soundcloud" aria-hidden="true"></i></a></li>
-					<li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+				{% for el in social_media %}
+					<li><a href="{{el.link}}"><i class="fa fa-{{el.name}}" aria-hidden="true"></i></a></li>
+				{% endfor %}
 				</ul>
 			</div>
 
