@@ -31,6 +31,7 @@ ROOT_FOLDER = os.path.dirname(BASE_DIR + '/podcasts/')
 try:
     if(os.environ['ENV'] == "prod"):
         DEBUG = False
+        DEBUG_PROPAGATE_EXCEPTIONS = True
         print("Using PRODUCTION configuration.")
     else:
         DEBUG = True
