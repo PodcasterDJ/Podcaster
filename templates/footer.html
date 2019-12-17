@@ -76,10 +76,9 @@
 				<div class="col">
 					<div class="footer_social">
 						<ul class="d-flex flex-row align-items-center justify-content-center">
-							<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-soundcloud" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+						{% for el in social_media %}
+							<li><a href="{{el.link}}"><i class="fa fa-{{el.name}}" aria-hidden="true"></i></a></li>
+						{% endfor %}
 						</ul>
 					</div>
 				</div>
