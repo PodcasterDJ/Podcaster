@@ -25,7 +25,7 @@
     <div class="super_container">
     {% include 'header.html' %}
     {% include 'navbar.html' %}
-    {% if 'home' in request.url %}
+    {% if 'home' in request.path %}
     {% include 'home.html' %}
     {% endif %}
     
