@@ -28,6 +28,8 @@ urlpatterns = [
 urlpatterns += i18n_patterns(
     #path('', redirectHome),
     path('', include("home.urls", namespace='home')),
+    path('episodes', include("episodes.urls", namespace='episodes')),
+
 )
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL,

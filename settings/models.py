@@ -37,8 +37,8 @@ class SocialMediaLink(models.Model):
 class PageBackground(models.Model):
     name = models.CharField(
         max_length=25   , choices=PAGE_CHOICES, default='select', unique=True)
-    # image = models.ImageField(upload_to='backgrounds/', blank=True,
-    #                                  null=True, help_text="This will be page bacground.")
+    image = models.ImageField(upload_to='backgrounds/', blank=True,
+                                     null=True, help_text="This will be page bacground.")
 
     def __str__(self):
         return self.name

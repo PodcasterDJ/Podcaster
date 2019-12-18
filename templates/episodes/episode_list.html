@@ -1,0 +1,206 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block episodes %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap-4.1.2/bootstrap.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" >
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/colorbox/colorbox.css' %}" >
+<link rel="stylesheet" type="text/css" href="{% static 'styles/episodes.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/episodes_responsive.css' %}">
+
+	<div class="home">
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{% static 'images/about.jpg' %}" data-speed="0.8"></div>
+		<div class="home_container d-flex flex-column align-items-center justify-content-center">
+			<div class="home_content">
+				<div class="home_title"><h1>episodes</h1></div>
+			</div>
+		</div>
+	</div>
+	<!-- Episodes -->
+
+	<div class="episodes">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="season_links">
+						<ul class="d-flex flex-row align-items-start justify-content-center flex-wrap">
+							<li class="item_filter_btn" data-filter="*">All Seasons</li>
+							<li class="item_filter_btn" data-filter=".s1">Season 1</li>
+							<li class="item_filter_btn" data-filter=".s2">Season 2</li>
+							<li class="item_filter_btn" data-filter=".s3">Season 3</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="row episodes_row">
+				
+				<!-- Sidebar -->
+				<div class="col-lg-3">
+					<div class="sidebar">
+						
+						<!-- Search -->
+						<div class="sidebar_search">
+							<div class="sidebar_title">Search</div>
+							<form action="#" class="search_form" id="search_form">
+								<input type="text" class="search_input" placeholder="Search here" required="required">
+								<button class="search_button"><img src="images/search.png" alt=""></button>
+							</form>
+						</div>
+
+						<!-- Categories -->
+						<div class="sidebar_list">
+							<div class="sidebar_title">Categories</div>
+							<ul>
+								<li><a href="#">Travel</a></li>
+								<li><a href="#">Music</a></li>
+								<li><a href="#">Lifestyle</a></li>
+								<li><a href="#">Social Media</a></li>
+								<li><a href="#">Art</a></li>
+								<li><a href="#">Audiobooks</a></li>
+								<li><a href="#">Documentaries</a></li>
+							</ul>
+						</div>
+
+						<!-- Tags -->
+						<div class="sidebar_tags">
+							<div class="sidebar_title">Tags</div>
+							<div class="tags">
+								<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
+									<li><a href="#">music</a></li>
+									<li><a href="#">art</a></li>
+									<li><a href="#">technology</a></li>
+									<li><a href="#">travel & food</a></li>
+									<li><a href="#">viral</a></li>
+									<li><a href="#">interview</a></li>
+									<li><a href="#">social media</a></li>
+									<li><a href="#">development</a></li>
+									<li><a href="#">success</a></li>
+									<li><a href="#">did you know?</a></li>
+									<li><a href="#">live</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<!-- Archive -->
+						<div class="sidebar_archive">
+							<div class="sidebar_title">Archive</div>
+							<div class="dropdown">
+								<ul>
+									<li class="dropdown_selected d-flex flex-row align-items-center justify-content-start"><span>September 2018</span><i class="fa fa-chevron-down ml-auto" aria-hidden="true"></i>
+										<ul>
+											<li><a href="#">August 2018</a></li>
+											<li><a href="#">July 2018</a></li>
+											<li><a href="#">June 2018</a></li>
+											<li><a href="#">May 2018</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Episodes -->
+				<div class="col-lg-9 episodes_col">
+					<div class="episodes_container">
+						<!--  TODO: Make episodes dynamic in templates -->
+						<!-- Episode -->
+						<div class="episode d-flex flex-row align-items-start justify-content-start s1">
+							<div>
+								<div class="episode_image">
+									<img src="{% static 'images/episode_1.jpg' %}" alt="">
+									<div class="tags">
+										<ul class="d-flex flex-row align-items-start justify-content-start">
+											<li><a href="#">music</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="episode_content">
+								<div class="episode_name"><a href="episode.html">Audio - Lorem ipsum dolor sit amet consectetur</a></div>
+								<div class="episode_date"><a href="#">24 September, 2018</a></div>
+								<div class="show_info d-flex flex-row align-items-start justify-content-start">
+									<div class="show_fav d-flex flex-row align-items-center justify-content-start">
+										<div class="show_fav_icon show_info_icon"><img class="svg" src="{% static 'images/heart.svg' %}" alt=""></div>
+										<div class="show_fav_count">2371</div>
+									</div>
+									<div class="show_comments">
+										<a href="#">
+											<div class="d-flex flex-row align-items-center justify-content-start">
+												<div class="show_comments_icon show_info_icon"><img class="svg" src="{% static 'images/speech-bubble.svg' %}" alt=""></div>
+												<div class="show_comments_count">88 Comments</div>
+											</div>
+										</a>	
+									</div>
+								</div>
+								<!-- Player -->
+								<div class="player-background">
+									<div id="ag1" class="audiogallery">
+										<div class="items">
+											<div class="audioplayer-tobe" style="width:100%; "
+												data-bgimage="{% static 'audioplayer/img/bg.jpg' %}"
+												data-scrubbg="{% static 'audioplayer/waves/scrubbg.png' %}"
+												data-scrubprog="{% static 'audioplayer/waves/scrubprog.png' %}"
+												data-videoTitle="Audio Video" data-type="normal"
+												data-source="{% static 'files/vampire.mp3' %}"
+												data-sourceogg="{% static 'files/vampire.mp3' %}">
+												<div class="meta-artist"><span class="the-artist">Dyzia</span><br /><span
+														class="the-name">Dyzia
+												</div>
+												<div class="menu-description">
+													<div class="menu-item-thumb-con">
+														<div class="menu-item-thumb"
+															style="background-image: url({% static 'audioplayer/img/adg3.jpg' %})">
+														</div>
+													</div>
+													<span class="the-artist">Dyzia</span>
+													<span class="the-name">Dyzia</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								</div>
+							</div>
+						</div>
+
+
+					</div>
+				</div>
+			</div>
+			<div class="row page_nav_row">
+				<div class="col">
+					<div class="page_nav d-flex flex-row align-items-center justify-content-center">
+						<ul class="d-flex flex-row">
+							<li class="active"><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock episodes %}
+
+
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'styles/bootstrap-4.1.2/popper.js' %}"></script>
+<script src="{% static 'styles/bootstrap-4.1.2/bootstrap.min.js' %}"></script>
+<script src="{% static 'plugins/greensock/TweenMax.min.js' %}"></script>
+<script src="{% static 'plugins/greensock/TimelineMax.min.js' %}"></script>
+<script src="{% static 'plugins/scrollmagic/ScrollMagic.min.js' %}"></script>
+<script src="{% static 'plugins/greensock/animation.gsap.min.js' %}"></script>
+<script src="{% static 'plugins/greensock/ScrollToPlugin.min.js' %}"></script>
+<script src="{% static 'plugins/colorbox/jquery.colorbox-min.js' %}"></script>
+<script src="{% static 'plugins/jPlayer/jquery.jplayer.min.js' %}"></script>
+<script src="{% static 'plugins/jPlayer/jplayer.playlist.min.js' %}"></script>
+<script src="{% static 'plugins/easing/easing.js' %}"></script>
+<script src="{% static 'plugins/progressbar/progressbar.min.js' %}"></script>
+<script src="{% static 'plugins/Isotope/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
+<script src="{% static 'js/episodes.js' %}"></script> 

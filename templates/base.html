@@ -25,7 +25,13 @@
     <div class="super_container">
     {% include 'header.html' %}
     {% include 'navbar.html' %}
+    {% if 'home' in request.url %}
     {% include 'home.html' %}
+    {% endif %}
+    
+
+    {% block episodes %}
+    {% endblock episodes %}
     {% include 'footer.html' %}
     <!-- SuperContainer End-->
     </div>
@@ -46,12 +52,7 @@
         <script src="{% static 'plugins/progressbar/progressbar.min.js' %}"></script>
         <script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
         <script src="{% static 'js/custom.js' %}"></script>
-        <script src="{% static 'plugins/jPlayer/jquery.jplayer.min.js' %}"></script>
-        <script src="{% static 'plugins/jPlayer/jplayer.playlist.min.js' %}"></script>
-        <script src="{% static 'plugins/easing/easing.js' %}"></script>
-        <script src="{% static 'plugins/Isotope/isotope.pkgd.min.js' %}"></script>
-        <script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
-        <script src="{% static 'js/episodes.js' %}"></script>
+
     </body>
 
 </html>

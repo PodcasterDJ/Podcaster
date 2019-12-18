@@ -46,10 +46,11 @@ class Episode(models.Model):
     meta_keywords = models.CharField(
         max_length=250, blank=True,  help_text="SEO Keywords helping in users searches.")
     title = models.CharField(max_length=199)
+    description = models.TextField(blank=True, null=True)
     # Possible troubles with russin?
     slug = models.SlugField(max_length=250, allow_unicode=True, blank=True,
                             help_text="Created automatically, no need to fill.")
-    overview = models.TextField()
+
     timestamp = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=10,
@@ -57,8 +58,8 @@ class Episode(models.Model):
                               default='draft')
     publish = models.DateTimeField(default=timezone.now)
 
-    # thumbnail = models.ImageField(upload_to='blog/', blank=True, default="blog/default.jpeg",
-    #                               null=True, help_text="This picture will be uploaded to AWS.")
+    thumbnail = models.ImageField(upload_to='episodes/', blank=True,
+                                  null=True, help_text="This picture will be uploaded to AWS.")
    
     content = models.TextField()
     featured = models.BooleanField(default=False)
@@ -75,7 +76,7 @@ class Episode(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('blog:post_detail',
+        return reverse('list_episodes',
                        args=[self.publish.year,
                              self.publish.month,
                              self.publish.day,
