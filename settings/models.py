@@ -9,7 +9,11 @@ PAGE_CHOICES = (
     ('blog', 'BLOG'),
     ('contact', 'CONTACT'),
 )
-
+PAGE_DESCRIPTION = (
+    ('select', 'SELECT'),
+    ('title', 'TITLE'),
+   
+)
 
 SOCIAL_CHOICES = (
     ('select', 'SELECT'),
@@ -48,6 +52,18 @@ class PageBackground(models.Model):
         verbose_name = 'Page Backgrounds'
         verbose_name_plural = 'Page Backgrounds'
 
+class PageDescription(models.Model):
+    name = models.CharField(
+        max_length=25   , choices=PAGE_DESCRIPTION, default='select', unique=True)
+    content = models.CharField(blank=True, null=True, max_length=200)
+    
+    def __str__(self):
+            return self.name
+    class Meta:
+        # db_table = ''
+        # managed = True
+        verbose_name = 'Page Description'
+        verbose_name_plural = 'Page Description'
 # Thats a model that will be responsive for any extra translation options.
 
 # class Messages(models.Model):

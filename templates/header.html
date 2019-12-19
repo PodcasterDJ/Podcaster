@@ -7,7 +7,7 @@
 
 		<!-- Logo -->
 		<div class="logo">
-			<a href="/"><span>gelernt</span>online</a>
+			<a href="/">{% for el in page_description %}{% if el.name == 'title' %}{{el.content}}{% endif %}{% endfor %}</a>
 		</div>
 
 		<div class="container">
