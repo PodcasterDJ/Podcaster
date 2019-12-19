@@ -5,7 +5,7 @@
 	<!-- Home -->
 
 	<div class="home">
-		<div class="background_image" style="background-image:url({% static 'images/index.jpg' %})"></div>
+		<div class="background_image" style="background-image:url({% for el in page_background %}{% if el.name in request.path %}{{el.image.url}}{% endif %}{% endfor %})"></div>
 		<div class="home_container">
 			<div class="container">
 				<div class="row">
@@ -13,51 +13,54 @@
 						<div class="home_content">
 							<div class="tags">
 								<ul class="d-flex flex-row align-items-start justify-content-start">
-									<li><a href="#">lifestyle</a></li>
-									<li><a href="#">interview</a></li>
-									<li><a href="#">last episode</a></li>
+									{% for el in last_episode.category.all %}
+									<li><a href="#">{{el.title}}</a></li>
+									{% endfor %}
+									
 								</ul>
 							</div>
-							<div class="home_title"><h1>Season 4 Episode 48 available.</h1></div>
-							<div class="home_subtitle">Check out my latest podcast a massive interview with John Doe</div>
+							<div class="home_title"><h1>{{last_episode.title}}</h1></div>
+							<div class="home_subtitle">{{last_episode.description}}</div>
 							<div class="track_info">
 								<ul class="d-flex flex-row align-items-start justify-content-start">
-									<li><a href="#">September 24, 2018</a></li>
+									<li><a href="#">{{last_episode.timestamp}}</a></li>
 									<li><a href="#">Music</a></li>
 									<li>56:40</li>
 									<li><a href="#">0 Comments</a></li>
 								</ul>
 							</div>
+							
 							<div class="track track_home">
+							<div class="card p-2" style="background: #ffffff26;">
 								<!-- Player -->
 								<div class="player-background">
 									<div id="ag1" class="audiogallery">
 										<div class="items">
 											<div class="audioplayer-tobe" style="width:100%; "
-												data-thumb="{% static 'images/about.jpg' %}"
+												data-thumb="{{last_episode.thumbnail.url}}"
 												data-bgimage="{% static 'audioplayer/img/bg.jpg' %}"
 												data-scrubbg="{% static 'audioplayer/waves/scrubbg.png' %}"
 												data-scrubprog="{% static 'audioplayer/waves/scrubprog.png' %}"
 												data-videoTitle="Audio Video" data-type="normal"
-												data-source="{% static 'files/vampire.mp3' %}"
-												data-sourceogg="{% static 'files/vampire.mp3' %}">
-												<div class="meta-artist"><span class="the-artist">Admin</span><br /><span
-														class="the-name">Admin
+												data-source="{{last_episode.audio.url}}"
+												data-sourceogg="{{last_episode.audio.url}}">
+												<div class="meta-artist"><span class="the-artist">{{last_episode.author}}</span><br /><span
+														class="the-name">{{last_episode.author}}
 												</div>
 												<div class="menu-description">
 													<div class="menu-item-thumb-con">
 														<div class="menu-item-thumb"
-															style="background-image: url({% static 'audioplayer/img/adg3.jpg' %})">
+															style="background-image: url({{last_episode.thumbnail.url}})">
 														</div>
 													</div>
-													<span class="the-artist">Admin</span>
-													<span class="the-name">Admin</span>
+													<span class="the-artist">{{last_episode.author}}</span>
+													<span class="the-name">{{last_episode.author}}</span>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-
+</div>
 								</div>							</div>
 							<div class="button_border home_button trans_200"><a href="#">More Info</a></div>
 						</div>

@@ -1,4 +1,4 @@
-from .models import SocialMediaLink, PageDescription
+from .models import SocialMediaLink, PageDescription, PageBackground
 
 # TODO: Wire data from models/admin through context processors
 
@@ -16,5 +16,8 @@ def social_media(request):
         "social_media": SocialMediaLink.objects.all(),
     }
 # Backgrounds
-
+def page_background(request):
+    return {
+        "page_background": PageBackground.objects.all(),
+    }
 # Colors

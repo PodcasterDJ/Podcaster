@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'styles/episodes_responsive.css' %}">
 
 	<div class="home">
-		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{% static 'images/about.jpg' %}" data-speed="0.8"></div>
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{% for el in page_background %}{% if el.name in request.path %}{{el.image.url}}{% endif %}{% endfor %}" data-speed="0.8"></div>
 		<div class="home_container d-flex flex-column align-items-center justify-content-center">
 			<div class="home_content">
 				<div class="home_title"><h1>episodes</h1></div>
@@ -90,73 +90,10 @@
 				<!-- Episodes -->
 				<div class="col-lg-9 episodes_col">
 					<div class="episodes_container">
-						
-						<!-- Episode -->
 						{% for el in episode_list %}
-						
-						<div class="episode d-flex flex-row align-items-start justify-content-start s1">
-							<div>
-								<div class="episode_image">
-									<img src="{{el.thumbnail.url}}" alt="">
-									<div class="tags">
-										<ul class="d-flex flex-row align-items-start justify-content-start">
-											{% for el in el.category.all %}<li><a href="#">{{el}}</a></li>{% endfor %}
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="episode_content">
-								<div class="episode_name"><a href="episode.html">{{el.title}}</a></div>
-								<div class="episode_date"><a href="#">{{el.timestamp}}</a></div>
-								<div class="show_info d-flex flex-row align-items-start justify-content-start">
-									{% comment %} <div class="show_fav d-flex flex-row align-items-center justify-content-start">
-										<div class="show_fav_icon show_info_icon"><img class="svg" src="{% static 'images/heart.svg' %}" alt=""></div>
-										<div class="show_fav_count">2371</div>
-									</div> {% endcomment %}
-									{% comment %} <div class="show_comments">
-										<a href="#">
-											<div class="d-flex flex-row align-items-center justify-content-start">
-												<div class="show_comments_icon show_info_icon"><img class="svg" src="{% static 'images/speech-bubble.svg' %}" alt=""></div>
-												<div class="show_comments_count">88 Comments</div>
-											</div>
-										</a>	
-									</div> {% endcomment %}
-								</div>
-								<!-- Player -->
-								<div class="player-background">
-									<div id="ag{{el.id}}" class="audiogallery">
-										<div class="items">
-											<div class="audioplayer-tobe" style="width:100%; "
-												data-bgimage="{% static 'audioplayer/img/bg.jpg' %}"
-												data-scrubbg="{% static 'audioplayer/waves/scrubbg.png' %}"
-												data-scrubprog="{% static 'audioplayer/waves/scrubprog.png' %}"
-												data-videoTitle="Audio Video" data-type="normal"
-												data-source="{{el.audio.url}}"
-												data-sourceogg="{{el.audio.url}}">
-												<div class="meta-artist"><span class="the-artist">{{el.author}}</span><br /><span
-														class="the-name">{{el.author}}
-												</div>
-												<div class="menu-description">
-													<div class="menu-item-thumb-con">
-														<div class="menu-item-thumb"
-															style="background-image: url({{ el.thumbnail.url }})">
-														</div>
-													</div>
-													<span class="the-artist">{{el.author}}</span>
-													<span class="the-name">{{el.author}}</span>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-
-								</div>
-							</div>
-							{% endfor %}
+							{% include 'episodes/single_episode.html' %}
+						{% endfor %}
 						</div>
-						
-						
-
 					</div>
 				</div>
 			</div>

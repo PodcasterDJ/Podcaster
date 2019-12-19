@@ -14,7 +14,7 @@
 	<!-- Home -->
 
 	<div class="home">
-		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{% static 'images/about.jpg' %}" data-speed="0.8"></div>
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{% for el in page_background %}{% if el.name in request.path %}{{el.image.url}}{% endif %}{% endfor %}" data-speed="0.8"></div>
 		<div class="home_container d-flex flex-column align-items-center justify-content-center">
 			<div class="home_content">
 				<div class="home_title"><h1>about</h1></div>

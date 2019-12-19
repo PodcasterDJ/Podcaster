@@ -154,7 +154,8 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.i18n',
                 'settings.context_processors.social_media',
-                'settings.context_processors.page_description'
+                'settings.context_processors.page_description',
+                'settings.context_processors.page_background',
             ],
         },
     },
