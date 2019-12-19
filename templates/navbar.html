@@ -4,21 +4,19 @@
 	<div class="menu">
 		<div class="menu_content d-flex flex-column align-items-end justify-content-start">
 			<ul class="menu_nav_list text-right">
-				<li><a href="index.html">Home</a></li>
-				<li><a href="about.html">About</a></li>
+				<li><a href="/">Home</a></li>
 				<li><a href="/episodes">Episodes</a></li>
-				<li><a href="blog.html">Blog</a></li>
-				<li><a href="contact.html">Contact</a></li>
+				<li><a href="/blog">Blog</a></li>
+				<li><a href="/about">About</a></li>
+				{% comment %} <li><a href="contact.html">Contact</a></li> {% endcomment %}
 			</ul>
 			<div class="menu_extra d-flex flex-column align-items-end justify-content-start">
-				<div class="menu_submit"><a href="#">Submit your podcast</a></div>
+				{% comment %} <div class="menu_submit"><a href="#">Submit your podcast</a></div> {% endcomment %}
 				<div class="social">
 					<ul class="d-flex flex-row align-items-start justify-content-start">
-						<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-						<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-						<li><a href="#"><i class="fa fa-soundcloud" aria-hidden="true"></i></a></li>
-						<li><a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
-						<li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+						{% for el in social_media %}
+							<li><a href="{{el.link}}"><i class="fa fa-{{el.name}}" aria-hidden="true"></i></a></li>
+						{% endfor %}
 					</ul>
 				</div>
 			</div>

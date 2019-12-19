@@ -21,7 +21,7 @@
 
 	<div class="episodes">
 		<div class="container">
-			<div class="row">
+			{% comment %} <div class="row">
 				<div class="col">
 					<div class="season_links">
 						<ul class="d-flex flex-row align-items-start justify-content-center flex-wrap">
@@ -32,33 +32,29 @@
 						</ul>
 					</div>
 				</div>
-			</div>
+			</div> {% endcomment %}
 			<div class="row episodes_row">
 				
 				<!-- Sidebar -->
 				<div class="col-lg-3">
 					<div class="sidebar">
 						
-						<!-- Search -->
+						{% comment %} <!-- Search -->
 						<div class="sidebar_search">
 							<div class="sidebar_title">Search</div>
 							<form action="#" class="search_form" id="search_form">
 								<input type="text" class="search_input" placeholder="Search here" required="required">
-								<button class="search_button"><img src="images/search.png" alt=""></button>
+								<button class="search_button"><img src="{% static 'images/search.png' %}" alt=""></button>
 							</form>
-						</div>
+						</div> {% endcomment %}
 
 						<!-- Categories -->
 						<div class="sidebar_list">
 							<div class="sidebar_title">Categories</div>
 							<ul>
-								<li><a href="#">Travel</a></li>
-								<li><a href="#">Music</a></li>
-								<li><a href="#">Lifestyle</a></li>
-								<li><a href="#">Social Media</a></li>
-								<li><a href="#">Art</a></li>
-								<li><a href="#">Audiobooks</a></li>
-								<li><a href="#">Documentaries</a></li>
+								{% for el in categories %}
+								<li><a href="#">{{el.title}}</a></li>
+								{% endfor %}
 							</ul>
 						</div>
 
@@ -67,22 +63,14 @@
 							<div class="sidebar_title">Tags</div>
 							<div class="tags">
 								<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-									<li><a href="#">music</a></li>
-									<li><a href="#">art</a></li>
-									<li><a href="#">technology</a></li>
-									<li><a href="#">travel & food</a></li>
-									<li><a href="#">viral</a></li>
-									<li><a href="#">interview</a></li>
-									<li><a href="#">social media</a></li>
-									<li><a href="#">development</a></li>
-									<li><a href="#">success</a></li>
-									<li><a href="#">did you know?</a></li>
-									<li><a href="#">live</a></li>
+									{% for el in tags %}
+									<li><a href="#">{{el.title}}</a></li>
+									{% endfor %}
 								</ul>
 							</div>
 						</div>
 
-						<!-- Archive -->
+						{% comment %} <!-- Archive -->
 						<div class="sidebar_archive">
 							<div class="sidebar_title">Archive</div>
 							<div class="dropdown">
@@ -97,7 +85,7 @@
 									</li>
 								</ul>
 							</div>
-						</div>
+						</div> {% endcomment %}
 					</div>
 				</div>
 
@@ -174,7 +162,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="row page_nav_row">
+			{% comment %} <div class="row page_nav_row">
 				<div class="col">
 					<div class="page_nav d-flex flex-row align-items-center justify-content-center">
 						<ul class="d-flex flex-row">
@@ -186,7 +174,7 @@
 						</ul>
 					</div>
 				</div>
-			</div>
+			</div> {% endcomment %}
 		</div>
 	</div>
 
