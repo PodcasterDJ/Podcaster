@@ -104,58 +104,60 @@
 				<!-- Episodes -->
 				<div class="col-lg-9 episodes_col">
 					<div class="episodes_container">
-						<!--  TODO: Make episodes dynamic in templates -->
+						
 						<!-- Episode -->
+						{% for el in episode_list %}
+						
 						<div class="episode d-flex flex-row align-items-start justify-content-start s1">
 							<div>
 								<div class="episode_image">
-									<img src="{% static 'images/episode_1.jpg' %}" alt="">
+									<img src="{{el.thumbnail.url}}" alt="">
 									<div class="tags">
 										<ul class="d-flex flex-row align-items-start justify-content-start">
-											<li><a href="#">music</a></li>
+											{% for el in el.category.all %}<li><a href="#">{{el}}</a></li>{% endfor %}
 										</ul>
 									</div>
 								</div>
 							</div>
 							<div class="episode_content">
-								<div class="episode_name"><a href="episode.html">Audio - Lorem ipsum dolor sit amet consectetur</a></div>
-								<div class="episode_date"><a href="#">24 September, 2018</a></div>
+								<div class="episode_name"><a href="episode.html">{{el.title}}</a></div>
+								<div class="episode_date"><a href="#">{{el.timestamp}}</a></div>
 								<div class="show_info d-flex flex-row align-items-start justify-content-start">
-									<div class="show_fav d-flex flex-row align-items-center justify-content-start">
+									{% comment %} <div class="show_fav d-flex flex-row align-items-center justify-content-start">
 										<div class="show_fav_icon show_info_icon"><img class="svg" src="{% static 'images/heart.svg' %}" alt=""></div>
 										<div class="show_fav_count">2371</div>
-									</div>
-									<div class="show_comments">
+									</div> {% endcomment %}
+									{% comment %} <div class="show_comments">
 										<a href="#">
 											<div class="d-flex flex-row align-items-center justify-content-start">
 												<div class="show_comments_icon show_info_icon"><img class="svg" src="{% static 'images/speech-bubble.svg' %}" alt=""></div>
 												<div class="show_comments_count">88 Comments</div>
 											</div>
 										</a>	
-									</div>
+									</div> {% endcomment %}
 								</div>
 								<!-- Player -->
 								<div class="player-background">
-									<div id="ag1" class="audiogallery">
+									<div id="ag{{el.id}}" class="audiogallery">
 										<div class="items">
 											<div class="audioplayer-tobe" style="width:100%; "
 												data-bgimage="{% static 'audioplayer/img/bg.jpg' %}"
 												data-scrubbg="{% static 'audioplayer/waves/scrubbg.png' %}"
 												data-scrubprog="{% static 'audioplayer/waves/scrubprog.png' %}"
 												data-videoTitle="Audio Video" data-type="normal"
-												data-source="{% static 'files/vampire.mp3' %}"
-												data-sourceogg="{% static 'files/vampire.mp3' %}">
-												<div class="meta-artist"><span class="the-artist">Dyzia</span><br /><span
-														class="the-name">Dyzia
+												data-source="{{el.audio.url}}"
+												data-sourceogg="{{el.audio.url}}">
+												<div class="meta-artist"><span class="the-artist">{{el.author}}</span><br /><span
+														class="the-name">{{el.author}}
 												</div>
 												<div class="menu-description">
 													<div class="menu-item-thumb-con">
 														<div class="menu-item-thumb"
-															style="background-image: url({% static 'audioplayer/img/adg3.jpg' %})">
+															style="background-image: url({{ el.thumbnail.url }})">
 														</div>
 													</div>
-													<span class="the-artist">Dyzia</span>
-													<span class="the-name">Dyzia</span>
+													<span class="the-artist">{{el.author}}</span>
+													<span class="the-name">{{el.author}}</span>
 												</div>
 											</div>
 										</div>
@@ -164,8 +166,10 @@
 
 								</div>
 							</div>
+							{% endfor %}
 						</div>
-
+						
+						
 
 					</div>
 				</div>
@@ -185,6 +189,7 @@
 			</div>
 		</div>
 	</div>
+
 {% endblock episodes %}
 
 
@@ -204,3 +209,29 @@
 <script src="{% static 'plugins/Isotope/isotope.pkgd.min.js' %}"></script>
 <script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
 <script src="{% static 'js/episodes.js' %}"></script> 
+
+{% block js %}
+	{% for el in episode_list %}
+<script>
+
+    jQuery(document).ready(function ($) {
+        var settings_ap = {
+            disable_volume: 'off',
+            disable_scrub: 'default',
+            design_skin: 'skin-wave',
+            skinwave_dynamicwaves: 'on',
+            google_analytics_send_play_event: 'on'
+        };
+        dzsag_init('#ag{{el.id}}', {
+            'transition': 'fade',
+            'autoplay': 'off',
+            'settings_ap': settings_ap,
+            google_analytics_send_play_event: "on"
+
+        });
+    });
+
+</script>
+{% endfor %}
+
+{% endblock js %}

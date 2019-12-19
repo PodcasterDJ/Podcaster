@@ -2,7 +2,8 @@ from django.db import models
 from django.utils import timezone
 from django.urls import reverse
 from django.utils.text import slugify
-
+from django.conf import settings
+from django.db import models
 
 class Category(models.Model):
     title = models.CharField(max_length=20)
@@ -34,7 +35,10 @@ class PublishedManager(models.Manager):
 class Episode(models.Model):
     objects = models.Manager()  # The default manager.
     published = PublishedManager()  # Our custom manager.
-
+    author = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE, null=True
+    )
     STATUS_CHOICES = (
         ('draft', 'Draft'),
         ('published', 'Published'),
@@ -61,7 +65,7 @@ class Episode(models.Model):
     thumbnail = models.ImageField(upload_to='episodes/', blank=True,
                                   null=True, help_text="This picture will be uploaded to AWS.")
    
-    content = models.TextField()
+
     featured = models.BooleanField(default=False)
     category = models.ManyToManyField(Category, blank=True)
     tags = models.ManyToManyField(Tags, blank=True)
