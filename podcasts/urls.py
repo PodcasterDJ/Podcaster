@@ -29,6 +29,8 @@ urlpatterns += i18n_patterns(
     #path('', redirectHome),
     path('', include("home.urls", namespace='home')),
     path('episodes', include("episodes.urls", namespace='episodes')),
+    path('blog', include("blog.urls", namespace='blog')),
+    path('about', include("about.urls", namespace='about')),
 
 )
 if settings.DEBUG:

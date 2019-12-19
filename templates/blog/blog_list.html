@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block blog %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap-4.1.2/bootstrap.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" >
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/colorbox/colorbox.css' %}" >
+<link rel="stylesheet" type="text/css" href="{% static 'styles/blog.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/blog_responsive.css' %}">
+	<!-- Home -->
+
+	<div class="home">
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{% static 'images/blog.jpg' %}" data-speed="0.8"></div>
+		<div class="home_container d-flex flex-column align-items-center justify-content-center">
+			<div class="home_content">
+				<div class="home_title"><h1>blog</h1></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Blog -->
+
+	<div class="blog">
+		<div class="container">
+			<div class="row">
+				
+				<!-- Sidebar -->
+				<div class="col-lg-3 order-lg-1 order-2 sidebar_col">
+					<div class="sidebar">
+						
+						<!-- Search -->
+						<div class="sidebar_search">
+							<div class="sidebar_title">Search</div>
+							<form action="#" class="search_form" id="search_form">
+								<input type="text" class="search_input" placeholder="Search here" required="required">
+								<button class="search_button"><img src="images/search.png" alt=""></button>
+							</form>
+						</div>
+
+						<!-- Categories -->
+						<div class="sidebar_list">
+							<div class="sidebar_title">Categories</div>
+							<ul>
+								<li><a href="#">Travel</a></li>
+								<li><a href="#">Music</a></li>
+								<li><a href="#">Lifestyle</a></li>
+								<li><a href="#">Social Media</a></li>
+								<li><a href="#">Art</a></li>
+								<li><a href="#">Audiobooks</a></li>
+								<li><a href="#">Documentaries</a></li>
+							</ul>
+						</div>
+
+						<!-- Tags -->
+						<div class="sidebar_tags">
+							<div class="sidebar_title">Tags</div>
+							<div class="tags">
+								<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
+									<li><a href="#">music</a></li>
+									<li><a href="#">art</a></li>
+									<li><a href="#">technology</a></li>
+									<li><a href="#">travel & food</a></li>
+									<li><a href="#">viral</a></li>
+									<li><a href="#">interview</a></li>
+									<li><a href="#">social media</a></li>
+									<li><a href="#">development</a></li>
+									<li><a href="#">success</a></li>
+									<li><a href="#">did you know?</a></li>
+									<li><a href="#">live</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<!-- Archive -->
+						<div class="sidebar_archive">
+							<div class="sidebar_title">Archive</div>
+							<div class="dropdown">
+								<ul>
+									<li class="dropdown_selected d-flex flex-row align-items-center justify-content-start"><span>September 2018</span><i class="fa fa-chevron-down ml-auto" aria-hidden="true"></i>
+										<ul>
+											<li><a href="#">August 2018</a></li>
+											<li><a href="#">July 2018</a></li>
+											<li><a href="#">June 2018</a></li>
+											<li><a href="#">May 2018</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Blog -->
+				<div class="col-lg-9 blog_col order-lg-2 order-1">
+					<div class="blog_posts">
+						
+						<!-- Blog Post -->
+						<div class="blog_post d-flex flex-md-row flex-column align-items-start justify-content-start">
+							<div class="blog_post_image">
+								<img src="{% static 'images/blog_1.jpg' %}" alt="https://unsplash.com/@kellysikkema">
+								<div class="blog_post_date"><a href="#">Sept 25, 2018</a></div>
+							</div>
+							<div class="blog_post_content">
+								<div class="blog_post_title"><a href="#">How to start your podcast</a></div>
+								<div class="blog_post_author">By <a href="#">Michael Smith</a></div>
+								<div class="blog_post_text">
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum malesuada tellus a pretium. Proin quam nisi, maximus in pulvinar sed, viverra vitae est. Ut nibh nisl, malesuada nec massa nec, molestie varius lorem. Mauris aliquet eros eu luctus pulvinar. Suspendisse dapibus iaculis tellus, dignissim posuere felis elementum a.</p>
+								</div>
+								<div class="blog_post_link"><a href="#">Read More</a></div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<!-- Page Nav -->
+			<div class="row page_nav_row">
+				<div class="col">
+					<div class="page_nav d-flex flex-row align-items-center justify-content-center">
+						<ul class="d-flex flex-row">
+							<li class="active"><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock blog %}
+
+{% block js %}
+        <script src="{% static 'js/blog.js' %}"></script>
+{% endblock js %}

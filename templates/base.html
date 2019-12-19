@@ -28,8 +28,10 @@
     {% if 'home' in request.path %}
     {% include 'home.html' %}
     {% endif %}
-    
-
+    {% block blog %}
+    {% endblock blog %}
+    {% block about %}
+    {% endblock about %}
     {% block episodes %}
     {% endblock episodes %}
     {% include 'footer.html' %}
@@ -56,6 +58,7 @@
         <script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
         <script src="{% static 'js/custom.js' %}"></script>
         {% block js %}
+        
         {% endblock js %}
     </body>
 
