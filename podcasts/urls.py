@@ -31,8 +31,8 @@ urlpatterns += i18n_patterns(
     path('episodes', include("episodes.urls", namespace='episodes')),
     path('blog', include("blog.urls", namespace='blog')),
     path('about', include("about.urls", namespace='about')),
-
-)
+    path('joinnewsletter/', include('joinnewsletter.urls', namespace='joinnewsletter')),
+    )
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL,
                           document_root=settings.STATIC_ROOT)

@@ -144,9 +144,11 @@ Etiam efficitur semper accumsan. Sed et dui aliquet, ultrices tellus non, sagitt
 			<div class="row newsletter_row">
 				<div class="col-lg-10 offset-lg-1">
 					<div class="newsletter_form_container">
-						<form action="#" class="newsletter_form d-flex flex-md-row flex-column align-items-md-start align-items-center justify-content-md-between justify-content-start" id="newsletter_form">
-							<input type="email" class="newsletter_input" required="required">
-							<button class="newsletter_button button_fill">subscribe now!</button>
+						<form action="{% url 'joinnewsletter:joinnewsletter' %}" class="newsletter_form d-flex flex-md-row flex-column align-items-md-start align-items-center justify-content-md-between justify-content-start" id="newsletter_form">
+							{% csrf_token %}
+							<input id="id_email_field" name="email" type="email" class="form-control"
+							placeholder="Email" aria-label="email" class="newsletter_input" required="required">
+							<button class="newsletter_button button_fill" id="id_submit_home" name="submit" value="Subscribe">subscribe now!</button>
 						</form>
 					</div>
 				</div>

@@ -2,9 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from joinnewsletter.forms import JoinForm
 from django.contrib import messages
-from core import settings
 from django.core.mail import EmailMessage
-from core import email
 # Create your views here.
 
 
@@ -21,6 +19,7 @@ def newsletter(request):
             # email.send_email(request, subject, body, success_msg)
             success_msg = "You have been subscribed to the newsletter! Congratz!"
             messages.success(request, success_msg)
+            print(success_msg)
             return HttpResponseRedirect('/')
         else:
             messages.error(request, "There was an error while subscribing!")

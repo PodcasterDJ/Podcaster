@@ -11,6 +11,20 @@
 		</div>
 
 		<div class="container">
+			{% if messages %}
+			<ul class="messages">
+				{% for message in messages %}
+				<li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+				<div class="alert alert-success" role="alert">
+			  {{message}}
+			  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+			</div>
+				</li>
+				{% endfor %}
+			</ul>
+			{% endif %}
 			<div class="row">
 				<div class="col">
 					<div class="header_content d-flex flex-row align-items-center justify-content-start trans_400">
@@ -26,6 +40,7 @@
 					</div>
 				</div>
 			</div>
+
 		</div>
 
 		<!-- Submit & Social -->

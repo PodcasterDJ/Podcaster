@@ -9,6 +9,7 @@
 		style="background-image:url({% for el in page_background %}{% if el.name in request.path %}{{el.image.url}}{% endif %}{% endfor %})">
 	</div>
 	<div class="home_container">
+		
 		<div class="container">
 			<div class="row">
 				<div class="col">
@@ -61,22 +62,12 @@
 													<span class="the-artist">{{last_episode.author}}</span>
 													<span class="the-name">{{last_episode.author}}</span>
 												</div>
-												
-{% if messages %}
-<ul class="messages">
-    {% for message in messages %}
-    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
-	<div class="alert alert-success" role="alert">
-  This is a success alert—check it out!
-</div>
-	</li>
-    {% endfor %}
-</ul>
-{% endif %}
+											
 											</div>
+											
 										</div>
 									</div>
-									
+
 								</div>
 								
 							</div>
@@ -215,11 +206,14 @@
 		<div class="row newsletter_row">
 			<div class="col-lg-10 offset-lg-1">
 				<div class="newsletter_form_container">
-					<form action="#"
+					<form enctype="multipart/form-data" method="POST" action="{% url 'joinnewsletter:joinnewsletter' %}"
 						class="newsletter_form d-flex flex-md-row flex-column align-items-md-start align-items-center justify-content-md-between justify-content-start"
 						id="newsletter_form">
-						<input type="email" class="newsletter_input" required="required">
-						<button class="newsletter_button button_fill">subscribe now!</button>
+						{% csrf_token %}
+						<input id="id_email_field" name="email" type="email"
+						placeholder="Email" aria-label="email" class="form-control newsletter_input" required="required">
+						<button class="btn btn-primary newsletter_button button_fill" id="id_submit_home" name="submit" value="Subscribe"
+						type="submit">subscribe now!</button>
 					</form>
 				</div>
 			</div>
