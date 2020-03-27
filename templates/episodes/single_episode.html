@@ -1,9 +1,13 @@
 {% load static %}
+{% load thumbnail %}
+
 <!-- Episode -->
 <div class="episode d-flex flex-row align-items-start justify-content-start s1">
 <div>
     <div class="episode_image">
-        <img src="{{el.thumbnail.url}}" alt="">
+    {% thumbnail el.thumbnail "180x220" crop="center" as im %}
+    	<img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+	{% endthumbnail %}
         <div class="tags">
             <ul class="d-flex flex-row align-items-start justify-content-start">
                 {% for el in el.category.all %}<li><a href="#">{{el}}</a></li>{% endfor %}

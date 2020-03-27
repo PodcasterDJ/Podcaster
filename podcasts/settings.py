@@ -62,7 +62,9 @@ INSTALLED_APPS = [
     'episodes',
     'home',
     'joinnewsletter',
-    'settings'
+    'settings',
+    # https://github.com/jazzband/sorl-thumbnail
+    'sorl.thumbnail',
 ]
 
 MIDDLEWARE = [

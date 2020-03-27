@@ -1,7 +1,7 @@
 {% load static %}
 {% load i18n %}
 {% load l10n %}
-
+{% load thumbnail %}
 <!-- Home -->
 
 <div class="home">
@@ -95,7 +95,9 @@
 				<div class="show">
 					<div class="show_image">
 						<a href="/episodes">
-							<img src="{{single_episode.thumbnail.url}}" alt="https://unsplash.com/@icons8">
+							{% thumbnail single_episode.thumbnail "400x300" crop="center" as im %}
+    							<img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+							{% endthumbnail %}
 						</a>
 						<div class="show_tags">
 							<div class="tags">
