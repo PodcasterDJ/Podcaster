@@ -12,12 +12,13 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="Podcasts webpage">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="{% static 'styles/bootstrap-4.1.2/bootstrap.min.css' %}" rel="stylesheet" type="text/css" >
-        <link href="{% static 'styles/main_styles.css' %}" rel="stylesheet" type="text/css" >
-        <link href="{% static 'styles/responsive.css' %}" rel="stylesheet" type="text/css" >
-        <link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
-        <link href="{% static 'plugins/colorbox/colorbox.css' %}" rel="stylesheet" type="text/css">
-        <link href="{% static 'audioplayer/audioplayer.css' %}" rel='stylesheet' />
+        <link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap-4.1.2/bootstrap.min.css' %}"  >
+        <link rel="stylesheet" type="text/css" href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" >
+        <link rel="stylesheet" type="text/css" href="{% static 'plugins/colorbox/colorbox.css' %}" >
+        <link rel="stylesheet" type="text/css" href="{% static 'audioplayer/audioplayer.css' %}" rel='stylesheet' />
+        <link rel="stylesheet" type="text/css" href="{% static 'styles/main_styles.css' %}"  >
+        <link rel="stylesheet" type="text/css" href="{% static 'styles/responsive.css' %}"  >
+       
     </head>
 
     <body>
@@ -54,7 +55,7 @@
         <script src="{% static 'plugins/greensock/ScrollToPlugin.min.js' %}"></script>
         <script src="{% static 'plugins/easing/easing.js' %}"></script>
         <script src="{% static 'plugins/colorbox/jquery.colorbox-min.js' %}"></script>
-        <script src="{% static 'plugins/progressbar/progressbar.min.js' %}"></script>
+        <!-- <script src="{% static 'plugins/progressbar/progressbar.min.js' %}"></script> -->
         <script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
         <script src="{% static 'js/custom.js' %}"></script>
         {% block js %}

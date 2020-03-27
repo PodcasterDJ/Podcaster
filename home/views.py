@@ -10,10 +10,9 @@ def redirectHome(request):
 
 def home(request):
     activate('en')
-    episode_list = Episode.objects.first()
-    last_episode = Episode.objects.first()
-    context = {"episode_list" : episode_list, 
+    episode_list = Episode.objects.filter(status='published')[0:3]
+    last_episode = Episode.objects.filter(status='published').first()
+    context = {"episodes_list" : episode_list, 
     "last_episode": last_episode}
-    # response = self.client.get(reverse("home"))
-    # self.assertTemplateUsed(response, "taskbuster/index.html")
+    print(context)
     return render(request, 'base.html', context)

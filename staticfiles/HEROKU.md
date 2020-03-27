@@ -1,1 +1,0 @@
-Solving issue with Heroku collect static files problem

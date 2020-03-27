@@ -14,7 +14,7 @@
 7. Weekly
 8. Shows 2
 9. Footer
-
+10. Newsletter
 
 ******************************/
 
@@ -1266,4 +1266,67 @@ section
 .footer_social ul li:hover a i
 {
 	color: #ff3500;
+}
+
+
+/*********************************
+10. Newsletter
+*********************************/
+
+.newsletter
+{
+	padding-top: 74px;
+	padding-bottom: 166px;
+}
+.newsletter_text
+{
+	max-width: 510px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 18px;
+}
+.newsletter_text p
+{
+	font-size: 16px;
+	font-weight: 300;
+	color: #FFFFFF;
+	line-height: 1.5;
+}
+.newsletter_row
+{
+	margin-top: 63px;
+}
+.newsletter_form_container
+{
+	width: 100%;
+}
+.newsletter_form
+{
+	display: block;
+}
+.newsletter_input
+{
+	display: block;
+	width: calc(100% - 260px);
+	height: 54px;
+	background: #FFFFFF;
+	border: none;
+	outline: none;
+	border-radius: 27px;
+	font-size: 18px;
+	color: #1f2128;
+	padding-left: 30px;
+}
+.newsletter_button
+{
+	width: 230px;
+	height: 54px;
+	border: none;
+	outline: none;
+	border-radius: 27px;
+	color: #FFFFFF;
+	font-size: 18px;
+	font-weight: 500;
+	text-transform: uppercase;
+	cursor: pointer;
 }

@@ -291,3 +291,37 @@
 {
 	
 }
+
+@media only screen and (max-width: 991px)
+{
+	.submit
+	{
+		display: none;
+	}
+	.menu_submit
+	{
+		display: block;
+	}
+	.about_content
+	{
+		width: 100%;
+		margin-top: 0;
+	}
+	.about_image
+	{
+		margin-top: 60px;
+	}
+	.newsletter_input
+	{
+		width: calc(100% - 220px);
+	}
+	.newsletter_button
+	{
+		width: 190px;
+		font-size: 14px;
+	}
+	.footer_content_row > div[class^='col']:not(:last-child)
+	{
+		margin-bottom: 80px;
+	}
+}

@@ -9,11 +9,21 @@ https://docs.djangoproject.com/en/3.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
+###################### 
+# General Settings:  #
+######################
+# Secret Key
+# How to generate your own key:
+# python manage.py shell 
+#  >>> from django.core.management.utils import get_random_secret_key
+#  >>> get_random_secret_key()
+# SECURITY WARNING: keep the secret key used in production secret!
 
 import os
 import dj_database_url
 import django_heroku
 from django.utils.translation import ugettext_lazy as _
+from django.contrib.messages import constants as messages
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -25,12 +35,16 @@ try:
     if(os.environ['ENV'] == "prod"):
         DEBUG = False
         DEBUG_PROPAGATE_EXCEPTIONS = True
+        ALLOWED_HOSTS = os.environ['ALLOWED_HOSTS']
+        SECRET_KEY = os.environ['SECRET_KEY']
         print("Using PRODUCTION configuration.")
     else:
         DEBUG = True
         print("Using DEBUG configuration.")
 except:
     DEBUG = True
+    ALLOWED_HOSTS = ['*']
+    SECRET_KEY = '4gbt+ow7luo&vbv96uug+81_+$$)zpf28xb!@#$+($(93+kz@0'
     print("Using DEBUG configuration.")
 
 # Application definition
@@ -47,9 +61,8 @@ INSTALLED_APPS = [
     'contact',
     'episodes',
     'home',
-    'newsletter',
+    'joinnewsletter',
     'settings'
-    
 ]
 
 MIDDLEWARE = [
@@ -64,20 +77,10 @@ MIDDLEWARE = [
     # Middleware for heroku
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
+MESSAGE_TAGS = {
+    messages.SUCCESS: 'success',
 
-###################### 
-# General Settings:  #
-######################
-
-ALLOWED_HOSTS = os.environ['ALLOWED_HOSTS']
-
-# How to generate your own key:
-# python manage.py shell 
-#  >>> from django.core.management.utils import get_random_secret_key
-#  >>> get_random_secret_key()
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['SECRET_KEY']
-
+}
 
 if DEBUG:
     SECURE_SSL_REDIRECT = False
