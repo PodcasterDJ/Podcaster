@@ -87,7 +87,11 @@ class Episode(models.Model):
                        )
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)
+        slug_el = [self.publish.year, self.publish.month,
+                   self.publish.day,
+                   self.title]
+        detail_episode_slug = '-'.join(['{0}'.format(element) for element in slug_el])
+        self.slug = slugify(detail_episode_slug)
         super(Episode, self).save(*args, **kwargs)
 
     def get_queryset(self):

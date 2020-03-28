@@ -5,9 +5,11 @@
 <div class="episode d-flex flex-row align-items-start justify-content-start s1">
 <div>
     <div class="episode_image">
+    {% if el.thumbnail %}
     {% thumbnail el.thumbnail "180x220" crop="center" as im %}
     	<img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
 	{% endthumbnail %}
+    {% endif %}
         <div class="tags">
             <ul class="d-flex flex-row align-items-start justify-content-start">
                 {% for el in el.category.all %}<li><a href="#">{{el}}</a></li>{% endfor %}
@@ -48,9 +50,11 @@
                     </div>
                     <div class="menu-description">
                         <div class="menu-item-thumb-con">
+                        {% if el.thumbnail %}
                             <div class="menu-item-thumb"
                                 style="background-image: url({{ el.thumbnail.url }})">
                             </div>
+                        {% endif %}
                         </div>
                         <span class="the-artist">{{el.author}}</span>
                         <span class="the-name">{{el.author}}</span>
