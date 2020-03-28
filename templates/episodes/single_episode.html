@@ -16,7 +16,7 @@
     </div>
 </div>
 <div class="episode_content">
-    <div class="episode_name"><a href="episode.html">{{el.title}}</a></div>
+    <div class="episode_name"><a href="{{ el.get_absolute_url }}">{{el.title}}</a></div>
     <div class="episode_date"><a href="#">{{el.timestamp}}</a></div>
     <div class="show_info d-flex flex-row align-items-start justify-content-start">
         {% comment %} <div class="show_fav d-flex flex-row align-items-center justify-content-start">

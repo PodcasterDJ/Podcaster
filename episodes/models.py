@@ -5,6 +5,7 @@ from django.utils.text import slugify
 from django.conf import settings
 from django.db import models
 
+
 class Category(models.Model):
     title = models.CharField(max_length=20)
     # thumbnail = models.ImageField(upload_to='blog/', blank=True, default="blog/categories/default.jpeg",
@@ -64,7 +65,6 @@ class Episode(models.Model):
 
     thumbnail = models.ImageField(upload_to='episodes/', blank=True,
                                   null=True, help_text="This picture will be uploaded to AWS.")
-   
 
     featured = models.BooleanField(default=False)
     category = models.ManyToManyField(Category, blank=True)
@@ -80,12 +80,20 @@ class Episode(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('list_episodes',
-                       args=[self.publish.year,
-                             self.publish.month,
-                             self.publish.day,
-                             self.slug])
+        return reverse('episodes:detail_episode',
+                       kwargs={
+                           "detail_episode_slug": self.slug
+                       }
+                       )
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         super(Episode, self).save(*args, **kwargs)
+
+    def get_queryset(self):
+        qs = super(Episode, self).get_queryset()
+        return qs.filter(is_published=True)
+
+    def published(self):
+        qs = Episode.objects.filter(is_published=True)
+        return qs

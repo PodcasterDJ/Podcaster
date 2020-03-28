@@ -18,7 +18,8 @@
         <link rel="stylesheet" type="text/css" href="{% static 'audioplayer/audioplayer.css' %}" rel='stylesheet' />
         <link rel="stylesheet" type="text/css" href="{% static 'styles/main_styles.css' %}"  >
         <link rel="stylesheet" type="text/css" href="{% static 'styles/responsive.css' %}"  >
-       
+        {% block css %}
+        {% endblock css %}
     </head>
 
     <body>
@@ -35,6 +36,8 @@
     {% endblock about %}
     {% block episodes %}
     {% endblock episodes %}
+    {% block episode_details %}
+    {% endblock episode_details %}
     {% include 'footer.html' %}
     <!-- SuperContainer End-->
     </div>
