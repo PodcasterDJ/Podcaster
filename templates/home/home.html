@@ -1,9 +1,10 @@
+{% extends 'base.html' %}
 {% load static %}
 {% load i18n %}
 {% load l10n %}
 {% load thumbnail %}
+{% block home %}
 <!-- Home -->
-
 <div class="home">
     <div class="background_image" style="background-image:url({% for el in page_background %}{% if el.name in request.path %}{{el.image.url}}{% endif %}{% endfor %})">
     </div>
@@ -35,36 +36,15 @@
                         </div>
 
                         <div class="track track_home">
-                            <div class="card p-2" style="background: #ffffff26;">
+                            <div class="player  s1 card border-primary shadow p-4" >
                                 <!-- Player -->
-                                <div class="player-background">
-                                    <div id="ag1" class="audiogallery">
-                                        <div class="items">
-                                            <div class="audioplayer-tobe" style="width:100%; " data-thumb="{{last_episode.thumbnail.url}}" data-bgimage="{% static 'audioplayer/img/bg.jpg' %}" data-scrubbg="{% static 'audioplayer/waves/scrubbg.png' %}" data-scrubprog="{% static 'audioplayer/waves/scrubprog.png' %}" data-videoTitle="Audio Video" data-type="normal" data-source="{{last_episode.audio.url}}" data-sourceogg="{{last_episode.audio.url}}">
-                                                <div class="meta-artist"><span class="the-artist">{{last_episode.author}}</span><br /><span class="the-name">{{last_episode.author}}
-                                                </div>
-                                                <div class="menu-description">
-                                                    <div class="menu-item-thumb-con">
-                                                        <div class="menu-item-thumb" style="background-image: url({{last_episode.thumbnail.url}})">
-                                                        </div>
-                                                    </div>
-                                                    <span class="the-artist">{{last_episode.author}}</span>
-                                                    <span class="the-name">{{last_episode.author}}</span>
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                </div>
-
+                               {% with last_episode as el %}
+								    {% include 'episodes/player.html' %}
+							    {% endwith %}
                             </div>
-
                         </div>
-
                     </div>
-                    <div class="button_border home_button trans_200"><a href="#">More Info</a></div>
+                    <div class="button_border home_button trans_200"><a href="{{ last_episode.get_absolute_url }}">{% trans "Transcription" %}</a></div>
                 </div>
             </div>
         </div>
@@ -101,7 +81,7 @@
                     </div>
                     <div class="show_content">
                         <div class="show_date">{{single_episode.publish}}</div>
-                        <div class="show_title"><a href="episode.html">{{single_episode.title}}</a></div>
+                        <div class="show_title"><a href="{{single_episode.get_absolute_url}}">{{single_episode.title}}</a></div>
                         <div class="show_info d-flex flex-row align-items-start justify-content-start">
                             <div class="show_fav d-flex flex-row align-items-center justify-content-start">
                                 <a href='{{single_episode.url}}'>
@@ -149,7 +129,7 @@
             <div class="col-xl-3 col-md-6">
                 <div class="show">
                     <div class="show_image">
-                        <a href="episode.html">
+                        <a href="{{single_episode.get_absolute_url}}">
                             <img src="{% static 'images/show_4.jpg' %}" alt="https://unsplash.com/@h4rd3n">
                             <div class="show_play_icon"><img src="{% static 'images/play.svg' %}" alt="https://www.flaticon.com/authors/cole-bemis"></div>
                             <div class="show_title_2">Cras malesuada ipsum sapien.</div>
@@ -174,3 +154,27 @@
         </div>
     </div>
 </div> {% endcomment %}
+{% endblock home %}
+
+{% block js %}
+<script>
+
+    jQuery(document).ready(function ($) {
+        var settings_ap = {
+            disable_volume: 'off',
+            disable_scrub: 'default',
+            design_skin: 'skin-wave',
+            skinwave_dynamicwaves: 'on',
+            google_analytics_send_play_event: 'on'
+        };
+        dzsag_init('#ag{{last_episode.id}}', {
+            'transition': 'fade',
+            'autoplay': 'off',
+            'settings_ap': settings_ap,
+            google_analytics_send_play_event: "on"
+
+        });
+    });
+
+</script>
+{% endblock js %}

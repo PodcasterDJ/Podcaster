@@ -4,7 +4,8 @@ from django.urls import reverse
 from django.utils.text import slugify
 from django.conf import settings
 from django.db import models
-
+def custom_route(instance, filename):
+    return 'episodes/episode-{0}/{1}'.format(instance.slug, filename)
 
 class Category(models.Model):
     title = models.CharField(max_length=20)
@@ -35,7 +36,7 @@ class PublishedManager(models.Manager):
 
 class Episode(models.Model):
     objects = models.Manager()  # The default manager.
-    published = PublishedManager()  # Our custom manager.
+    # published = PublishedManager()  # Our custom manager.
     author = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE, null=True
@@ -50,7 +51,7 @@ class Episode(models.Model):
         max_length=250, blank=True, null=True,  help_text="SEO Description appearing in search engines.")
     meta_keywords = models.CharField(
         max_length=250, blank=True,  help_text="SEO Keywords helping in users searches.")
-    title = models.CharField(max_length=199)
+    title = models.CharField(max_length=199, unique=True)
     description = models.TextField(blank=True, null=True)
     # Possible troubles with russin?
     slug = models.SlugField(max_length=250, allow_unicode=True, blank=True,
@@ -63,17 +64,20 @@ class Episode(models.Model):
                               default='draft')
     publish = models.DateTimeField(default=timezone.now)
 
-    thumbnail = models.ImageField(upload_to='episodes/', blank=True,
+    thumbnail = models.ImageField(upload_to=custom_route, blank=True,
                                   null=True, help_text="This picture will be uploaded to AWS.")
-
+    background = models.ImageField(upload_to=custom_route, blank=True,
+                                  null=True, help_text="This picture will be uploaded to AWS.")
     featured = models.BooleanField(default=False)
     category = models.ManyToManyField(Category, blank=True)
     tags = models.ManyToManyField(Tags, blank=True)
-    audio = models.FileField(upload_to='episodes')
+    audio = models.FileField(upload_to=custom_route)
     # comment = models.OneToOneField(
     #     Comment, on_delete=models.CASCADE, null=True)
 
     class Meta:
+        verbose_name = 'Podcasts'
+        verbose_name_plural = verbose_name
         ordering = ('-publish',)
 
     def __str__(self):
@@ -87,7 +91,9 @@ class Episode(models.Model):
                        )
 
     def save(self, *args, **kwargs):
-        slug_el = [self.publish.year, self.publish.month,
+
+        slug_el = [self.publish.year, 
+                   self.publish.month,
                    self.publish.day,
                    self.title]
         detail_episode_slug = '-'.join(['{0}'.format(element) for element in slug_el])

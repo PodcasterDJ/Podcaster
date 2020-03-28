@@ -2,7 +2,8 @@
 {% load static %}
 {% block episodes %}
 {% load thumbnail %}
-
+{% load i18n %}
+{% load l10n %}
 <link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap-4.1.2/bootstrap.min.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" >
 <link rel="stylesheet" type="text/css" href="{% static 'plugins/colorbox/colorbox.css' %}" >
@@ -13,7 +14,7 @@
 		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{% for el in page_background %}{% if el.name in request.path %}{{el.image.url}}{% endif %}{% endfor %}" data-speed="0.8"></div>
 		<div class="home_container d-flex flex-column align-items-center justify-content-center">
 			<div class="home_content">
-				<div class="home_title"><h1>episodes</h1></div>
+				<div class="home_title"><h1>{% trans "episodes" %}</h1></div>
 			</div>
 		</div>
 	</div>
@@ -50,7 +51,7 @@
 
 						<!-- Categories -->
 						<div class="sidebar_list">
-							<div class="sidebar_title">Categories</div>
+							<div class="sidebar_title">{% trans "Categories" %}</div>
 							<ul>
 								{% for el in categories %}
 								<li><a href="#">{{el.title}}</a></li>
@@ -60,7 +61,7 @@
 
 						<!-- Tags -->
 						<div class="sidebar_tags">
-							<div class="sidebar_title">Tags</div>
+							<div class="sidebar_title">{% trans "Tags" %}</div>
 							<div class="tags">
 								<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
 									{% for tag in tags %}

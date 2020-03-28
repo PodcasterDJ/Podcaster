@@ -33,7 +33,7 @@ class EpisodeDetailView(View):
     def get(self, request, detail_episode_slug, *args, **kwargs):
         episode = get_object_or_404(Episode, slug=detail_episode_slug)
         # gallery = InterviewImage.objects.filter(interview__title=interview)
-        context = {'episode': episode}
+        context = {'episode_details': episode}
         return render(request, "episodes/episode_details.html", context)
     
     # For DetailView

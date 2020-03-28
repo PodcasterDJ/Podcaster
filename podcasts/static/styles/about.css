@@ -116,7 +116,7 @@ p a:hover::after
 }
 ::selection
 {
-	background: #ff3500;
+	background: #2a50e2;
 	color: #FFFFFF;
 }
 p::selection
@@ -303,13 +303,13 @@ section
 }
 .button_border:hover a
 {
-	color: #ff3500;
+	color: #2a50e2;
 }
 .button_fill
 {
 	display: inline-block;
 	height: 42px;
-	background: #ff3500;
+	background: #2a50e2;
 	border-radius: 21px;
 	-webkit-transition: all 200ms ease;
 	-moz-transition: all 200ms ease;
@@ -623,7 +623,7 @@ section
 }
 .menu_nav_list li a:hover
 {
-	color: #ff3500;
+	color: #2a50e2;
 }
 .menu_extra
 {
@@ -652,7 +652,7 @@ section
 }
 .menu_submit a:hover
 {
-	color: #ff3500;
+	color: #2a50e2;
 }
 .menu .social
 {
@@ -819,11 +819,11 @@ section
 }
 .about .social ul li:hover
 {
-	border-color: #ff3500;
+	border-color: #2a50e2;
 }
 .about .social ul li:hover a i
 {
-	color: #ff3500;
+	color: #2a50e2;
 }
 
 /*********************************
@@ -936,7 +936,7 @@ section
 {
 	display: inline-block;
 	height: 20px;
-	background: #ff3500;
+	background: #2a50e2;
 	border-radius: 3px;
 	margin-bottom: 5px;
 	margin-bottom: 10px;
@@ -995,7 +995,7 @@ section
 }
 .latest_title_container:hover .latest_play svg path
 {
-	fill: #ff3500;
+	fill: #2a50e2;
 }
 .latest_title_content
 {
@@ -1015,7 +1015,7 @@ section
 }
 .latest_title_container:hover .latest_title
 {
-	color: #ff3500;
+	color: #2a50e2;
 }
 .latest_episode_info
 {
@@ -1039,7 +1039,7 @@ section
 }
 .latest_episode_info ul li a:hover
 {
-	color: #ff3500;
+	color: #2a50e2;
 }
 .gallery
 {
@@ -1126,10 +1126,10 @@ section
 }
 .footer_social ul li:hover
 {
-	border-color: #ff3500;
-	box-shadow: 0 0 1px 0px #ff3500 inset, 0 0 1px 0px #ff3500;
+	border-color: #2a50e2;
+	box-shadow: 0 0 1px 0px #2a50e2 inset, 0 0 1px 0px #2a50e2;
 }
 .footer_social ul li:hover a i
 {
-	color: #ff3500;
+	color: #2a50e2;
 }

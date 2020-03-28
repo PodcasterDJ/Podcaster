@@ -1,9 +1,9 @@
 from django.urls import path
-from . import views
+from .views import HomeView, redirectHome
 
 app_name = 'home'
 
 urlpatterns = [
-    path('', views.redirectHome),
-    path('home', views.home),
+    path('', redirectHome),
+    path('home', HomeView.as_view(), name="home"),
 ]

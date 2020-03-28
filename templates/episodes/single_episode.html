@@ -1,6 +1,7 @@
 {% load static %}
 {% load thumbnail %}
-
+{% load i18n %}
+{% load l10n %}
 <!-- Episode -->
 <div class="episode d-flex flex-row align-items-start justify-content-start s1">
 <div>
@@ -34,35 +35,6 @@
             </a>	
         </div> {% endcomment %}
     </div>
-    <!-- Player -->
-    <div class="player-background">
-        <div id="ag{{el.id}}" class="audiogallery">
-            <div class="items">
-                <div class="audioplayer-tobe" style="width:100%; "
-                    data-bgimage="{% static 'audioplayer/img/bg.jpg' %}"
-                    data-scrubbg="{% static 'audioplayer/waves/scrubbg.png' %}"
-                    data-scrubprog="{% static 'audioplayer/waves/scrubprog.png' %}"
-                    data-videoTitle="Audio Video" data-type="normal"
-                    data-source="{{el.audio.url}}"
-                    data-sourceogg="{{el.audio.url}}">
-                    <div class="meta-artist"><span class="the-artist">{{el.author}}</span><br /><span
-                            class="the-name">{{el.author}}
-                    </div>
-                    <div class="menu-description">
-                        <div class="menu-item-thumb-con">
-                        {% if el.thumbnail %}
-                            <div class="menu-item-thumb"
-                                style="background-image: url({{ el.thumbnail.url }})">
-                            </div>
-                        {% endif %}
-                        </div>
-                        <span class="the-artist">{{el.author}}</span>
-                        <span class="the-name">{{el.author}}</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    {% include 'episodes/player.html' %}
     </div>
 </div>
