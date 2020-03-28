@@ -1,6 +1,41 @@
 {% load static %}
 {% load i18n %}
 {% load l10n %}
+
+
+<!-- Newsletter -->
+
+<div class="newsletter text-white">
+	<div class="parallax_background parallax-window" data-parallax="scroll"
+		data-image-src="{% static 'images/newsletter.jpg' %}" data-speed="0.8"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div class="section_title text-white text-center">
+					<h1>{% trans "Join my Newsletter" %}</h1>
+				</div>
+				<div class="newsletter_text text-center">
+					<p>{% trans "Get latest posts, podcasts and giveaways informations." %}</p>
+				</div>
+			</div>
+		</div>
+		<div class="row newsletter_row">
+			<div class="col-lg-10 offset-lg-1">
+				<div class="newsletter_form_container">
+					<form enctype="multipart/form-data" method="POST" action="{% url 'joinnewsletter:joinnewsletter' %}"
+						class="newsletter_form d-flex flex-md-row flex-column align-items-md-start align-items-center justify-content-md-between justify-content-start"
+						id="newsletter_form">
+						{% csrf_token %}
+						<input id="id_email_field" name="email" type="email"
+						placeholder="Email" aria-label="email" class="form-control newsletter_input" required="required">
+						<button class="btn btn-primary newsletter_button button_fill" id="id_submit_home" name="submit" value="Subscribe"
+						type="submit">{% trans "subscribe" %}!</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 	<!-- Footer -->
 
 	<footer class="footer">
@@ -13,21 +48,12 @@
 				</div>
 			</div>
 			<div class="row footer_content_row">
-				
-				<!-- Tags -->
-				<div class="col-lg-4">
-					<div class="footer_title">Tags</div>
-					<div class="footer_list">
-						<div><div><a href="#">language</a></div></div>
-						
-					</div>
-				</div>
 
-				<!-- Latest Episodes -->
-				<div class="col-lg-4">
-					<div class="footer_title">Latest Episodes</div>
+				<!-- Latest Podcasts -->
+				<div class="col-lg-3">
+					<div class="footer_title">{% trans "Latest Podcasts" %}</div>
 					<div class="latest_container">
-						
+						{% for episode in latest_episodes %}
 						<!-- Latest -->
 						<div class="latest">
 							<div class="latest_title_container d-flex flex-row align-items-start justify-content-start">
@@ -41,25 +67,77 @@
 											</svg>
 										</div>
 										<div class="latest_title_content">
-											<div class="latest_title">Season 4 Episode 48 - A Step Further</div>
+											<div class="latest_title">{{episode.title}}</div>
 										</div>
 									</div>
 								</a>
 							</div>
 							<div class="latest_episode_info">
 								<ul class="d-flex flex-row align-items-start justify-content-start">
-									<li><a href="#">September 24, 2018</a></li>
-									<li><a href="#">Music</a></li>
+									<li>{{episode.updated}}</li>
 								</ul>
 							</div>
 						</div>
+						{% endfor %}
 
 
 					</div>
 				</div>
 
-				<!-- Gallery -->
-				<div class="col-lg-4">
+				<!-- Latest Posts -->
+				<div class="col-lg-3">
+					<div class="footer_title">{% trans "Latest Posts" %}</div>
+					<div class="latest_container">
+					
+						<!-- Latest -->
+						<div class="latest">
+							<div class="latest_title_container d-flex flex-row align-items-start justify-content-start">
+								<a href="episode.html">
+									<div class="d-flex flex-row align-items-start justify-content-start">
+										<div class="latest_play">
+											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 714 714" style="enable-background:new 0 0 714 714;" xml:space="preserve">
+												<g id="Play">
+													<path d="M641.045,318.521L102,0C73.822,0,51,22.822,51,51v612c0,28.178,22.822,51,51,51l539.045-318.521      C654.661,387.422,663,372.81,663,357C663,341.19,654.661,326.579,641.045,318.521z M153,565.386V148.614L505.665,357      L153,565.386z" fill="#FFFFFF"/>
+												</g>
+											</svg>
+										</div>
+										<div class="latest_title_content">
+											<div class="latest_title">TITLE</div>
+										</div>
+									</div>
+								</a>
+							</div>
+							<div class="latest_episode_info">
+								<ul class="d-flex flex-row align-items-start justify-content-start">
+									<li>UPDATED</li>
+								</ul>
+							</div>
+						</div>
+							{% comment %} {% for episode in latest_posts %}{% endfor %} {% endcomment %}
+
+
+					</div>
+				</div>
+				<!-- Tags -->
+				<div class="col-lg-3">
+					<div class="footer_title">{% trans "Tags" %}</div>
+					<div class="footer_list">
+						{% for tag in tags %}
+						<div><div><a href="#">{{tag.title}}</a></div></div>
+						{% endfor %}
+					</div>
+				</div>
+				<!-- categories -->
+				<div class="col-lg-3">
+					<div class="footer_title">{% trans "Categories" %}</div>
+					<div class="footer_list">
+						{% for tag in categories %}
+						<div><div><a href="#">{{tag.title}}</a></div></div>
+						{% endfor %}
+					</div>
+				</div>
+				{% comment %} <!-- Gallery -->
+				<div class="col-lg-3">
 					<div class="footer_title">Instagram</div>
 					<div class="gallery d-flex flex-row align-items-start justify-content-start flex-wrap">
 						
@@ -67,10 +145,8 @@
 						<div class="gallery_item">
 							<a class="colorbox" ><img src="{% static 'images/gallery_1.jpg' %}" alt=""></a>
 						</div>
-
-
 					</div>
-				</div>
+				</div>  {% endcomment %}
 			</div>
 			<div class="row footer_social_row">
 				<div class="col">

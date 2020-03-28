@@ -128,33 +128,6 @@ Etiam efficitur semper accumsan. Sed et dui aliquet, ultrices tellus non, sagitt
 		</div>
 	</div>
 
-	<!-- Newsletter -->
-
-	<div class="newsletter">
-		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{% static 'images/newsletter.jpg' %}" data-speed="0.8"></div>
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="section_title light text-center"><h1>Join my Newsletter</h1></div>
-					<div class="newsletter_text text-center">
-						<p>Stay on track with the latest information about our podcasts, guests, special guest and giveaways.</p>
-					</div>
-				</div>
-			</div>
-			<div class="row newsletter_row">
-				<div class="col-lg-10 offset-lg-1">
-					<div class="newsletter_form_container">
-						<form action="{% url 'joinnewsletter:joinnewsletter' %}" class="newsletter_form d-flex flex-md-row flex-column align-items-md-start align-items-center justify-content-md-between justify-content-start" id="newsletter_form">
-							{% csrf_token %}
-							<input id="id_email_field" name="email" type="email" class="form-control"
-							placeholder="Email" aria-label="email" class="newsletter_input" required="required">
-							<button class="newsletter_button button_fill" id="id_submit_home" name="submit" value="Subscribe">subscribe now!</button>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 {% endblock about %}
 
 {% block js %}

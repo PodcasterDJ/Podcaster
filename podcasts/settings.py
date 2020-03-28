@@ -161,6 +161,8 @@ TEMPLATES = [
                 'settings.context_processors.social_media',
                 'settings.context_processors.page_description',
                 'settings.context_processors.page_background',
+                # Custom context processor listing 3 latest episodes
+                "podcasts.context_processors.latest_episodes",
             ],
         },
     },
@@ -196,7 +198,12 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'es'
+# List of activated languages
+LANGUAGES = (
+    ('es', _('Spanish')),
+    ('en', _('English')),
+)
 
 TIME_ZONE = 'UTC'
 
@@ -209,7 +216,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-
 STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
@@ -221,22 +227,13 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 # Media files
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = '/media/'
-
-# list of activated languages
-LANGUAGES = (
-    ('es', _('Spanish')),
-    ('en', _('English')),
-)
-
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
 )
 
-
 SITE_ROOT = 1
 
 # Loggin the info
-
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
