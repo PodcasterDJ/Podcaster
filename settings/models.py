@@ -64,40 +64,17 @@ class PageDescription(models.Model):
         # managed = True
         verbose_name = 'Page Description'
         verbose_name_plural = 'Page Description'
-# Thats a model that will be responsive for any extra translation options.
 
-# class Messages(models.Model):
-#     name = models.CharField(
-#         max_length=20, choices=MSG_CHOICES, default='select', unique=True)
-#     message_error = models.CharField(null=True, blank=True, max_length=400)
-#     message_success = models.CharField(null=True, blank=True, max_length=400)
+class PageOGTags(models.Model):
+    name = models.CharField(
+        max_length=25   , choices=PAGE_CHOICES, default='select', unique=True)
+    image = models.ImageField(upload_to='backgrounds/', blank=True,
+                                     null=True, help_text="This will be page bacground.")
 
-#     message_error_es = models.CharField(null=True, blank=True, max_length=400)
-#     message_success_es = models.CharField(
-#         null=True, blank=True, max_length=400)
-
-#     def __str__(self):
-#         return self.name
-#     class Meta:
-#         # db_table = ''
-#         # managed = True
-#         verbose_name = '_Error and success messages for alerts'
-#         verbose_name_plural = '_Error and success messages for alerts'
-
-# class BackgroundColors(models.Model):
-#     name = models.CharField(
-#     max_length=20, choices=PAGE_CHOICES, default='select', unique=True)
-#     background_color = ColorField(default='#f0f0f0')
-#     def __str__(self):
-#         if self.name:
-#             return " For " + self.name + " the slider background is: " + self.background_color
-#         else:
-#             return self.id
-#     class Meta:
-#         # db_table = ''
-#         # managed = True
-#         verbose_name = 'Colores de fondo'
-#         verbose_name_plural = 'Colores de fondo'
-#     @classmethod
-#     def get_content_by_page(cls, page_name):
-#         return cls.objects.filter(name=page_name)
+    def __str__(self):
+        return self.name
+    class Meta:
+        # db_table = ''
+        # managed = True
+        verbose_name = 'Page Backgrounds'
+        verbose_name_plural = 'Page Backgrounds'

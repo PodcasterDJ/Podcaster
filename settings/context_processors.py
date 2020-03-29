@@ -20,4 +20,5 @@ def page_background(request):
     return {
         "page_background": PageBackground.objects.all(),
     }
-# Colors
+def SEO_info(request):
+    pass
