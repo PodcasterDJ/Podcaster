@@ -68,7 +68,7 @@
 								<div class="blog_post_title"><a href="{{ post.get_absolute_url }}">{{post.title}}</a></div>
 								<div class="blog_post_author">{% trans "By" %} <a href="/about">{{post.author.get_full_name}}</a></div>
 								<div class="blog_post_text">
-									<p>{{ post.get_absolute_url.overview }}</p>
+									<p>{{ post.overview }}</p>
 								</div>
 								<div class="blog_post_link"><a href="{{ post.get_absolute_url }}">{% trans "Read More" %}</a></div>
 							</div>
