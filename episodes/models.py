@@ -52,7 +52,9 @@ class Episode(models.Model):
     meta_keywords = models.CharField(
         max_length=250, blank=True,  help_text="SEO Keywords helping in users searches.")
     title = models.CharField(max_length=199, unique=True)
-    description = models.TextField(blank=True, null=True)
+    description = models.TextField(blank=True, null=True,  help_text="Short description for list of Episodes.")
+    content = models.TextField(blank=True, null=True,  help_text="Actual text content for a Podcast, transcriptions etc.")
+
     # Possible troubles with russin?
     slug = models.SlugField(max_length=250, allow_unicode=True, blank=True,
                             help_text="Created automatically, no need to fill.")
