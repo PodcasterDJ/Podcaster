@@ -38,23 +38,8 @@
 							</form>
 						</div> {% endcomment %}
 
-						<!-- Categories -->
-						<div class="sidebar_list">
-							<div class="sidebar_title">Categories</div>
-							<ul>
-								<li><a href="#">Travel</a></li> 
-							</ul>
-						</div>
-
-						<!-- Tags -->
-						<div class="sidebar_tags">
-							<div class="sidebar_title">Tags</div>
-							<div class="tags">
-								<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-									<li><a href="#">music</a></li> 
-								</ul>
-							</div>
-						</div>
+						
+						{% include 'tags_categories.html' %}
 
 						<!-- Archive -->
 						{% comment %} <div class="sidebar_archive">

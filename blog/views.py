@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView, View
 from .models import Post
+from episodes.models import Category, Tags
 # Create your views here.
 class BlogListView(ListView):
     model = Post
@@ -9,7 +10,8 @@ class BlogListView(ListView):
         post_list = Post.objects.filter(status='published')
         context = super().get_context_data(**kwargs)
         context['post_list']=post_list
-        print(context)
+        context['categories'] = Category.objects.all()
+        context['tags'] = Tags.objects.all() 
         return context
 class BlogDetailView(View):
     model = Post

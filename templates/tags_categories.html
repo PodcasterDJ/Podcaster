@@ -1,0 +1,26 @@
+{% load static %}
+{% load thumbnail %}
+{% load i18n %}
+{% load l10n %}
+
+<!-- Categories -->
+<div class="sidebar_list">
+    <div class="sidebar_title">{% trans "Categories" %}</div>
+    <ul>
+        {% for el in categories %}
+        <li><a href="#">{{el.title}}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+
+<!-- Tags -->
+<div class="sidebar_tags">
+    <div class="sidebar_title">{% trans "Tags" %}</div>
+    <div class="tags">
+        <ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
+            {% for tag in tags %}
+            <li><a href="#">{{tag.title}}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
