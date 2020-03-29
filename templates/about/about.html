@@ -98,10 +98,10 @@
                 <div class="col-xl-4 col-md-6">
                     <div class="milestone text-center">
                         <div class="milestone_content ml-auto mr-auto">
-                            <div class="milestone_counter" data-end-value="3004">0</div>
+                            <div class="milestone_counter" id="hoursOfStudying" data-end-value="">0</div>
                             <div class="milestone_icon"><img src="{% static 'images/alarm-clock.svg' %}" alt="https://www.flaticon.com/authors/smashicons"></div>
                         </div>
-                        <div class="milestone_title">{% trans "Hours I've spent on studying" %}</div>
+                        <div class="milestone_title">{% trans "Approx hours I've spent on becoming a doctor" %}</div>
                     </div>
                 </div>
 
@@ -180,4 +180,15 @@
 
     {% block js %}
     <script src="{% static 'js/about.js' %}"></script>
+    <script>
+        // Hello there stranger. @hvitis says Hello
+        const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+        const startedStudying = new Date(2016, 9, 1);
+        const asOfToday = new Date();
+        const numberOfHours = Math.round(Math.abs((startedStudying - asOfToday) / oneDay)) * 8 * 0.85; // Number of days x Hours per day x Average working days per year
+        let hoursOfStudying = document.getElementById('hoursOfStudying')
+        hoursOfStudying.setAttribute("data-end-value", numberOfHours)
+    </script>
+
+
     {% endblock js %}
