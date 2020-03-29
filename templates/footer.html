@@ -88,7 +88,7 @@
 				<div class="col-lg-3">
 					<div class="footer_title">{% trans "Latest Posts" %}</div>
 					<div class="latest_container">
-					
+					{% for post in latest_posts %}
 						<!-- Latest -->
 						<div class="latest">
 							<div class="latest_title_container d-flex flex-row align-items-start justify-content-start">
@@ -102,20 +102,19 @@
 											</svg>
 										</div>
 										<div class="latest_title_content">
-											<div class="latest_title">TITLE</div>
+											<div class="latest_title">{{ post.title }}</div>
 										</div>
 									</div>
 								</a>
 							</div>
 							<div class="latest_episode_info">
 								<ul class="d-flex flex-row align-items-start justify-content-start">
-									<li>UPDATED</li>
+									<li>{{ post.publish }}</li>
 								</ul>
 							</div>
 						</div>
 							{% comment %} {% for episode in latest_posts %}{% endfor %} {% endcomment %}
-
-
+						{% endfor %} 
 					</div>
 				</div>
 				<!-- Tags -->
@@ -131,8 +130,8 @@
 				<div class="col-lg-3">
 					<div class="footer_title">{% trans "Categories" %}</div>
 					<div class="footer_list">
-						{% for tag in categories %}
-						<div><div><a href="#">{{tag.title}}</a></div></div>
+						{% for category in categories %}
+						<div><div><a href="#">{{category.title}}</a></div></div>
 						{% endfor %}
 					</div>
 				</div>
