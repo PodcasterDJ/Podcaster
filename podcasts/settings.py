@@ -24,7 +24,7 @@ import dj_database_url
 import django_heroku
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.messages import constants as messages
-
+from .sub_settings.text_editor import DJANGO_SUMMERNOTE_SETTINGS
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -65,6 +65,8 @@ INSTALLED_APPS = [
     'settings',
     # https://github.com/jazzband/sorl-thumbnail
     'sorl.thumbnail',
+    'django_summernote',
+
 ]
 
 MIDDLEWARE = [
@@ -199,7 +201,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
 LANGUAGE_CODE = 'es'
-# List of activated languages
+# List of activated 
+DEFAULT_LANGUAGE = 1 # the first one in the list
 LANGUAGES = (
     ('es', _('Spanish')),
     ('en', _('English')),
@@ -230,6 +233,10 @@ MEDIA_URL = '/media/'
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
 )
+
+# Django summernote default theme for text editor
+SUMMERNOTE_THEME = 'bs4'
+SUMMERNOTE_CONFIG = DJANGO_SUMMERNOTE_SETTINGS
 
 SITE_ROOT = 1
 

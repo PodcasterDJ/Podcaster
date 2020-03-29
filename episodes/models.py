@@ -36,7 +36,7 @@ class PublishedManager(models.Manager):
 
 class Episode(models.Model):
     objects = models.Manager()  # The default manager.
-    # published = PublishedManager()  # Our custom manager.
+    published = PublishedManager()  # Our custom manager.
     author = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE, null=True
@@ -106,6 +106,6 @@ class Episode(models.Model):
         qs = super(Episode, self).get_queryset()
         return qs.filter(is_published=True)
 
-    def published(self):
-        qs = Episode.objects.filter(is_published=True)
-        return qs
+    # def published(self):
+    #     qs = Episode.objects.filter(is_published=True)
+    #     return qs

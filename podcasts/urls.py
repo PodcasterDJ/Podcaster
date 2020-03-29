@@ -28,10 +28,12 @@ urlpatterns = [
 urlpatterns += i18n_patterns(
     #path('', redirectHome),
     path('', include("home.urls", namespace='home')),
-    path('episodes', include("episodes.urls", namespace='episodes')),
+    path('podcasts', include("episodes.urls", namespace='episodes')),
+    # This namespace corresponds to save method for slug in models
     path('blog', include("blog.urls", namespace='blog')),
     path('about', include("about.urls", namespace='about')),
     path('joinnewsletter/', include('joinnewsletter.urls', namespace='joinnewsletter')),
+    path('summernote/', include('django_summernote.urls')),
     )
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL,
