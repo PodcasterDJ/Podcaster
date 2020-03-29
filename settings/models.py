@@ -12,7 +12,8 @@ PAGE_CHOICES = (
 PAGE_DESCRIPTION = (
     ('select', 'SELECT'),
     ('title', 'TITLE'),
-   
+    ('description', 'DESCRIPTION'),
+    ('website_url', 'WEBSITE_URL'), 
 )
 
 SOCIAL_CHOICES = (

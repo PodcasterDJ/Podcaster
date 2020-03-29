@@ -294,6 +294,10 @@
 
 @media only screen and (max-width: 991px)
 {
+	.lang_icon
+	{
+		visibility: hidden !important;
+	}
 	.submit
 	{
 		display: none;

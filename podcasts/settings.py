@@ -200,12 +200,12 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'es'
+LANGUAGE_CODE = 'es-ES'
 # List of activated 
 DEFAULT_LANGUAGE = 1 # the first one in the list
 LANGUAGES = (
-    ('es', _('Spanish')),
-    ('en', _('English')),
+    ('es-ES', _('Spanish')),
+    ('en-US', _('English')),
 )
 
 TIME_ZONE = 'UTC'

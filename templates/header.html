@@ -15,7 +15,7 @@
 			{% if messages %}
 			<ul class="messages">
 				{% for message in messages %}
-				<li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+				<li {% if message.tags %} class="{{ message.tags }}"{% endif %}>
 				<div class="alert alert-success" role="alert">
 			  {{message}}
 			  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -28,37 +28,38 @@
 			{% endif %}
 			<div class="row">
 				<div class="col">
-					<div class="header_content d-flex flex-row align-items-center justify-content-start trans_400">
+					<div class="header_content d-flex flex-row align-items-center justify-content-between trans_400">
 						<nav class="main_nav">
-							<ul class="d-flex flex-row align-items-start justify-content-start">
+							<ul class="d-flex flex-row align-items-end justify-content-end">
 								<li><a href="/">Home</a></li>
-								<li><a href="/podcasts">Podcasts</a></li>
-								<li><a href="/blog">Blog</a></li>
-								<li><a href="/about">About</a></li>
-								{% comment %} <li><a href="contact.html">Contact</a></li> {% endcomment %}
+								<li><a href="/podcasts">{% trans "Podcasts" %}</a></li>
+								<li><a href="/blog">{% trans "Blog" %}</a></li>
+								<li><a href="/about">{% trans "About" %}</a></li>
 							</ul>
 						</nav>
-					</div>
+						<nav class="main_nav">
+							<ul class="d-flex flex-row align-items-end justify-content-end">
+								<li><a class="lang_icon" href="/en-us/home"><img src="{% static 'icons/en.svg' %}" width="20px" /> {% trans "English" %}</a></li>
+								<li><a class="lang_icon" href="/es-es/home"><img src="{% static 'icons/es.svg' %}" width="20px" />  {% trans "Spanish" %}</a></li>
+							</ul>
+						</nav> 
+					</div> 
 				</div>
-			</div>
-
+			</div> 
 		</div>
 
 		<!-- Submit & Social -->
 		<div class="header_right d-flex flex-row align-items-start justify-content-start">
 
-			<!-- Submit -->
-			{% comment %} <div class="submit"><a href="#">Register</a></div> {% endcomment %}
-			
 			<!-- Social -->
 			<div class="social">
 				<ul class="d-flex flex-row align-items-start justify-content-start">
 				{% for el in social_media %}
 					<li><a href="{{el.link}}"><i class="fa fa-{{el.name}}" aria-hidden="true"></i></a></li>
 				{% endfor %}
-				</ul>
+				</ul> 
 			</div>
-
+			
 			<!-- Hamburger -->
 			<div class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></div>
 			

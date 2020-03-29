@@ -6,12 +6,9 @@
 
     <head>
         <title>{% for el in page_description %}{% if el.name == 'title' %}{{el.content}}{% endif %}{% endfor %}</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1,
-      shrink-to-fit=no">     
+        <meta charset="utf-8">  
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="description" content="Podcasts webpage">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
         <link rel="shortcut icon" type="image/png" href="{% static 'icons/favicon.ico' %}"/>
         <link rel="icon"          type="image/x-icon" href="{% static 'icons/favicon.ico' %}" >
         <link rel="stylesheet"    type="text/css" href="{% static 'styles/bootstrap-4.1.2/bootstrap.min.css' %}"  >
@@ -28,10 +25,10 @@
         <meta name="twitter:card" content="{% static 'icons/bb.svg' %}">
         <meta name="twitter:site" content="@butterflybonedoctor">
         <meta name="twitter:title" content="Butterflybone Doctor || Medicine student sharing passion for knowledge.">
-        <meta name="twitter:description" content="Up than 200 characters.">
+        <meta name="twitter:description" content="{% for el in page_description %}{% if el.name == 'description' %}{{el.content}}{% endif %}{% endfor %}">
         <meta name="twitter:creator" content="@AnaJurado">
         <meta name="twitter:image" content="{% static 'icons/bb.svg' %}">
-        <meta name="twitter:domain" content="http://butterflybone.doctor/es/home/">
+        <meta name="twitter:domain" content="{% for el in page_description %}{% if el.name == 'website_url' %}{{el.content}}{% endif %}{% endfor %}">
     </head>
 
     <body>

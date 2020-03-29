@@ -87,7 +87,7 @@
                                 <a href='{{single_episode.url}}'>
                                     <div class="show_fav_icon show_info_icon"><img class="svg" src="{% static 'images/heart.svg' %}" alt=""></div>
                                 </a>
-                                <div class="show_fav_count">Share</div>
+                                <div class="show_fav_count">{% trans "Share" %}</div>
                             </div>
                             {% comment %} <div class="show_comments">
                                 <a href="#">
@@ -106,7 +106,7 @@
         </div>
         <div class="row">
             <div class="col text-center">
-                <div class="button_fill shows_button"><a href="/podcasts">browse shows</a></div>
+                <div class="button_fill shows_button"><a href="/podcasts">{% trans "browse shows" %}</a></div>
             </div>
         </div>
     </div>
