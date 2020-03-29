@@ -5,7 +5,7 @@ from episodes.models import Episode
 from django.views.generic import ListView, DetailView
 from django.shortcuts import get_object_or_404, redirect
 from django.views.generic import DetailView, ListView, View
-
+from blog.models import Post
 
 # Create your views here.
 class AboutView(ListView):
@@ -16,6 +16,8 @@ class AboutView(ListView):
         context = super().get_context_data(**kwargs)
         context['about_me'] = GeneralInfo.objects.first()
         context['podcasts_amount'] = Episode.objects.filter(status='published').count()
+        context['posts_amount'] = Post.objects.filter(status='published').count()
+
         # context['posts_amount'] = Post.objects.filter(status='published').count()
         return context
 

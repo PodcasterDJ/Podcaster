@@ -74,7 +74,7 @@
                 <div class="col-xl-4 col-md-6">
                     <div class="milestone text-center">
                         <div class="milestone_content ml-auto mr-auto">
-                            <div class="milestone_counter" data-end-value="{{podcasts_amount}}">0</div>
+                            <div class="milestone_counter" data-end-value="{{podcasts_amount}}">{{podcasts_amount}}</div>
                             <div class="milestone_icon"><img src="{% static 'images/speaker.svg' %}" alt="https://www.flaticon.com/authors/smashicons"></div>
                         </div>
                         <div class="milestone_title">{% trans "Podcast episodes" %}</div>
@@ -85,7 +85,7 @@
                 <div class="col-xl-4 col-md-6">
                     <div class="milestone text-center">
                         <div class="milestone_content ml-auto mr-auto">
-                            <div class="milestone_counter" data-end-value="1">0</div>
+                            <div class="milestone_counter" data-end-value="1">{{posts_amount}}</div>
                             <div class="milestone_icon"><img src="{% static 'images/film.svg' %}" alt="https://www.flaticon.com/authors/smashicons"></div>
                         </div>
                         <div class="milestone_title">{% trans "Blog Posts" %}</div>
@@ -96,7 +96,7 @@
                 <div class="col-xl-4 col-md-6">
                     <div class="milestone text-center">
                         <div class="milestone_content ml-auto mr-auto">
-                            <div class="milestone_counter" id="hoursOfStudying" data-end-value="">0</div>
+                            <div class="milestone_counter" id="hoursOfStudying" data-end-value="">3000</div>
                             <div class="milestone_icon"><img src="{% static 'images/alarm-clock.svg' %}" alt="https://www.flaticon.com/authors/smashicons"></div>
                         </div>
                         <div class="milestone_title">{% trans "Approx hours I've spent on becoming a doctor" %}</div>
@@ -177,7 +177,6 @@
     {% endblock about %}
 
     {% block js %}
-    <script src="{% static 'js/about.js' %}"></script>
     <script>
         // Hello there stranger. @hvitis says Hello
         const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
@@ -185,8 +184,6 @@
         const asOfToday = new Date();
         const numberOfHours = Math.round(Math.abs((startedStudying - asOfToday) / oneDay)) * 8 * 0.85; // Number of days x Hours per day x Average working days per year
         let hoursOfStudying = document.getElementById('hoursOfStudying')
-        hoursOfStudying.setAttribute("data-end-value", numberOfHours)
-    </script>
-
-
+        hoursOfStudying.innerHTML = numberOfHours
+        </script>
     {% endblock js %}
