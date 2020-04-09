@@ -1,0 +1,18 @@
+{
+    "name": "Podcasts NOW!",
+    "description": "Set-up FREE Django Podcasts page in minutes.",
+    "website": "http://hvitis.com",
+    "success_url": "/free-podcasts-blog-template-based-on-django",
+    "addons": ["heroku-postgresql:hobby-dev", "papertrail"],
+    "env": {
+      "PYTHON_ENV": "production",
+      "COOKIE_SECRET": {
+              "description": "This gets generated",
+              "generator": "secret"
+      },
+      "SETUP_BY": {
+              "description": "Initiated by Hvitis",
+              "value": ""
+      }
+    }
+  }
