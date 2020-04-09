@@ -47,7 +47,7 @@
     <!-- Milestones -->
 
     <div class="milestones">
-        <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{% static 'images/medicine-devices.jpg' %}" data-speed="0.8"></div>
+        <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{% for el in page_background %}{% if el.name in request.path %}{{el.image.url}}{% endif %}{% endfor %}" data-speed="0.8"></div>
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -166,7 +166,6 @@
                                 </div>
                             </div>
                         </div>
-                        {% comment %} <div class="about_image"><img src="{% static 'images/thank-you.jpg' %}" alt=""></div> {% endcomment %}
                     </div>
                 </div>
             </div>
