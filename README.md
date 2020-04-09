@@ -4,7 +4,7 @@ This is a Heroku-ready website for Developing your own podcasts.
 
 ## Default Heroku URL
 
-butterflybone.herokuapp.com
+HEROKU_PROJECT_NAME.herokuapp.com
 
 ## Development
 
@@ -14,20 +14,20 @@ butterflybone.herokuapp.com
 
 ## Prod
 
-    heroku run -a butterflybone python manage.py compilemessages -l en
-    heroku run -a butterflybone python manage.py collectstatic
-    heroku run -a butterflybone python manage.py makemigrations
-    heroku run -a butterflybone python manage.py migrate
-    heroku run -a butterflybone python manage.py createsuperuser
+    heroku run -a HEROKU_PROJECT_NAME python manage.py compilemessages -l en
+    heroku run -a HEROKU_PROJECT_NAME python manage.py collectstatic
+    heroku run -a HEROKU_PROJECT_NAME python manage.py makemigrations
+    heroku run -a HEROKU_PROJECT_NAME python manage.py migrate
+    heroku run -a HEROKU_PROJECT_NAME python manage.py createsuperuser
 
 ## Logs
 
-    heroku logs --tail -a butterflybone
+    heroku logs --tail -a HEROKU_PROJECT_NAME
 
 ## DB
 
-    heroku pg:copy butterflybone::DATABASE_URL HEROKU_POSTGRESQL_GOLD_URL -a butterflybone
-    heroku pg:info -a butterflybone
+    heroku pg:copy HEROKU_PROJECT_NAME::DATABASE_URL HEROKU_POSTGRESQL_GOLD_URL -a HEROKU_PROJECT_NAME
+    heroku pg:info -a HEROKU_PROJECT_NAME
 
 
 ## Config vars
@@ -56,7 +56,7 @@ Remove a config var
 
 
 Before making translation
-heroku buildpacks:set https://github.com/grauwoelfchen/heroku-buildpack-gettext.git -a butterflybone
+heroku buildpacks:set https://github.com/grauwoelfchen/heroku-buildpack-gettext.git -a HEROKU_PROJECT_NAME
 
 How to make and update new translations
 

@@ -1,4 +1,4 @@
-DJANGO_SUMMERNOTE_SETTINGS = {
+SUMMERNOTE_CONFIG = {
     # Using SummernoteWidget - iframe mode, default
     'iframe': True,
 
@@ -93,3 +93,5 @@ DJANGO_SUMMERNOTE_SETTINGS = {
     #     '//somewhere_in_internet/summernote-plugin-name.js',
     # },
 }
+# Django summernote default theme for text editor
+SUMMERNOTE_THEME = 'bs4'

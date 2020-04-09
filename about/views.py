@@ -7,7 +7,6 @@ from django.shortcuts import get_object_or_404, redirect
 from django.views.generic import DetailView, ListView, View
 from blog.models import Post
 
-# Create your views here.
 class AboutView(ListView):
     model = Episode
     # Changning the objects to Episodes that are published
@@ -17,11 +16,8 @@ class AboutView(ListView):
         context['about_me'] = GeneralInfo.objects.first()
         context['podcasts_amount'] = Episode.objects.filter(status='published').count()
         context['posts_amount'] = Post.objects.filter(status='published').count()
-
-        # context['posts_amount'] = Post.objects.filter(status='published').count()
         return context
 
-# Create your views here.
 def about(request):
     context = {}
     return render(request, 'about/about.html', context)

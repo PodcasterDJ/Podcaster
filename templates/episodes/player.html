@@ -1,31 +1,20 @@
 {% load static %}
-    <div class="player-background">
-        <div id="ag{{el.id}}" class="audiogallery">
-            <div class="items">
-                <div class="audioplayer-tobe" style="width:100%; "
-                    data-bgimage="{% static 'audioplayer/img/bg.jpg' %}"
-                    data-scrubbg="{% static 'audioplayer/waves/scrubbg.png' %}"
-                    data-scrubprog="{% static 'audioplayer/waves/scrubprog.png' %}"
-                    data-videoTitle="Audio Video" data-type="normal"
-                    data-source="{{el.audio.url}}"
-                    data-sourceogg="{{el.audio.url}}">
-                    <div class="meta-artist"><span class="the-artist">{{el.author.get_full_name}}</span><br /><span
-                            class="the-name">{{el.author.get_full_name}}
-                    </div>
-                    <div class="menu-description">
-                        <div class="menu-item-thumb-con">
-                        {% if el.thumbnail %}
-                            <div class="menu-item-thumb"
-                                style="background-image: url({{ el.thumbnail.url }})">
-                            </div>
-                        {% endif %}
-                        </div>
-                        <span class="the-artist">{{el.author.get_full_name}}</span>
-                        <span class="the-name">{{el.author.get_full_name}}</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    
+<style>
+    audio {
+        width: 100%;
+    }
+    audio::-webkit-media-controls-panel {
+        background-color: cornflowerblue;
+
+    }
+</style>
+
+<div class="player-background">
+    <audio controls>
+        <source src="{{el.audio.url}}" type="audio/ogg">
+        <source src="{{el.audio.url}}" type="audio/mpeg">
+        <source src="{{el.audio.url}}" type="audio/wav">
+        Your browser does not support the audio element.
+    </audio>
+</div>

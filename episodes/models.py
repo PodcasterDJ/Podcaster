@@ -4,14 +4,14 @@ from django.urls import reverse
 from django.utils.text import slugify
 from django.conf import settings
 from django.db import models
+
+
 def custom_route(instance, filename):
+    # Function saving files to a custom route on each episode.
     return 'episodes/episode-{0}/{1}'.format(instance.slug, filename)
 
 class Category(models.Model):
     title = models.CharField(max_length=20)
-    # thumbnail = models.ImageField(upload_to='blog/', blank=True, default="blog/categories/default.jpeg",
-    #                                  null = True, help_text = "This picture will be uploaded to AWS.")
-
     def __str__(self):
         return self.title
 
@@ -74,9 +74,6 @@ class Episode(models.Model):
     category = models.ManyToManyField(Category, blank=True)
     tags = models.ManyToManyField(Tags, blank=True)
     audio = models.FileField(upload_to=custom_route)
-    # comment = models.OneToOneField(
-    #     Comment, on_delete=models.CASCADE, null=True)
-
     class Meta:
         verbose_name = 'Podcasts'
         verbose_name_plural = verbose_name
@@ -105,7 +102,3 @@ class Episode(models.Model):
     def get_queryset(self):
         qs = super(Episode, self).get_queryset()
         return qs.filter(is_published=True)
-
-    # def published(self):
-    #     qs = Episode.objects.filter(is_published=True)
-    #     return qs

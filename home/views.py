@@ -7,8 +7,6 @@ from django.views.generic import ListView, DetailView
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views.generic import DetailView, ListView, View
 
-
-# Create your views here.
 class HomeView(ListView):
     model = Episode
     # Changning the objects to Episodes that are published
@@ -19,10 +17,6 @@ class HomeView(ListView):
         context['last_episode'] = Episode.objects.filter(status='published').first()
         return context
 
-def redirectHome(request):
-    return HttpResponseRedirect('/home')
-
-
 def home(request):
     activate('en')
     episode_list = Episode.objects.filter(status='published')[0:3]
@@ -31,3 +25,6 @@ def home(request):
     "last_episode": last_episode}
     print(context)
     return render(request, 'base.html', context)
+
+def redirectHome(request):
+    return HttpResponseRedirect('/home')

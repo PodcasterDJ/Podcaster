@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-29 18:57+0000\n"
+"POT-Creation-Date: 2020-04-09 01:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: podcasts/settings.py:207 templates/header.html:45
+#: podcasts/settings.py:207 templates/header.html:43
 msgid "Spanish"
 msgstr "Espanol"
 
-#: podcasts/settings.py:208 templates/header.html:44
+#: podcasts/settings.py:208 templates/header.html:42
 msgid "English"
 msgstr "Ingles"
 
@@ -47,7 +47,9 @@ msgid "Blog Posts"
 msgstr "Publicaciones de blog"
 
 #: templates/about/about.html:104
-msgid "Approx hours I've spent on becoming a doctor"
+#, fuzzy
+#| msgid "Approx hours I've spent on becoming a doctor"
+msgid "Approx hours I've spent on mastering"
 msgstr "Aproximadamente las horas que he pasado para convertirme en médico"
 
 #: templates/about/about.html:122
