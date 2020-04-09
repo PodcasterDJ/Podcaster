@@ -1,7 +1,9 @@
 import os
+import dj_database_url
+
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 try:
     if(os.environ['ENV'] == "prod"):
         DEBUG = False

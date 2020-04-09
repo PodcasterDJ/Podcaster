@@ -1,5 +1,4 @@
 import os
-import dj_database_url
 import django_heroku
 from .sub_settings.text_editor import *
 from .sub_settings.middleware import *
