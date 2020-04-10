@@ -1,0 +1,15 @@
+venv
+*.pyc
+staticfiles
+podcasts/.env
+.env
+*.sqlite3
+# DEPLOY
+secret.txt
+env.py
+settings.json
+Pipfile.lock
+Pipfile
+templates/_original
+media
+.DS_Store

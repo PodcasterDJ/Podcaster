@@ -1,0 +1,49 @@
+{
+    "name": "Podcaster",
+    "description": "Set-up FREE Django Podcasts & Blog page in minutes.",
+    "website": "http://hvitis.com",
+    "success_url": "https://hvitis.com/free-podcasts-blog-template-based-on-django",
+    "addons": ["heroku-postgresql:hobby-dev",
+    "bucketeer:hobbyist"
+    ],
+    "repository": "https://github.com/hvitis/podcaster",
+    "logo": "https://i.ibb.co/QQNtj9j/Podcaster-Logo-Medium.png",
+    "buildpacks": [{
+        "url": "heroku/python"
+    }],
+    "env": {
+        "ENV": {
+            "description": "Environment name. Changing this value will cause your app to run in DEBUG mode. You can change it once deployed.",
+            "value": "prod",
+            "generator": "secret"
+        },
+        "SECRET_KEY": {
+            "description": "Django-generated secret key. You can change it once deployed.",
+            "value": "4gbt+ow7luo&vbv96uug+81_+$$)zpf28xb!@#$+($(93+kz@0",
+            "generator": "secret"
+        },
+        "ALLOWED_HOSTS": {
+            "description": "Address of your webpage. YOUR_APP_NAME - name of your app you have just chosen.",
+            "value": "https://YOUR_APP_NAME.herokuapp.com",
+            "required": true
+        },
+        "AWS_ACCESS_KEY_ID": {
+            "description": "Fill ONLY if you don't want to pay for 5$ AWS Heroku addon and you have AWS S3 Key ID - check the tutorial on GitHub if you don't.",
+            "value": "",
+            "required": false
+        },
+        "AWS_SECRET_ACCESS_KEY": {
+            "description": "Fill ONLY if you don't want to pay for 5$ AWS Heroku addon and you have AWS S3 Access Key - check the tutorial on GitHub if you don't.",
+            "value": "",
+            "required": false
+        },
+        "AWS_STORAGE_BUCKET_NAME": {
+            "description": "Fill ONLY if you don't want to pay for 5$ AWS Heroku addon and you have AWS S3 Bucket name - check the tutorial on GitHub if you don't.",
+            "value": "",
+            "required": false
+        }
+    },
+    "scripts": {
+        "postdeploy": "chmod +x postdeploy-django.sh && ./postdeploy-django.sh"
+    }
+}

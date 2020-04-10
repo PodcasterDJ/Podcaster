@@ -1,0 +1,74 @@
+{% load static %}
+{% load i18n %}
+{% load l10n %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>{% for el in page_description %}{% if el.name == 'title' %}{{el.content}}{% endif %}{% endfor %}</title>
+        <meta charset="utf-8">  
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+        <link rel="icon"          type="image/x-icon" href="{% static 'icons/favicon.ico' %}" >
+        <link rel="stylesheet"    type="text/css" href="{% static 'styles/bootstrap-4.1.2/bootstrap.min.css' %}"  >
+        <link rel="stylesheet"    type="text/css" href="{% static 'font-awesome-4.7.0/css/font-awesome.min.css' %}" >
+        <link rel="stylesheet"    type="text/css" href="{% static 'styles/main_styles.css' %}"  >
+        <link rel="stylesheet"    type="text/css" href="{% static 'styles/responsive.css' %}"  >
+        {% block css %}
+        {% endblock css %}
+        <!-- TODO: Implement block of tags  -->
+
+        <!-- //TODO: Implement Twitter og tags into settings -->
+        <meta name="twitter:card" content="TWITTER_IMAGE_URL">
+        <meta name="twitter:site" content="@TWITTER_SITE">
+        <meta name="twitter:title" content="TWITTER_TITLE">
+        <meta name="twitter:description" content="{% for el in page_description %}{% if el.name == 'description' %}{{el.description}}{% endif %}{% endfor %}">
+        <meta name="twitter:creator" content="@TWITTER_USERNAME">
+        <meta name="twitter:image" content="TWITTER_IMAGE_URL">
+        <meta name="twitter:domain" content="{% for el in page_description %}{% if el.name == 'website_url' %}{{el.website_url}}{% endif %}{% endfor %}">
+    </head>
+
+    <body>
+    <!-- SuperContainer Beginner-->
+    <div class="super_container">
+    {% include 'header.html' %}
+    {% include 'navbar.html' %}
+    {% block home %}
+    {% endblock home %}
+    {% block blog %}
+    {% endblock blog %}
+    {% block post_details %}
+    {% endblock post_details %}
+    {% block about %}
+    {% endblock about %}
+    {% block episodes %}
+    {% endblock episodes %}
+    {% block episode_details %}
+    {% endblock episode_details %}
+    {% include 'footer.html' %}
+    <!-- SuperContainer End-->
+    </div>
+    <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v6.0&appId=1779294385457652&autoLogAppEvents=1"></script>
+        <!-- Audioplayer settings -->
+        <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>       
+        <script src="{% static 'styles/bootstrap-4.1.2/popper.js' %}"></script>
+        <script src="{% static 'styles/bootstrap-4.1.2/bootstrap.min.js' %}"></script>
+
+        {% block js %}
+        {% endblock js %}
+        <script src="{% static 'js/custom.js' %}"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=GOOGLE_ANALYTICS_NUMBER"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'GOOGLE_ANALYTICS_NUMBER');
+        </script>
+
+    </body>
+
+</html>

@@ -1,0 +1,24 @@
+
+	<!-- Menu -->
+
+	<div class="menu">
+		<div class="menu_content d-flex flex-column align-items-end justify-content-start">
+			<ul class="menu_nav_list text-right">
+				<li><a href="/">Home</a></li>
+				<li><a href="/podcasts">Podcasts</a></li>
+				<li><a href="/blog">Blog</a></li>
+				<li><a href="/about">About</a></li>
+				{% comment %} <li><a href="contact.html">Contact</a></li> {% endcomment %}
+			</ul>
+			<div class="menu_extra d-flex flex-column align-items-end justify-content-start">
+				{% comment %} <div class="menu_submit"><a href="#">Submit your podcast</a></div> {% endcomment %}
+				<div class="social">
+					<ul class="d-flex flex-row align-items-start justify-content-start">
+						{% for el in social_media %}
+							<li><a href="{{el.link}}"><i class="fa fa-{{el.name}}" aria-hidden="true"></i></a></li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>

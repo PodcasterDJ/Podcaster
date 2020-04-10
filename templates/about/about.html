@@ -1,0 +1,188 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% load thumbnail %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles/about.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/about_responsive.css' %}">
+{% endblock css %}
+
+{% block about %}
+<div class="super_container">
+
+    <!-- Home -->
+
+    <div class="home">
+        <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{% for el in page_background %}{% if el.name in request.path %}{{el.image.url}}{% endif %}{% endfor %}" data-speed="0.8"></div>
+        <div class="home_container d-flex flex-column align-items-center justify-content-center">
+            <div class="home_content">
+                <div class="home_title">
+                    <h1>{% trans "about" %}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Intro -->
+
+    <div class="intro">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="intro_content text-center">
+                        <div class="section_title text-center">
+                            <h2>{% trans "About my" %}<span>podcast</span></h2>
+                        </div>
+                        <div class="intro_text text-center">
+                            <p>{{about_me.podcast_description}}</p>
+                        </div>
+                        {% comment %} <div class="button_fill intro_button"><a href="#">read more</a></div> {% endcomment %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Milestones -->
+
+    <div class="milestones">
+        <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{% for el in page_background %}{% if el.name in request.path %}{{el.image.url}}{% endif %}{% endfor %}" data-speed="0.8"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="section_title light text-center">
+                        <h1>{% trans "Facts about the page" %}</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row milestones_row">
+
+                {% comment %}
+                <!-- Milestone -->
+                <div class="col-xl-3 col-md-6">
+                    <div class="milestone text-center">
+                        <div class="milestone_content ml-auto mr-auto">
+                            <div class="milestone_counter" data-end-value="55126">0</div>
+                            <div class="milestone_icon"><img src="{% static 'images/alarm-clock.svg' %}" alt="https://www.flaticon.com/authors/smashicons"></div>
+                        </div>
+                        <div class="milestone_title">Learned hours</div>
+                    </div>
+                </div> {% endcomment %}
+
+                <!-- Milestone -->
+                <div class="col-xl-4 col-md-6">
+                    <div class="milestone text-center">
+                        <div class="milestone_content ml-auto mr-auto">
+                            <div class="milestone_counter" data-end-value="{{podcasts_amount}}">{{podcasts_amount}}</div>
+                            <div class="milestone_icon"><img src="{% static 'images/speaker.svg' %}" alt="https://www.flaticon.com/authors/smashicons"></div>
+                        </div>
+                        <div class="milestone_title">{% trans "Podcast episodes" %}</div>
+                    </div>
+                </div>
+
+                <!-- Milestone -->
+                <div class="col-xl-4 col-md-6">
+                    <div class="milestone text-center">
+                        <div class="milestone_content ml-auto mr-auto">
+                            <div class="milestone_counter" data-end-value="1">{{posts_amount}}</div>
+                            <div class="milestone_icon"><img src="{% static 'images/film.svg' %}" alt="https://www.flaticon.com/authors/smashicons"></div>
+                        </div>
+                        <div class="milestone_title">{% trans "Blog Posts" %}</div>
+                    </div>
+                </div>
+
+                <!-- Milestone -->
+                <div class="col-xl-4 col-md-6">
+                    <div class="milestone text-center">
+                        <div class="milestone_content ml-auto mr-auto">
+                            <div class="milestone_counter" id="hoursOfStudying" data-end-value="">3000</div>
+                            <div class="milestone_icon"><img src="{% static 'images/alarm-clock.svg' %}" alt="https://www.flaticon.com/authors/smashicons"></div>
+                        </div>
+                        <div class="milestone_title">{% trans "Approx hours I've spent on mastering" %}</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- About -->
+
+
+    <div class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="about_container d-flex flex-lg-row flex-column align-items-start justify-content-start">
+                        <div class="about_content">
+                            <div class="section_title">
+                                <h1>{% trans "About Me" %}</h1>
+                            </div>
+                            <div class="about_text">
+                                <p>{{about_me.personal_description}}</p>
+                            </div>
+                            <div class="social">
+                                <ul class="d-flex flex-row align-items-start justify-content-start">
+                                    {% for el in social_media %}
+                                    <li><a href="{{el.link}}"><i class="fa fa-{{el.name}}" aria-hidden="true"></i></a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+						    {% if about_me.profile_picture %}
+								{% thumbnail about_me.profile_picture "300x300" crop="center" as im %}
+									<div class="about_image" ><img style="border-radius: 20px" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="profile_picture"></div>
+								{% endthumbnail %}
+							{% endif %}
+                    </div>
+                </div>
+            </div>
+			{% if about_me.paypal_email or about_me.patreon_link %}
+            <hr />
+            <div class="row">
+                <div class="col">
+                    <div class="about_container d-flex flex-lg-row flex-column align-items-center justify-content-center mb-5">
+                        <div class="about_content">
+                                <h2>{% trans "Support Me" %}</h2>
+                            <div class="row">
+                                <div class="col p-4">
+                                    <div class="text-center">
+									{% if about_me.paypal_email %}
+                                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                            <input type="hidden" name="cmd" value="_donations" />
+                                            <input type="hidden" name="business" value="{{about_me.paypal_email}}" />
+                                            <input type="hidden" name="currency_code" value="EUR" />
+                                            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+                                            <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+                                        </form>
+									{% endif %}
+                                    </div>
+                                </div>
+                                <div class="col p-4">
+                                    <div class="">
+                                        {% if about_me.patreon_link %}<div class=""><a href="{{about_me.patreon_link}}"><img src="{% static 'images/become_a_patron_button.png' %}" alt="patreon-button"></a></div>{% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			{% endif %}
+        </div>
+    </div>
+
+    {% endblock about %}
+
+    {% block js %}
+    <script>
+        // Hello there stranger. @hvitis says Hello
+        const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+        const startedStudying = new Date(2016, 9, 1);
+        const asOfToday = new Date();
+        const numberOfHours = Math.round(Math.abs((startedStudying - asOfToday) / oneDay)) * 8 * 0.85; // Number of days x Hours per day x Average working days per year
+        let hoursOfStudying = document.getElementById('hoursOfStudying')
+        hoursOfStudying.innerHTML = numberOfHours
+        </script>
+    {% endblock js %}

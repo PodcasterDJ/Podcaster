@@ -1,0 +1,20 @@
+{% load static %}
+
+<style>
+    audio {
+        width: 100%;
+    }
+    audio::-webkit-media-controls-panel {
+        background-color: cornflowerblue;
+
+    }
+</style>
+
+<div class="player-background">
+    <audio controls>
+        <source src="{{el.audio.url}}" type="audio/ogg">
+        <source src="{{el.audio.url}}" type="audio/mpeg">
+        <source src="{{el.audio.url}}" type="audio/wav">
+        Your browser does not support the audio element.
+    </audio>
+</div>

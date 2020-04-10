@@ -1,0 +1,180 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% load l10n %}
+{% load thumbnail %}
+{% block home %}
+<!-- Home -->
+<div class="home">
+    <div class="background_image" style="background-image:url({% for el in page_background %}{% if el.name in request.path %}{{el.image.url}}{% endif %}{% endfor %})">
+    </div>
+    <div class="home_container">
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="home_content">
+                        <div class="tags">
+                            <ul class="d-flex flex-row align-items-start justify-content-start">
+                                {% for el in last_episode.category.all %}
+                                <li><a href="#">{{el.title}}</a></li>
+                                {% endfor %}
+
+                            </ul>
+                        </div>
+                        <div class="home_title">
+                            <h1>{{last_episode.title}}</h1>
+                        </div>
+                        <div class="home_subtitle">{{last_episode.description}}</div>
+                        <div class="track_info">
+                            <ul class="d-flex flex-row align-items-start justify-content-start">
+                                <li><a href="#">{{last_episode.timestamp}}</a></li>
+                                {% comment %} <li><a href="#">Music</a></li> {% endcomment %}
+                                {% comment %} <li>56:40</li> {% endcomment %}
+                                {% comment %} <li><a href="#">0 Comments</a></li> {% endcomment %}
+                            </ul>
+                        </div>
+
+                        <div class="track track_home">
+                            <div class="player  s1 card border-primary shadow p-4" >
+                                <!-- Player -->
+                               {% with last_episode as el %}
+								    {% include 'episodes/player.html' %}
+							    {% endwith %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button_border home_button trans_200"><a href="{{ last_episode.get_absolute_url }}">{% trans "Transcription" %}</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Shows -->
+
+<div class="shows">
+    <div class="container">
+        <div class="row shows_row">
+            {% for single_episode in episodes_list %}
+
+            <!-- Show -->
+            <div class="col-lg-4">
+                <div class="show">
+                    <div class="show_image">
+                        <a href="/podcasts">
+                            {% thumbnail single_episode.thumbnail "400x300" crop="center" as im %}
+                            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                            {% endthumbnail %}
+                        </a>
+                        <div class="show_tags">
+                            <div class="tags">
+                                <ul class="d-flex flex-row align-items-start justify-content-start">
+                                    {% for category in single_episode.category.all %}
+                                    <li><a href="#">{{category.title}}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="show_play_icon"><img src="{% static 'images/play.svg' %}" alt="https://www.flaticon.com/authors/cole-bemis"></div>
+                    </div>
+                    <div class="show_content">
+                        <div class="show_date">{{single_episode.publish}}</div>
+                        <div class="show_title"><a href="{{single_episode.get_absolute_url}}">{{single_episode.title}}</a></div>
+                        <div class="show_info d-flex flex-row align-items-start justify-content-start">
+                            <div class="show_fav d-flex flex-row align-items-center justify-content-start">
+                                <a href='{{single_episode.url}}'>
+                                    <div class="show_fav_icon show_info_icon"><img class="svg" src="{% static 'images/heart.svg' %}" alt=""></div>
+                                </a>
+                                <div class="show_fav_count">{% trans "Share" %}</div>
+                            </div>
+                            {% comment %} <div class="show_comments">
+                                <a href="#">
+                                    <div class="d-flex flex-row align-items-center justify-content-start">
+                                        <div class="show_comments_icon show_info_icon"><img class="svg" src="{% static 'images/speech-bubble.svg' %}" alt=""></div>
+                                        <div class="show_comments_count">88 Comments</div>
+                                    </div>
+                                </a>
+                            </div> {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                <div class="button_fill shows_button"><a href="/podcasts">{% trans "browse shows" %}</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% comment %}
+
+<!-- Categories 2 -->
+
+<div class="shows_2">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="shows_2_title">By Category</div>
+            </div>
+        </div>
+        <div class="row shows_2_row">
+
+            <!-- Category -->
+            <div class="col-xl-3 col-md-6">
+                <div class="show">
+                    <div class="show_image">
+                        <a href="{{single_episode.get_absolute_url}}">
+                            <img src="" alt="https://unsplash.com/@h4rd3n">
+                            <div class="show_play_icon"><img src="{% static 'images/play.svg' %}" alt="https://www.flaticon.com/authors/cole-bemis"></div>
+                            <div class="show_title_2">Cras malesuada ipsum sapien.</div>
+                        </a>
+                        <div class="show_tags">
+                            <div class="tags">
+                                <ul class="d-flex flex-row align-items-start justify-content-start">
+                                    <li><a href="#">travel</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                <div class="button_fill shows_2_button"><a href="#">browse shows</a></div>
+            </div>
+        </div>
+    </div>
+</div> {% endcomment %}
+{% endblock home %}
+
+{% block js %}
+<script>
+
+    jQuery(document).ready(function ($) {
+        var settings_ap = {
+            disable_volume: 'off',
+            disable_scrub: 'default',
+            design_skin: 'skin-wave',
+            skinwave_dynamicwaves: 'on',
+            google_analytics_send_play_event: 'on'
+        };
+        dzsag_init('#ag{{last_episode.id}}', {
+            'transition': 'fade',
+            'autoplay': 'off',
+            'settings_ap': settings_ap,
+            google_analytics_send_play_event: "on"
+
+        });
+    });
+
+</script>
+{% endblock js %}

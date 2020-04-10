@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% load thumbnail %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles/episode.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/episode_responsive.css' %}">
+{% endblock css %}
+
+
+{% block post_details %}
+<div class="home">
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{% if post_details.thumbnail %}{{ post_details.thumbnail.url }}{% endif %}" data-speed="0.8"></div>
+		<div class="home_container">
+			{% comment %} <div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="home_content text-center">
+							<div class="home_title"><h1>{{ post_details.title }}</h1></div>
+							<div class="home_subtitle text-center">{{ post_details.publish }}</div>
+						</div>
+					</div>
+				</div>
+			</div>		 {% endcomment %}
+		</div> 
+	</div>
+	<!-- Episode -->
+
+	<div class="episode_container">
+
+		{% comment %} <!-- Episode Image -->
+		<div class="episode_image_container">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3">
+						<!-- Episode Image -->
+						<div class="episode_image"><img src="{% if post_details.thumbnail %}{{ post_details.thumbnail }}{% endif %}" alt="{{ post_details.title }}"></div>
+					</div>
+				</div>
+			</div>
+		</div> {% endcomment %}
+
+		<div class="container">
+			<div class="row flex-row justify-content-center m-4">
+				<h1 class="text-center">{{ post_details.title }}</h1>
+				{% comment %} <!-- Sidebar -->
+				<div class="col-lg-3 order-lg-1 order-2 sidebar_col">
+					<div class="sidebar">
+						<div class="card"></div>
+					</div>
+				</div> {% endcomment %}
+
+				<!-- Episode -->
+				<div class="col-lg-12 episode_col order-lg-2 order-1">
+					<div class="intro card shadow-lg p-5 m-4">
+						<div class="section_title">{{ post_details.publish }}</div>
+						<div class="intro_text">
+							<p>{{ post_details.content|safe  }}</p>
+						</div>
+					</div>
+					{% comment %} <div class="guests">
+						<div class="section_title">Guests</div>
+						<div class="guests_container d-flex flex-md-row flex-column align-items-md-start align-items-center justify-content-start">
+							
+							<!-- Guest -->
+							<div class="guest_container">
+								<div class="guest">
+									<div class="guest_image"><img src="{% if post_details.thumbnail %}{{ post_details.thumbnail }}{% endif %}" alt="https://unsplash.com/@stairhopper"></div>
+									<div class="guest_content text-center">
+										<div class="guest_name"><a href="#">{{ post_details.author.get_full_name }}</a></div>
+										<div class="guest_title">Developer</div>
+									</div>
+								</div>
+							</div>
+
+
+						</div>
+					</div>
+
+					<!-- Comments -->
+					<div class="comments">
+						<div class="section_title">Comments</div>
+						<div class="comments_container">
+							<ul>
+
+								<!-- Comment -->
+								<li class="d-flex flex-row">
+									<div>
+										<div class="comment_image"><img src="images/user_1.jpg" alt=""></div>
+									</div>
+									<div class="comment_content">
+										<div class="user_name"><a href="#">Michael Smith</a></div>
+										<div class="comment_text">
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum malesuada tellus a pretium. Proin quam nisi, maximus in pulvinar sed, viverra vitae es.</p>
+										</div>
+									</div>
+								</li>
+
+
+							</ul>
+						</div>
+					</div>
+
+					<!-- Leave a Comment -->
+					<div class="comment_form_container">
+						<div class="section_title">Leave a comment</div>
+						<form action="#" id="comment_form" class="comment_form">
+							<div class="row">
+								<div class="col-md-6">
+									<input type="text" class="comment_input" placeholder="Name" required="required">
+								</div>
+								<div class="col-md-6">
+									<input type="email" class="comment_input" placeholder="E-mail" required="required">
+								</div>
+							</div>
+							<div><input type="text" class="comment_input" placeholder="Subject"></div>
+							<div><textarea class="comment_input comment_textarea" placeholder="Message" required="required"></textarea></div>
+							<button class="comment_button button_fill">send</button>
+						</form>
+					</div> {% endcomment %}
+						
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock post_details %}
+
+{% block js %}
+{% endblock js %}
+

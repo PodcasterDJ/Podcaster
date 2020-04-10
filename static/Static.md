@@ -1,0 +1,1 @@
+Collectstatic creates staticfiles folder. Put everything new here (to static)

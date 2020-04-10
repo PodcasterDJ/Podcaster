@@ -1,0 +1,129 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-09 12:58+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: podcasts/sub_settings/internationalization.py:12 templates/header.html:43
+msgid "Spanish"
+msgstr "Espanol"
+
+#: podcasts/sub_settings/internationalization.py:13 templates/header.html:42
+msgid "English"
+msgstr "Ingles"
+
+#: templates/about/about.html:21
+msgid "about"
+msgstr "acerca de"
+
+#: templates/about/about.html:35
+msgid "About my"
+msgstr "Sobre mi"
+
+#: templates/about/about.html:56
+msgid "Facts about the page"
+msgstr "Datos sobre la página"
+
+#: templates/about/about.html:82
+msgid "Podcast episodes"
+msgstr "Episodios de podcast"
+
+#: templates/about/about.html:93
+msgid "Blog Posts"
+msgstr "Publicaciones de blog"
+
+#: templates/about/about.html:104
+#, fuzzy
+#| msgid "Approx hours I've spent on becoming a doctor"
+msgid "Approx hours I've spent on mastering"
+msgstr "Aproximadamente las horas que he pasado para convertirme en médico"
+
+#: templates/about/about.html:122
+msgid "About Me"
+msgstr "Sobre mí"
+
+#: templates/about/about.html:149
+msgid "Support Me"
+msgstr ""
+
+#: templates/blog/blog_list.html:71
+msgid "By"
+msgstr "Por"
+
+#: templates/blog/blog_list.html:75
+msgid "Read More"
+msgstr "Lee mas"
+
+#: templates/episodes/episode_list.html:16
+msgid "episodes"
+msgstr "episodios"
+
+#: templates/footer.html:15
+msgid "Join my Newsletter"
+msgstr "Únete a mi boletín"
+
+#: templates/footer.html:18
+msgid "Get latest posts, podcasts and giveaways informations."
+msgstr "Obtenga las últimas publicaciones, podcasts e información de regalos."
+
+#: templates/footer.html:32
+msgid "subscribe"
+msgstr "suscribir"
+
+#: templates/footer.html:54
+msgid "Latest Podcasts"
+msgstr "Últimos podcasts"
+
+#: templates/footer.html:89
+msgid "Latest Posts"
+msgstr "últimas publicaciones"
+
+#: templates/footer.html:123 templates/tags_categories.html:18
+msgid "Tags"
+msgstr "Etiquetas"
+
+#: templates/footer.html:132 templates/tags_categories.html:8
+msgid "Categories"
+msgstr "Categorias"
+
+#: templates/header.html:35
+#, fuzzy
+#| msgid "Latest Podcasts"
+msgid "Podcasts"
+msgstr "Podcasts"
+
+#: templates/header.html:36
+msgid "Blog"
+msgstr "Blog"
+
+#: templates/header.html:37
+#, fuzzy
+#| msgid "about"
+msgid "About"
+msgstr "acerca de"
+
+#: templates/home/home.html:50
+msgid "Transcription"
+msgstr "Transcripción"
+
+#: templates/home/home.html:93
+msgid "Share"
+msgstr "Compartir"
+
+#: templates/home/home.html:113
+msgid "browse shows"
+msgstr "mas episodios"

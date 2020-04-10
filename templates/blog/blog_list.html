@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block blog %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles/blog.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/blog_responsive.css' %}">
+	<!-- Home -->
+
+	<div class="home">
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{% for el in page_background %}{% if el.name in request.path %}{{el.image.url}}{% endif %}{% endfor %}" data-speed="0.8"></div>
+		<div class="home_container d-flex flex-column align-items-center justify-content-center">
+			<div class="home_content">
+				<div class="home_title"><h1>blog</h1></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Blog -->
+
+	<div class="blog">
+		<div class="container">
+			<div class="row">
+				
+				<!-- Sidebar -->
+				<div class="col-lg-3 order-lg-1 order-2 sidebar_col">
+					<div class="sidebar">
+						
+						<!-- Search -->
+						{% comment %} <div class="sidebar_search">
+							<div class="sidebar_title">Search</div>
+							<form action="#" class="search_form" id="search_form">
+								<input type="text" class="search_input" placeholder="Search here" required="required">
+								<button class="search_button"><img src="images/search.png" alt=""></button>
+							</form>
+						</div> {% endcomment %}
+
+
+						{% include 'tags_categories.html' %}
+
+						<!-- Archive -->
+						{% comment %} <div class="sidebar_archive">
+							<div class="sidebar_title">Archive</div>
+							<div class="dropdown">
+								<ul>
+									<li class="dropdown_selected d-flex flex-row align-items-center justify-content-start"><span>September 2018</span><i class="fa fa-chevron-down ml-auto" aria-hidden="true"></i>
+										<ul>
+											<li><a href="#">August 2018</a></li> 
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div> {% endcomment %}
+					</div>
+				</div>
+
+				<!-- Blog -->
+				<div class="col-lg-9 blog_col order-lg-2 order-1">
+					<div class="blog_posts">
+						{% for post in post_list %}
+						<!-- Blog Post -->
+						<div class="blog_post d-flex flex-md-row flex-column align-items-start justify-content-start">
+							<div class="blog_post_image">
+								<img src="{% if post.thumbnail %}{{post.thumbnail.url}}{% endif %}" alt="{{post.title}}">
+								<div class="blog_post_date"><a href="{{ post.get_absolute_url }}">{{ post.publish | slugify | slice:":10" }}</a></div>
+							</div>
+							<div class="blog_post_content">
+								<div class="blog_post_title"><a href="{{ post.get_absolute_url }}">{{post.title}}</a></div>
+								<div class="blog_post_author">{% trans "By" %} <a href="/about">{{post.author.get_full_name}}</a></div>
+								<div class="blog_post_text">
+									<p>{{ post.overview }}</p>
+								</div>
+								<div class="blog_post_link"><a href="{{ post.get_absolute_url }}">{% trans "Read More" %}</a></div>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+
+			{% comment %} <!-- Page Nav -->
+			<div class="row page_nav_row">
+				<div class="col">
+					<div class="page_nav d-flex flex-row align-items-center justify-content-center">
+						<ul class="d-flex flex-row">
+							<li class="active"><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div> {% endcomment %}
+		</div>
+	</div>
+{% endblock blog %}
+
+{% block js %}
+{% endblock js %}

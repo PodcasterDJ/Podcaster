@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load thumbnail %}
+{% load i18n %}
+{% load l10n %}
+
+{% block episodes %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles/episodes.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/episodes_responsive.css' %}">
+
+	<div class="home">
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{% for el in page_background %}{% if el.name in request.path %}{{el.image.url}}{% endif %}{% endfor %}" data-speed="0.8"></div>
+		<div class="home_container d-flex flex-column align-items-center justify-content-center">
+			<div class="home_content">
+				<div class="home_title"><h1>{% trans "episodes" %}</h1></div>
+			</div>
+		</div>
+	</div>
+	<!-- Episodes -->
+
+	<div class="episodes">
+		<div class="container">
+			{% comment %} <div class="row">
+				<div class="col">
+					<div class="season_links">
+						<ul class="d-flex flex-row align-items-start justify-content-center flex-wrap">
+							<li class="item_filter_btn" data-filter="*">All Seasons</li>
+							<li class="item_filter_btn" data-filter=".s1">Season 1</li>
+							<li class="item_filter_btn" data-filter=".s2">Season 2</li>
+							<li class="item_filter_btn" data-filter=".s3">Season 3</li>
+						</ul>
+					</div>
+				</div>
+			</div> {% endcomment %}
+			<div class="row episodes_row">
+				
+				<!-- Sidebar -->
+				<div class="col-lg-3">
+					<div class="sidebar">
+						
+						{% comment %} <!-- Search -->
+						<div class="sidebar_search">
+							<div class="sidebar_title">Search</div>
+							<form action="#" class="search_form" id="search_form">
+								<input type="text" class="search_input" placeholder="Search here" required="required">
+								<button class="search_button"><img src="" alt=""></button>
+							</form>
+						</div> {% endcomment %}
+
+						{% include 'tags_categories.html' %}
+
+
+						{% comment %} <!-- Archive -->
+						<div class="sidebar_archive">
+							<div class="sidebar_title">Archive</div>
+							<div class="dropdown">
+								<ul>
+									<li class="dropdown_selected d-flex flex-row align-items-center justify-content-start"><span>September 2018</span><i class="fa fa-chevron-down ml-auto" aria-hidden="true"></i>
+										<ul>
+											<li><a href="#">August 2018</a></li>
+											<li><a href="#">July 2018</a></li>
+											<li><a href="#">June 2018</a></li>
+											<li><a href="#">May 2018</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div> {% endcomment %}
+					</div>
+				</div>
+
+				<!-- Episodes -->
+				<div class="col-lg-9 episodes_col">
+					<div class="episodes_container">
+						{% for el in episode_list %}
+							{% include 'episodes/single_episode.html' %}
+						{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+			{% comment %} <div class="row page_nav_row">
+				<div class="col">
+					<div class="page_nav d-flex flex-row align-items-center justify-content-center">
+						<ul class="d-flex flex-row">
+							<li class="active"><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div> {% endcomment %}
+		</div>
+	</div>
+
+	
+{% endblock episodes %}
+
+
+
+{% block js %}
+	{% for el in episode_list %}
+		<script>
+
+			jQuery(document).ready(function ($) {
+				var settings_ap = {
+					disable_volume: 'off',
+					disable_scrub: 'default',
+					design_skin: 'skin-wave',
+					skinwave_dynamicwaves: 'on',
+					google_analytics_send_play_event: 'on'
+				};
+				dzsag_init('#ag{{el.id}}', {
+					'transition': 'fade',
+					'autoplay': 'off',
+					'settings_ap': settings_ap,
+					google_analytics_send_play_event: "on"
+
+				});
+			});
+
+		</script>
+	{% endfor %}
+{% endblock js %}
