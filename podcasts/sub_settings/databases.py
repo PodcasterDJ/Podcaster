@@ -22,13 +22,16 @@ if DEBUG:
     }
 
 if not DEBUG:
-    AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
-    AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
-    AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME']
-    if((len(AWS_ACCESS_KEY_ID) + len(AWS_SECRET_ACCESS_KEY) + len(AWS_STORAGE_BUCKET_NAME)) < 4):
+    # FREE / Cheaper AWS Solution has priority.
+    try:
+        AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+        AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
+        AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME']
+    except:
         AWS_ACCESS_KEY_ID = os.environ['BUCKETEER_AWS_ACCESS_KEY_ID']
         AWS_SECRET_ACCESS_KEY = os.environ['BUCKETEER_AWS_SECRET_ACCESS_KEY']
         AWS_STORAGE_BUCKET_NAME = os.environ['BUCKETEER_BUCKET_NAME']
+
     # Database
     # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
     DATABASES = { 'default': dj_database_url.config(
