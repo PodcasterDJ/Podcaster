@@ -3,10 +3,8 @@
     "description": "Set-up FREE Django Podcasts & Blog page in minutes.",
     "website": "http://hvitis.com",
     "success_url": "https://hvitis.com/free-podcasts-blog-template-based-on-django",
-    "addons": ["heroku-postgresql:hobby-dev",
-    "bucketeer:hobbyist"
-    ],
-    "repository": "https://github.com/hvitis/podcaster",
+    "addons": ["heroku-postgresql:hobby-dev"],
+    "repository": "https://github.com/hvitis/Podcaster/tree/no-addons-free-deploy",
     "logo": "https://i.ibb.co/QQNtj9j/Podcaster-Logo-Medium.png",
     "buildpacks": [{
         "url": "heroku/python"
@@ -28,19 +26,19 @@
             "required": true
         },
         "AWS_ACCESS_KEY_ID": {
-            "description": "Fill ONLY if you don't want to pay for 5$ AWS Heroku addon and you have AWS S3 Key ID - check the tutorial on GitHub if you don't.",
+            "description": "AWS S3 Key ID - check the tutorial on GitHub if you don't have it.",
             "value": "",
-            "required": false
+            "required": true
         },
         "AWS_SECRET_ACCESS_KEY": {
-            "description": "Fill ONLY if you don't want to pay for 5$ AWS Heroku addon and you have AWS S3 Access Key - check the tutorial on GitHub if you don't.",
+            "description": "AWS S3 Access Key - check the tutorial on GitHub if you don't have it.",
             "value": "",
-            "required": false
+            "required": true
         },
         "AWS_STORAGE_BUCKET_NAME": {
-            "description": "Fill ONLY if you don't want to pay for 5$ AWS Heroku addon and you have AWS S3 Bucket name - check the tutorial on GitHub if you don't.",
+            "description": "AWS S3 Bucket name - check the tutorial on GitHub if you don't have it.",
             "value": "",
-            "required": false
+            "required": true
         }
     },
     "scripts": {
