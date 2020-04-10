@@ -22,13 +22,15 @@ if DEBUG:
     }
 
 if not DEBUG:
-    AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
-    AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
-    AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME']
-    if((len(AWS_ACCESS_KEY_ID) + len(AWS_SECRET_ACCESS_KEY) + len(AWS_STORAGE_BUCKET_NAME)) < 4):
-        AWS_ACCESS_KEY_ID = os.environ['BUCKETEER_AWS_ACCESS_KEY_ID']
-        AWS_SECRET_ACCESS_KEY = os.environ['BUCKETEER_AWS_SECRET_ACCESS_KEY']
-        AWS_STORAGE_BUCKET_NAME = os.environ['BUCKETEER_BUCKET_NAME']
+    try:
+        AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+        AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
+        AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME']
+        if((len(AWS_ACCESS_KEY_ID) + len(AWS_SECRET_ACCESS_KEY) + len(AWS_STORAGE_BUCKET_NAME)) < 4):
+            raise ValueError('Some of the variables were not loaded properly.')
+    except:
+        raise ValueError('Loading AWS variables failed.')
+
     # Database
     # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
     DATABASES = { 'default': dj_database_url.config(
