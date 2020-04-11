@@ -19,12 +19,12 @@
         <!-- TODO: Implement block of tags  -->
 
         <!-- //TODO: Implement Twitter og tags into settings -->
-        <meta name="twitter:card" content="TWITTER_IMAGE_URL">
+        <!-- <meta name="twitter:card" content="TWITTER_IMAGE_URL">
         <meta name="twitter:site" content="@TWITTER_SITE">
         <meta name="twitter:title" content="TWITTER_TITLE">
         <meta name="twitter:description" content="{% for el in page_description %}{% if el.name == 'description' %}{{el.description}}{% endif %}{% endfor %}">
         <meta name="twitter:creator" content="@TWITTER_USERNAME">
-        <meta name="twitter:image" content="TWITTER_IMAGE_URL">
+        <meta name="twitter:image" content="TWITTER_IMAGE_URL"> -->
         <meta name="twitter:domain" content="{% for el in page_description %}{% if el.name == 'website_url' %}{{el.website_url}}{% endif %}{% endfor %}">
     </head>
 
@@ -54,6 +54,8 @@
         <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>       
         <script src="{% static 'styles/bootstrap-4.1.2/popper.js' %}"></script>
         <script src="{% static 'styles/bootstrap-4.1.2/bootstrap.min.js' %}"></script>
+        <script src="{% static 'plugins/parallax.min.js' %}"></script>
+        <script src="{% static 'plugins/scrollmagic.min.js' %}"></script>
 
         {% block js %}
         {% endblock js %}
