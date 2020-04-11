@@ -23,7 +23,7 @@ In order to avoid paying for Heroku Add-on you can use your own AWS S3 bucket wi
 If you want to deploy your app __100% FREE__ you can use button on [no-addons-free-deploy][7] branch, that will generate you the deploy without bucketeer.
 
 __IMPORTANT!__:
-> During deploy admin account is created automatically with the following credentials: login __admin__ / pass __StarIfUsefulThanks!__ . Don't forget to change the admin password after first login!
+> During deploy admin account is created automatically with the following credentials: login __admin__ / pass __StarIfUsefulThanks!__. Don't forget to change the admin password after first login!
 
 [0]: https://colorlib.com/wp/template/mypodcast/
 [1]: https://butterflybone.doctor
@@ -36,18 +36,20 @@ __IMPORTANT!__:
 
 ### What is my goal?
 
-The goal is to expand functionalities by learning on the way and increase the customisation options. Implement good practices, more functionalities. 
+The goal is to expand functionalities by learning _Django_ and increase the customisation options. Implement good practices, new functionalities and more. 
 
-If you are or ( want to be ) Django developer, you can check [Issues][8] on this repo. There is plenty of different possible tasks that you could help with.
+If you are ( or want to be ) Django developer, you can check [Issues][8] on this repo. There is plenty of different possible tasks that you could help with.
 
-If you would like this template to have more functionalities ( shop? look? etc ) [create an Issue] for it wiht a __feature-idea__ label. 
+If you would like this template to have more functionalities ( shop? look? etc ) [create an Issue][9] for it wiht a <mark>__feature-idea__</mark> label. 
+
+If you would like to collaborate would be nice if you could [drop me a message][12]. 😁
 
 [8]: https://github.com/hvitis/Podcaster/issues
 [9]: https://github.com/hvitis/Podcaster/issues/new
-
+[12]: https://hvitis.com/contact
 ### Who is this for?
 
-This repo is for everybody that either wants to have his own Podcast / Blog or for people who like Django framework / would like to start with it.
+This repo is for everybody that either wants to have his own Podcast / Blog or for people who like _Django_ framework / would like to start with it.
 
 You can deploy it for Free and then adjust it or change theme in the way you like. Important to know that when deployed to heroku you can [clone your repository from heroku][10]. You can also clone it locally and later host yourself.
 
