@@ -18,5 +18,5 @@ INSTALLED_APPS = [
     # https://github.com/jazzband/sorl-thumbnail
     'sorl.thumbnail',
     'django_summernote',
-
+    'rest_framework',
 ]
