@@ -16,4 +16,12 @@ class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
         fields = ('author', 'title', 'overview', 'content',
-                  'timestamp', 'publish', 'thumbnail')
+                  'publish', 'thumbnail')
+
+
+class PostDetailsSerializers(serializers.ModelSerializer):
+    author = UserSerializer(read_only=True)
+
+    class Meta:
+        model = Post
+        fields = '__all__'

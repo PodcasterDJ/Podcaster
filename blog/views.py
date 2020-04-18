@@ -5,7 +5,7 @@ from episodes.models import Category, Tags
 from rest_framework import viewsets
 
 # Create your views here.
-from .serializers import PostSerializer
+from .serializers import PostSerializer, PostDetailsSerializers
 
 
 class BlogListView(ListView):
@@ -33,5 +33,11 @@ class BlogDetailView(View):
 
 class PostViewSet(viewsets.ModelViewSet):
     serializer_class = PostSerializer
+    queryset = Post.objects.all()
+    http_method_names = ['get', 'head', 'list']
+
+
+class PostDetailViewSet(viewsets.ModelViewSet):
+    serializer_class = PostDetailsSerializers
     queryset = Post.objects.all()
     http_method_names = ['get', 'head', 'list']

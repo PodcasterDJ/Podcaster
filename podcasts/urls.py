@@ -28,6 +28,7 @@ urlpatterns = [
 urlpatterns += i18n_patterns(
     #path('', redirectHome),
     path('', include("home.urls", namespace='home')),
+    path('api/v1/', include('settings.urls.v1')),
     path('podcasts', include("episodes.urls", namespace='episodes')),
     # This namespace corresponds to save method for slug in models
     path('blog', include("blog.urls", namespace='blog')),
