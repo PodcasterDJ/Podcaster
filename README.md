@@ -36,7 +36,8 @@ __IMPORTANT!__:
 
 ### What is my goal?
 
-The goal is to expand functionalities by learning _Django_ and increase the customisation options. Implement good practices, new functionalities and more. 
+The goal is to teach people Django and practice together via Pull Requests, pair programing and having fun. Expand functionalities by learning _Django Rest Framework_ and increase the customisation options. Implement good practices, new functionalities and more. 
+If you want to join, try our [![Telegram Group](https://patrolavia.github.io/telegram-badge/chat.png)](https://patrolavia.github.io/telegram-badge/chat.png)
 
 If you are ( or want to be ) Django developer, you can check [Issues][8] on this repo. There is plenty of different possible tasks that you could help with.
 
