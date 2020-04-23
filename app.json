@@ -1,6 +1,6 @@
 {
     "name": "Podcaster",
-    "description": "Set-up FREE Django Podcasts & Blog page in minutes.",
+    "description": "Set-up FREE Django Podcasts & Blog page in seconds.",
     "website": "http://hvitis.com",
     "success_url": "https://hvitis.com/free-podcasts-blog-template-based-on-django",
     "addons": ["heroku-postgresql:hobby-dev"],
