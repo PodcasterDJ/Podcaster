@@ -1,10 +1,10 @@
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+print('MY DIST', os.path.join(BASE_DIR, 'dist'))
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, '..', 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, '..', 'dist')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -23,6 +23,8 @@ TEMPLATES = [
     },
 ]
 # Template directory setting
-TEMPLATE_DIRS = (
-    os.path.join(os.path.dirname(__file__), '..', 'templates'),
-)
+# TEMPLATE_DIRS = (
+#     os.path.join(os.path.dirname(__file__), '..', 'templates'),
+#     os.path.join(BASE_DIR, '..', 'staticfiles'),
+#     os.path.join(BASE_DIR, '..', 'dirs'),
+# )
