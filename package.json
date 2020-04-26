@@ -6,7 +6,9 @@
   "scripts": {
     "lint": "vue-cli-service lint",
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build && rm -rf static/dist && cp -av dist static/dist"
+    "build": "vue-cli-service build && rm -rf static/dist && cp -av dist static/dist",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "bootstrap": "^4.4.1",
