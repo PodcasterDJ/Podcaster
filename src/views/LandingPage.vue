@@ -49,7 +49,7 @@
           :style="{ backgroundColor: 'transparent', color: 'white' }"
           class="white"
         >
-          <p>For more information visit website</p>
+          <p>For more information visit website </p>
           <b-button
             variant="white"
             href="#"
