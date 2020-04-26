@@ -11,8 +11,8 @@ STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'dist'),
-    os.path.join(BASE_DIR, 'dist/static')
+    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'static/dist/static')
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
