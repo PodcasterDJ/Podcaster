@@ -8,6 +8,7 @@
 export default {
   computed: {
     layout() {
+      console.log(`${this.$route.meta.layout || 'default'}-layout`)
       return `${this.$route.meta.layout || 'default'}-layout`;
     },
   },
