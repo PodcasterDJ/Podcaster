@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "vue-cli-service lint",
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build && cp dist static/dist"
+    "build": "vue-cli-service build && rm -rf static/dist && cp -av dist static/dist"
   },
   "dependencies": {
     "bootstrap": "^4.4.1",

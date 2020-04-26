@@ -104,6 +104,13 @@ In case you want to see what's happening on your Production app without entering
 heroku logs --tail -a YOUR_APP_NAME
 ```
 
+# Other
+
+One-line rebuild with deploy
+```
+npm run build && python3 manage.py collectstatic -c --no-post-process --noinput && python3 manage.py runserver
+```
+
 #### Authors
 
 - [Hvitis][11] 👨🏼‍💻
