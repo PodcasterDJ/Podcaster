@@ -36,17 +36,19 @@ __IMPORTANT!__:
 
 ### What is my goal?
 
-The goal is to expand functionalities by learning _Django_ and increase the customisation options. Implement good practices, new functionalities and more. 
+The goal is to teach people Django and practice together via Pull Requests, pair programing and having fun. Expand functionalities by learning _Django Rest Framework_ and increase the customisation options. Implement good practices, new functionalities and more. 
+If you want to join, try our [![Telegram Group](https://patrolavia.github.io/telegram-badge/chat.png)](https://patrolavia.github.io/telegram-badge/chat.png) If you don't have Telegram and would like to collaborate would be nice if you could [drop me a message][12]. 😁
 
-If you are ( or want to be ) Django developer, you can check [Issues][8] on this repo. There is plenty of different possible tasks that you could help with.
+If you are ( or want to be ) Django developer, you can check [Issues][8] on this repo. There is plenty of different possible tasks that you could help with. 
 
 If you would like this template to have more functionalities ( shop? look? etc ) [create an Issue][9] for it wiht a <mark>__feature-idea__</mark> label. 
 
-If you would like to collaborate would be nice if you could [drop me a message][12]. 😁
+__ We follow collaboration rules __ good code practices, REST guidelines and more so please read [contribution rules][33] before taking an issue.
 
 [8]: https://github.com/hvitis/Podcaster/issues
 [9]: https://github.com/hvitis/Podcaster/issues/new
 [12]: https://hvitis.com/contact
+[33]: https://github.com/PodcasterDJ/Podcaster/edit/master/CONTRIBUTE.md
 ### Who is this for?
 
 This repo is for everybody that either wants to have his own Podcast / Blog or for people who like _Django_ framework / would like to start with it.
