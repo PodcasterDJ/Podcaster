@@ -48,7 +48,7 @@ __ We follow collaboration rules __ good code practices, REST guidelines and mor
 [8]: https://github.com/hvitis/Podcaster/issues
 [9]: https://github.com/hvitis/Podcaster/issues/new
 [12]: https://hvitis.com/contact
-[33]: https://github.com/PodcasterDJ/Podcaster/edit/master/CONTRIBUTE.md
+[33]: https://github.com/PodcasterDJ/Podcaster/master/CONTRIBUTE.md
 ### Who is this for?
 
 This repo is for everybody that either wants to have his own Podcast / Blog or for people who like _Django_ framework / would like to start with it.
