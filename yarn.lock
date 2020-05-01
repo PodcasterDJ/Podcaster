@@ -11286,6 +11286,11 @@ vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
+vue-aplayer@^1.6.1:
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/vue-aplayer/-/vue-aplayer-1.6.1.tgz#17fd419b091e09425bc737fa9e84f55565160df6"
+  integrity sha512-c+ZAwZ63bVDsKkcHeKLAonIL2gY4nrVRdKypoPRXSkh+8B1cVhFT2tx8HSTNT6eX6WZyDtaYrEJfcgetrfvcdQ==
+
 vue-clickaway@^2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/vue-clickaway/-/vue-clickaway-2.2.2.tgz#cecf6839575e8b2afc5d3edb3efb616d293dbb44"
@@ -11352,6 +11357,13 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
 
+vue-wave-surfer@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/vue-wave-surfer/-/vue-wave-surfer-1.0.1.tgz#2ef93267afe73ff609db9c6ca1f5002f366e62a4"
+  integrity sha512-4Y/M2JHqfrtwwIA+w95ClvVBibXKwq8/d3lvrFiktbsEbgxPKlgV1R07Nw78H6L9KTki5V2o3iy76fexO0fA8Q==
+  dependencies:
+    wavesurfer.js "^3.2.0"
+
 vue@^2.6.11:
   version "2.6.11"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.11.tgz#76594d877d4b12234406e84e35275c6d514125c5"
@@ -11377,6 +11389,11 @@ watchpack@^1.6.1:
     chokidar "^2.1.8"
     graceful-fs "^4.1.2"
     neo-async "^2.5.0"
+
+wavesurfer.js@^3.2.0:
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/wavesurfer.js/-/wavesurfer.js-3.3.3.tgz#9b16a62335c6bd13a3d55deb895a336d027ccb51"
+  integrity sha512-meko20S9in+V5xBLSVV/9uYVBSbx5AsJNkAslZ+a5yYIeFGYwcCo4Yd1sUpSGaiNnyflzrJwC7x7TdJFYrdT8w==
 
 wbuf@^1.1.0, wbuf@^1.7.3:
   version "1.7.3"

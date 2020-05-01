@@ -14,7 +14,10 @@ import Default from "@/layouts/Default.vue";
 import ShardsVue from "shards-vue";
 /* eslint-disable */
 import Vue from "vue";
+import VueWaveSurfer from "vue-wave-surfer";
 import router from "./router";
+
+Vue.use(VueWaveSurfer);
 
 ShardsVue.install(Vue);
 
