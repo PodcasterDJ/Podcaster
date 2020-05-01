@@ -5,10 +5,8 @@
 <!-- PROJECT SHIELDS -->
 [![Contributors][contributors-shield]][contributors-url] 
 [![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url] 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/PodcasterDJ/Podcaster/badges/quality-score.png?b=development)](https://scrutinizer-ci.com/g/PodcasterDJ/Podcaster/?branch=development)
 [![LinkedIn][linkedin-shield]][linkedin-url]
-
-
 
 <!-- PROJECT LOGO -->
 <br />
@@ -165,7 +163,5 @@ npm run build && python3 manage.py collectstatic -c --no-post-process --noinput 
 [contributors-url]: https://github.com/PodcasterDJ/Podcaster/graphs/contributors
 [stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=flat-square
 [stars-url]: https://github.com/PodcasterDJ/Podcaster/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=flat-square
-[issues-url]: https://github.com/PodcasterDJ/Podcaster/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/adampi 
