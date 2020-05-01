@@ -61,8 +61,8 @@ You can deploy it for Free and then adjust it or change theme in the way you lik
 
 Once you deployed your repo on Heroku, start with making virtual environment:
 ```
-virtualenv my-podcasts
-cd my-podcasts
+virtualenv my-podcaster
+cd my-podcaster
 ```
 
 Then clone the repo:

@@ -17,7 +17,7 @@ TEMPLATES = [
                 'settings.context_processors.page_description',
                 'settings.context_processors.page_background',
                 # Custom context processor listing 3 latest episodes
-                "podcasts.context_processors.latest_episodes",
+                "podcaster.context_processors.latest_episodes",
             ],
         },
     },

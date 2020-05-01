@@ -1,4 +1,4 @@
-"""podcasts URL Configuration
+"""podcaster URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -45,6 +45,6 @@ if settings.DEBUG:
 urlpatterns += [re_path('.*',
                         never_cache(TemplateView.as_view(template_name="index.html")))]
 
-admin.site.site_header = "Podcasts Admin"
-admin.site.site_title = "Podcasts Admin Portal"
-admin.site.index_title = "Welcome to Podcasts Portal"
+admin.site.site_header = "Podcaster Admin"
+admin.site.site_title = "Podcaster Admin Portal"
+admin.site.index_title = "Welcome to Podcaster Portal"

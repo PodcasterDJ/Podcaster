@@ -75,7 +75,7 @@ class Episode(models.Model):
     tags = models.ManyToManyField(Tags, blank=True)
     audio = models.FileField(upload_to=custom_route)
     class Meta:
-        verbose_name = 'Podcasts'
+        verbose_name = 'Podcaster'
         verbose_name_plural = verbose_name
         ordering = ('-publish',)
 

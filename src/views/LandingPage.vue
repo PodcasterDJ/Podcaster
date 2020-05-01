@@ -1,13 +1,13 @@
 <template>
     <div>
-        <nav-bar-basic></nav-bar-basic>
-        <jumbotron-basic></jumbotron-basic>
+        <NavBarBasic></NavBarBasic>
+        <JumbotronBasic></JumbotronBasic>
 
         <b-container>
             <b-row class="text-center justify-content-center">
-                <card-audio></card-audio>
+                <CardAudio></CardAudio>
                 <b-container>
-                    <carousel-new></carousel-new>
+                    <CarouselNew></CarouselNew>
                 </b-container>
             </b-row>
         </b-container>

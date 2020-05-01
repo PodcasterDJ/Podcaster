@@ -11,6 +11,7 @@
     },
     "dependencies": {
         "@babel/core": "^7.9.0",
+        "@vue/eslint-config-prettier": "^6.0.0",
         "bootstrap": "^4.4.1",
         "bootstrap-vue": "^2.12.0",
         "chart.js": "^2.7.2",
@@ -23,7 +24,9 @@
         "shards-vue": "^1.0.4",
         "style-resources-loader": "^1.3.3",
         "vue": "^2.6.11",
-        "vue-aplayer": "^1.6.1"
+        "vue-aplayer": "^1.6.1",
+        "vue-router": "^3.1.6",
+        "vue-wave-surfer": "^1.0.1"
     },
     "devDependencies": {
         "@babel/preset-env": "^7.1.0",

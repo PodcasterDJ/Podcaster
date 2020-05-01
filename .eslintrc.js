@@ -1,29 +1,23 @@
 module.exports = {
     root: true,
     env: {
-        node: true
+        node: true,
+        browser: true
     },
     extends: [
-        "plugin:vue/essential",
-        "plugin:prettier/recommended",
-        "eslint:recommended"
+        "plugin:vue/recommended",
+        "eslint:recommended",
+        "prettier/vue",
+        "plugin:prettier/recommended"
     ],
     rules: {
+        "vue/component-name-in-template-casing": ["error", "PascalCase"],
         "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
-        "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
-        "global-require": "off",
-        "no-new": 0, // Intrusive when using Chart.js instances.
-        "no-underscore-dangle": 0, // Chart.js uses underscore dangles (_) internally.
-        "import/no-unresolved": 0, // False positives regarding imports that use aliases. 
+        "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off"
     },
-    overrides: [
-        {
-            files: ["*.vue"],
-            rules: {
-                "max-len": "off"
-            }
-        }
-    ],
+    globals: {
+        $nuxt: true
+    },
     parserOptions: {
         parser: "babel-eslint"
     }

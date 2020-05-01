@@ -45,4 +45,4 @@ if not DEBUG:
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
     PUBLIC_MEDIA_LOCATION = 'media'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
-    DEFAULT_FILE_STORAGE = 'podcasts.storage_backends.PublicMediaStorage'
+    DEFAULT_FILE_STORAGE = 'podcaster.storage_backends.PublicMediaStorage'

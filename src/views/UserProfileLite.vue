@@ -25,7 +25,7 @@ import UserDetails from "@/components/user-profile-lite/UserDetails.vue";
 import UserAccountDetails from "@/components/user-profile-lite/UserAccountDetails.vue";
 
 export default {
-    name: "user-profile-lite",
+    name: "UserProfileLite",
     components: {
         uplUserDetails: UserDetails,
         uplUserAccountDetails: UserAccountDetails
