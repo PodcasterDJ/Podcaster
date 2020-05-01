@@ -23,15 +23,16 @@ from django.views.generic import TemplateView
 from django.views.decorators.cache import never_cache
 
 
-urlpatterns = [ 
+urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 urlpatterns += [
-    path('podcasts', include("episodes.urls", namespace='episodes')),
+    path('blog/', include("blog.urls", namespace='blog')),
+    path('podcasts/', include("episodes.urls", namespace='episodes')),
     # This namespace corresponds to save method for slug in models
-    path('blog', include("blog.urls", namespace='blog')),
-    path('about', include("about.urls", namespace='about')),
-    path('joinnewsletter/', include('joinnewsletter.urls', namespace='joinnewsletter')),
+    path('about/', include("about.urls", namespace='about')),
+    path('joinnewsletter/', include(
+        'joinnewsletter.urls', namespace='joinnewsletter')),
     path('summernote/', include('django_summernote.urls')),
 ]
 if settings.DEBUG:
@@ -41,7 +42,8 @@ if settings.DEBUG:
                           document_root=settings.MEDIA_ROOT)
 
 # Adding main URL for FrontEnd app
-urlpatterns += [re_path('.*', never_cache(TemplateView.as_view(template_name="index.html")))]
+urlpatterns += [re_path('.*',
+                        never_cache(TemplateView.as_view(template_name="index.html")))]
 
 admin.site.site_header = "Podcasts Admin"
 admin.site.site_title = "Podcasts Admin Portal"
