@@ -1,13 +1,16 @@
 <template>
     <div>
-        <b-navbar toggleable="lg" type="dark" variant="primary">
-            <b-navbar-brand href="#">Home</b-navbar-brand>
+        <b-navbar toggleable="lg" type="light" variant="faded">
+            <b-navbar-brand to="/home" class="m-2">Home</b-navbar-brand>
 
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
             <b-collapse id="nav-collapse" is-nav>
                 <b-navbar-nav>
-                    <b-nav-item href="/blog-overview">Dashboard</b-nav-item>
+                    <b-nav-item to="/posts-list" class="m-2">Posts</b-nav-item>
+                    <b-nav-item to="/blog-overview" class="m-2"
+                        >Dashboard</b-nav-item
+                    >
                 </b-navbar-nav>
 
                 <!-- Right aligned nav items -->
@@ -15,8 +18,6 @@
                     <b-nav-item-dropdown text="Lang" right>
                         <b-dropdown-item href="#">EN</b-dropdown-item>
                         <b-dropdown-item href="#">ES</b-dropdown-item>
-                        <b-dropdown-item href="#">RU</b-dropdown-item>
-                        <b-dropdown-item href="#">FA</b-dropdown-item>
                     </b-nav-item-dropdown>
 
                     <b-nav-item-dropdown right>

@@ -10,6 +10,7 @@ import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 import App from "./App.vue";
 // Layouts
 import Default from "@/layouts/Default.vue";
+import Main from "./layouts/Main.vue";
 // import ElementUI from 'element-ui';
 import ShardsVue from "shards-vue";
 /* eslint-disable */
@@ -21,6 +22,7 @@ Vue.use(VueWaveSurfer);
 
 ShardsVue.install(Vue);
 
+Vue.component("main-layout", Main);
 Vue.component("default-layout", Default);
 
 Vue.config.productionTip = false;

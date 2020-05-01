@@ -1,11 +1,16 @@
 // Styles
 import "bootstrap/dist/css/bootstrap.css";
 import "../src/assets/scss/date-range.scss";
+import "@/scss/shards-dashboards.scss";
+import "@/assets/scss/date-range.scss";
 
 import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 
+import ShardsVue from "shards-vue";
 import Vue from "vue";
 import { configure } from "@storybook/vue";
+
+ShardsVue.install(Vue);
 
 // import "@/scss/shards-dashboards.scss";
 
