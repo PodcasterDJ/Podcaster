@@ -63,3 +63,4 @@ MANIFEST
 *.pyc
 *.pyc 
 static
+package-lock.json

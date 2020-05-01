@@ -1,22 +1,47 @@
 <template>
   <div>
     <b-card
-      title="Card Title"
-      img-src="https://picsum.photos/600/300/?image=25"
-      img-alt="Image"
-      img-top
-      tag="article"
-      style="max-width: 20rem;"
-      class="m-4"
+      no-body
+      class="overflow-hidden"
+      style="max-width: 540px;"
     >
-      <b-card-text>
-        Some quick example text to build on the card title and make up the bulk of the card's content.
-      </b-card-text>
+      <b-row no-gutters>
+        <b-card-body title="Horizontal Card">
+          <b-badge>New</b-badge>
+          <b-card-text>
+            This is a wider card with supporting text as a natural lead-in to additional content.
+            This content is a little bit longer. <h2>
+            </h2>
+          </b-card-text>
+          <b-row>
 
-      <b-button
-        href="#"
-        variant="primary"
-      >Go somewhere</b-button>
+            <b-col md="8">
+              <audio
+                controls
+                :style="{width:'100%'}"
+                class="p-2"
+              >
+                <source
+                  src="horse.ogg"
+                  type="audio/ogg"
+                >
+                <source
+                  src="horse.mp3"
+                  type="audio/mpeg"
+                >
+                Your browser does not support the audio element.
+              </audio>
+            </b-col>
+            <b-col md="4">
+              <div class="text-center">
+                <b-button variant="primary">
+                  Notifications <b-badge variant="light">4</b-badge>
+                </b-button>
+              </div>
+            </b-col>
+          </b-row>
+        </b-card-body>
+      </b-row>
     </b-card>
   </div>
 </template>
