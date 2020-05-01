@@ -30,7 +30,7 @@ urlpatterns += [
     path('blog/', include("blog.urls", namespace='blog')),
     path('podcasts/', include("episodes.urls", namespace='episodes')),
     # This namespace corresponds to save method for slug in models
-    path('about/', include("about.urls", namespace='about')),
+    path('about', include("about.urls", namespace='about')),
     path('joinnewsletter/', include(
         'joinnewsletter.urls', namespace='joinnewsletter')),
     path('summernote/', include('django_summernote.urls')),

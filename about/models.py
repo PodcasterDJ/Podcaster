@@ -11,9 +11,9 @@ INFO_ELEMENT = (
 
 
 class GeneralInfo(models.Model):
-    name = models.TextField(
+    name = models.CharField(
         max_length=500, choices=INFO_ELEMENT, default='select', unique=True)
-
+    content = models.TextField(blank=True, null=True)
     # TODO: Extend User model and enrich it with photo option.
     # profile_picture = models.ImageField(upload_to='profile_pictures/', blank=True,
     #                               null=True, help_text="This picture will be uploaded to AWS.")

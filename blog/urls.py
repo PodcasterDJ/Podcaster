@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import BlogListView, BlogDetailView
-from .apiviews import PostDetailView, PostListView
+# from .views import BlogListView, BlogDetailView
+from .apiviews import PostDetailApiView, PostListApiView
 
 
 app_name = 'blog'
@@ -8,9 +8,9 @@ app_name = 'blog'
 # API URLs
 urlpatterns = [
     # Show all posts
-    path("posts/", PostListView.as_view(), name="posts"),
+    path("posts/", PostListApiView.as_view(), name="posts"),
     # Show one post
-    path("posts/<str:slug>", PostDetailView.as_view(),
+    path("posts/<str:slug>", PostDetailApiView.as_view(),
          name="single-post"),
     # path('', PostsApiViews.as_view()),
 ]
