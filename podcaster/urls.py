@@ -42,8 +42,8 @@ if settings.DEBUG:
                           document_root=settings.MEDIA_ROOT)
 
 # Adding main URL for FrontEnd app
-urlpatterns += [re_path('.*',
-                        never_cache(TemplateView.as_view(template_name="index.html")))]
+# urlpatterns += [re_path('.*',
+#                         never_cache(TemplateView.as_view(template_name="index.html")))]
 
 admin.site.site_header = "Podcaster Admin"
 admin.site.site_title = "Podcaster Admin Portal"

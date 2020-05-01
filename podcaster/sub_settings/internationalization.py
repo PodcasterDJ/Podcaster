@@ -10,8 +10,9 @@ LANGUAGE_CODE = 'es-ES'
 DEFAULT_LANGUAGE = 1  # the first one in the list
 
 LANGUAGES = (
-    ('es-ES', _('Spanish')),
+    # Translation settings:  The first language is treated as the default language.
     ('en-US', _('English')),
+    ('es-ES', _('Spanish')),
 )
 
 TIME_ZONE = 'UTC'

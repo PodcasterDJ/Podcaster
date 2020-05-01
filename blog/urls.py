@@ -5,8 +5,11 @@ from .apiviews import PostDetailApiView, PostListApiView
 
 app_name = 'blog'
 
+urlpatterns = []
+
+
 # API URLs
-urlpatterns = [
+urlpatterns += [
     # Show all posts
     path("posts/", PostListApiView.as_view(), name="posts"),
     # Show one post
@@ -14,7 +17,6 @@ urlpatterns = [
          name="single-post"),
     # path('', PostsApiViews.as_view()),
 ]
-
 # Old template views
 urlpatterns += [
     path('', BlogListView.as_view(), name='blog_list'),
