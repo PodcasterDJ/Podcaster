@@ -1,3 +1,45 @@
+<!--
+*** Thanks for checking out this repo for Django and VueJS Template.
+-->
+
+<!-- PROJECT SHIELDS -->
+[![Contributors][contributors-shield]][contributors-url] 
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url] 
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
+
+
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/PodcasterDJ/Podcaster">
+    <img src="https://github.com/PodcasterDJ/Podcaster/blob/development/PodcasterLogoMedium.png" alt="Podcaster logo" width="100" height="100">
+  </a>
+
+  <h3 align="center">Podcaster</h3>
+  <p align="center">
+    Start your blog or podcast in seconds. 
+    <br />
+    <strong>or</strong>
+    <br />
+    <a href="https://hvitis.com/free-podcasts-blog-template-based-on-django"><strong>Learn Django or VueJS</strong></a>
+    <br />
+    <a href="http://www.butterflybone.doctor/en-us/home">View Demo</a>
+    ·
+    <a href="https://github.com/hvitis/Podcaster/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/PodcasterDJ/Podcaster/issues/new">Request Feature</a>
+  </p>
+</p>
+
+<p align="center">
+  <a href="https://github.com/PodcasterDJ/Podcaster/projects">
+    <img src="https://miro.medium.com/max/1280/1*n9MSMu6_-0cODbeItES0wQ.png" alt="Django & VueJS logo"  height="200">
+  </a> 
+</p>
+___
+
 # [![Podcaster](./PodcasterLogo25.png)](https://hvitis.com/free-podcasts-blog-template-based-on-django) Podcaster 🎙️📝 on Heroku
 Make your place in web in seconds. Write Blog or submit Podcasts. 
 ___
@@ -117,3 +159,13 @@ npm run build && python3 manage.py collectstatic -c --no-post-process --noinput 
 - It might be you! Feel free to contribute.
 
 [11]: https://hvitis.com
+ 
+<!-- MARKDOWN LINKS & IMAGES --> 
+[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=flat-square
+[contributors-url]: https://github.com/PodcasterDJ/Podcaster/graphs/contributors
+[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=flat-square
+[stars-url]: https://github.com/PodcasterDJ/Podcaster/stargazers
+[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=flat-square
+[issues-url]: https://github.com/PodcasterDJ/Podcaster/issues
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/adampi 
