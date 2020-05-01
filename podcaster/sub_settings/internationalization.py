@@ -8,6 +8,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LANGUAGE_CODE = 'es-ES'
 # List of activated
 DEFAULT_LANGUAGE = 1  # the first one in the list
+
 LANGUAGES = (
     ('es-ES', _('Spanish')),
     ('en-US', _('English')),

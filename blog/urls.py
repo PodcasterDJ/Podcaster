@@ -1,5 +1,5 @@
 from django.urls import path
-# from .views import BlogListView, BlogDetailView
+from .views import BlogListView, BlogDetailView
 from .apiviews import PostDetailApiView, PostListApiView
 
 
@@ -16,8 +16,8 @@ urlpatterns = [
 ]
 
 # Old template views
-# urlpatterns += [
-#     path('', BlogListView.as_view(), name='blog_list'),
-#     path('posts/<detail_post_slug>',
-#          BlogDetailView.as_view(), name='post_detail'),
-# ]
+urlpatterns += [
+    path('', BlogListView.as_view(), name='blog_list'),
+    path('posts/<detail_post_slug>',
+         BlogDetailView.as_view(), name='post_detail'),
+]
