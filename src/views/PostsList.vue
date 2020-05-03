@@ -1,7 +1,7 @@
 <template lang="en">
 <div>
     <b-row> 
-        <b-col v-for="(post, index) in posts" :key="index">
+        <b-col v-for="(post, index) in posts" :key="index" lg="4">
             <PostTopPicture :post="post"></PostTopPicture>  
         </b-col>
     </b-row> 
@@ -24,7 +24,7 @@ export default {
     },
     async created() {
         try {
-            const res = await axios.get(`http://127.0.0.1:8000/blog/posts/
+            const res = await axios.get(`http://127.0.0.1:8000/en-us/blog/api/posts/
 `);
 
             this.posts = res.data;

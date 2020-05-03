@@ -1,5 +1,5 @@
 <template>
-    <d-card class="card-small card-post card-post--1">
+    <d-card class="card-small card-post card-post--1 m-1">
         <div
             class="card-post__image"
             :style="{
@@ -13,7 +13,7 @@
             >
             <div class="card-post__author d-flex">
                 <a
-                    href="#"
+                    :href="post.slug"
                     class="card-post__author-avatar card-post__author-avatar--small"
                     :style="{
                         backgroundImage: 'url(\'' + post.thumbnail + '\')'
@@ -24,7 +24,9 @@
         </div>
         <d-card-body>
             <h5 class="card-title">
-                <a href="#" class="text-fiord-blue">{{ post.title }}</a>
+                <a :href="currentPath" class="text-fiord-blue">{{
+                    post.title
+                }}</a>
             </h5>
             <p class="card-text d-inline-block mb-3" v-html="post.content"></p>
             <span class="text-muted">{{ post.publish }}</span>
@@ -37,13 +39,14 @@ export default {
     name: "PostTopPicture",
     props: ["post"],
     data() {
-        return {};
+        return { currentPath: "" };
     },
     created() {
-        console.log("List of post on child", this.post);
+        this.currentPath =
+            // window.location.host +
+            window.location.pathname + "/" + this.post.slug;
+        console.log("CP", this.currentPath);
     },
-    mounted() {
-        console.log("List of post on mounted child", this.post);
-    }
+    mounted() {}
 };
 </script>

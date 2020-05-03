@@ -21,11 +21,16 @@ from django.conf.urls.i18n import i18n_patterns
 from home.views import redirectHome
 from django.views.generic import TemplateView
 from django.views.decorators.cache import never_cache
+from rest_framework_swagger.views import get_swagger_view
 
+schema_view = get_swagger_view(title='Blog API')
 
+# Not translated urls
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
+
+# Internationalised e.g. /en-US/
 urlpatterns += i18n_patterns(
     path('blog/', include("blog.urls", namespace='blog')),
     path('podcasts/', include("episodes.urls", namespace='episodes')),
@@ -34,6 +39,7 @@ urlpatterns += i18n_patterns(
     path('joinnewsletter/', include(
         'joinnewsletter.urls', namespace='joinnewsletter')),
     path('summernote/', include('django_summernote.urls')),
+    path('docs', schema_view),
 )
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL,
@@ -42,8 +48,8 @@ if settings.DEBUG:
                           document_root=settings.MEDIA_ROOT)
 
 # Adding main URL for FrontEnd app
-# urlpatterns += [re_path('.*',
-#                         never_cache(TemplateView.as_view(template_name="index.html")))]
+urlpatterns += [re_path('.*',
+                        never_cache(TemplateView.as_view(template_name="index.html")))]
 
 admin.site.site_header = "Podcaster Admin"
 admin.site.site_title = "Podcaster Admin Portal"

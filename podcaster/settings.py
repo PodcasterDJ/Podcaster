@@ -53,6 +53,17 @@ WSGI_APPLICATION = 'podcaster.wsgi.application'
 # ADJUST SETTINGS:  #
 ######################
 
+#Official docs use
+APPEND_SLASH = False
+REST_FRAMEWORK = { 'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema' }
+
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        'basic': {
+            'type': 'basic'
+        }
+    }
+}
 
 GOOGLE_ANALYTICS_NUMBER = ''
 

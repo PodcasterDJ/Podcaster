@@ -4,6 +4,7 @@ import ComponentsOverview from "./views/ComponentsOverview.vue";
 import Errors from "./views/Errors.vue";
 import LandingPage from "./views/LandingPage.vue";
 import PersonalBlog from "./views/PersonalBlog.vue";
+import PostDetails from "./views/PostDetails.vue";
 import PostsList from "./views/PostsList.vue";
 import Router from "vue-router";
 import Tables from "./views/Tables.vue";
@@ -72,6 +73,14 @@ export default new Router({
             path: "/posts-list",
             name: "posts-list",
             component: PostsList,
+            meta: {
+                layout: "main"
+            }
+        },
+        {
+            path: "/posts-list/:title",
+            name: "post-details",
+            component: PostDetails,
             meta: {
                 layout: "main"
             }
