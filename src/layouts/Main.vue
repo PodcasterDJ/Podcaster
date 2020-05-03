@@ -1,9 +1,9 @@
 <template>
-    <d-container>
+    <div>
         <NavBarBasic></NavBarBasic>
         <!-- Content -->
         <slot />
-    </d-container>
+    </div>
 </template>
 
 <script>

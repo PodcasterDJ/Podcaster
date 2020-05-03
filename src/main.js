@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "@/scss/shards-dashboards.scss";
 import "@/assets/scss/date-range.scss";
 import "element-ui/lib/theme-chalk/index.css";
+import "./customisation/custom.scss";
 
 import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 

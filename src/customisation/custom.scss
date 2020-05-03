@@ -1,0 +1,39 @@
+// File: custom.scss
+/* import only the necessary Bootstrap files */
+@import "~bootstrap/scss/functions"; 
+@import "~bootstrap/scss/variables";
+// Define your variable overrides here
+$enable-shadows: false;
+$enable-rounded: false;
+$enable-gradients: true;
+$grid-breakpoints: (
+  xs: 0,
+  sm: 456px,
+  md: 789px,
+  lg: 999px,
+  xl: 1234px
+);
+$bv-enable-table-stacked: false;
+@import './buttons';
+// Include Bootstrap and BootstrapVue SCSS files
+@import '~bootstrap/scss/bootstrap.scss';
+@import '~bootstrap-vue/src/index.scss';
+
+// General style overrides and custom classes
+h2 {
+  color: rgba(22, 138, 233, 100);
+  font-size: large;
+  font-style: oblique;
+}
+
+.wizard {
+  color: $pink;
+}
+// .wizard2 {
+//   color: theme-color("tertiary");
+// }
+.wizard2 {
+  color: theme-color-level(tertiary, 5);
+}
+
+// ...

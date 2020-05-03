@@ -2,7 +2,7 @@
 <div>
     <b-row> 
         <b-col v-for="(post, index) in posts" :key="index" lg="4">
-            <PostTopPicture :post="post"></PostTopPicture>  
+            <post-top-picture :post="post"></post-top-picture>  
         </b-col>
     </b-row> 
 </div>
