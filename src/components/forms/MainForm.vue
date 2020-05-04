@@ -6,21 +6,10 @@
                 v-model="state1"
                 class="inline-input"
                 :fetch-suggestions="querySearch"
-                placeholder="Please Input"
+                :placeholder="formdata.placeholder"
                 @select="handleSelect"
             ></el-autocomplete>
         </el-col>
-        <!-- <el-col :span="12">
-                <div class="sub-title">list suggestions on input</div>
-                <el-autocomplete
-                    v-model="state2"
-                    class="inline-input"
-                    :fetch-suggestions="querySearch"
-                    placeholder="Please Input"
-                    :trigger-on-focus="false"
-                    @select="handleSelect"
-                ></el-autocomplete>
-            </el-col> -->
     </b-row>
 </template>
 <script>
@@ -86,7 +75,9 @@ export default {
             ];
         },
         handleSelect(item) {
-            console.log(item);
+            // console.log("from child", item);
+            // Event must be called identically like action
+            this.$emit("select", item);
         }
     }
 };

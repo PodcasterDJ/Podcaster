@@ -16,7 +16,10 @@
                 <p class="small text-center mx-auto">
                     Fill the form to get 3 suggestions
                 </p>
-                <MainForm :formdata="formdata"></MainForm>
+                <MainForm
+                    :formdata="formdata"
+                    @select="handleSelect"
+                ></MainForm>
                 <p class="small text-center mx-auto">
                     Or create an account to get more.
                 </p>
@@ -54,7 +57,15 @@ export default {
     components: { MainForm },
 
     created() {
-        this.formdata = { label: "Hobby" };
+        this.formdata = {
+            label: "Hobby",
+            placeholder: "One of your hobbies you prefer the most."
+        };
+    },
+    methods: {
+        handleSelect(item) {
+            console.log("from parent", item.value);
+        }
     }
 };
 </script>
