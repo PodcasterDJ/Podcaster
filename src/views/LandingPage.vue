@@ -16,13 +16,30 @@
                 <p class="small text-center mx-auto">
                     Fill the form to get 3 suggestions
                 </p>
-                <MainForm
-                    :formdata="formdata"
-                    @select="handleSelect"
-                ></MainForm>
+                <div v-for="(el, index) in formdata" :key="index">
+                    <MainForm :formdata="el" @select="handleSelect"></MainForm>
+                </div>
+                <div class="row m-3">
+                    <b-button
+                        variant="outline-primary"
+                        size="lg"
+                        lg="4"
+                        class="p-2 mx-auto"
+                        >Switch</b-button
+                    >
+                </div>
                 <p class="small text-center mx-auto">
                     Or create an account to get more.
                 </p>
+                <div class="row m-3">
+                    <b-button
+                        variant="outline-secondary"
+                        size="lg"
+                        lg="4"
+                        class="p-2 mx-auto"
+                        >Register</b-button
+                    >
+                </div>
             </b-col>
         </b-row>
         <!-- <b-col class="mt-5 text-center justify-content-center">
@@ -57,10 +74,66 @@ export default {
     components: { MainForm },
 
     created() {
-        this.formdata = {
-            label: "Hobby",
-            placeholder: "One of your hobbies you prefer the most."
-        };
+        this.formdata = [
+            {
+                label: "Hobby",
+                placeholder: "One of your hobbies you prefer the most.",
+                listOfElements: [
+                    {
+                        value: "Knitting",
+                        link: "https://github.com/ElemeFE/knitting"
+                    },
+                    {
+                        value: "Cooking",
+                        link: "https://github.com/ElemeFE/cooking"
+                    }
+                ]
+            },
+            {
+                label: "Job title",
+                placeholder: "One of your job titles that you did in the past.",
+                listOfElements: [
+                    {
+                        value: "Sailor",
+                        link: "https://github.com/ElemeFE/knitting"
+                    },
+                    {
+                        value: "Programmer",
+                        link: "https://github.com/ElemeFE/cooking"
+                    },
+                    {
+                        value: "Developer",
+                        link: "https://github.com/ElemeFE/mint-ui"
+                    },
+                    {
+                        value: "Magician",
+                        link: "https://github.com/vuejs/vue-router"
+                    }
+                ]
+            },
+            {
+                label: "Education",
+                placeholder: "Studies - if you have",
+                listOfElements: [
+                    {
+                        value: "Chemistry Bachelor",
+                        link: "https://github.com/ElemeFE/knitting"
+                    },
+                    {
+                        value: "Mathematics",
+                        link: "https://github.com/ElemeFE/cooking"
+                    },
+                    {
+                        value: "History",
+                        link: "https://github.com/ElemeFE/mint-ui"
+                    },
+                    {
+                        value: "Bussinesw",
+                        link: "https://github.com/vuejs/vue-router"
+                    }
+                ]
+            }
+        ];
     },
     methods: {
         handleSelect(item) {
