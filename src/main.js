@@ -11,8 +11,8 @@ import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 import App from "./App.vue";
 // Layouts
 import Default from "@/layouts/Default.vue";
+import ElementUI from "element-ui";
 import Main from "./layouts/Main.vue";
-// import ElementUI from 'element-ui';
 import ShardsVue from "shards-vue";
 /* eslint-disable */
 import Vue from "vue";
@@ -33,7 +33,7 @@ Vue.use(BootstrapVue);
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin);
 
-// Vue.use(ElementUI);
+Vue.use(ElementUI);
 
 new Vue({
     router,

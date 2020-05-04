@@ -14,7 +14,7 @@ $grid-breakpoints: (
   xl: 1234px
 );
 $bv-enable-table-stacked: false;
-@import './buttons';
+@import './colors';
 // Include Bootstrap and BootstrapVue SCSS files
 @import '~bootstrap/scss/bootstrap.scss';
 @import '~bootstrap-vue/src/index.scss';
@@ -24,6 +24,10 @@ h2 {
   color: rgba(22, 138, 233, 100);
   font-size: large;
   font-style: oblique;
+}
+
+.el-autocomplete{
+  width: 100%
 }
 
 .wizard {
