@@ -42,28 +42,21 @@
                 </div>
             </b-col>
         </b-row>
-        <!-- <b-col class="mt-5 text-center justify-content-center">
-            <h2>Hello World</h2>
-            <p class="wizard m-4">ANd this is my paraghraph wizard text.</p>
-            <p class="wizard2 p-3">
-                ANd this is my paraghraph wizard text.
-            </p>
-
-            <b-btn variant="primary m-4">Primary</b-btn>
-            <b-btn variant="secondary m-3">secondary</b-btn>
-            <b-btn variant="tertiary p-5">tertiary</b-btn>
-            <b-card
-                bg-variant="tertiary"
-                text-variant="white"
-                header="Primary"
-                class="text-center"
-            >
-                <b-card-text
-                    >Lorem ipsum dolor sit amet, consectetur adipiscing
-                    elit.</b-card-text
+        <b-container>
+            <b-col cols="2" class="mt-5 text-center justify-content-center">
+                <b-card
+                    bg-variant="tertiary"
+                    text-variant="white"
+                    header="Primary"
+                    class="text-center"
                 >
-            </b-card>
-        </b-col> -->
+                    <b-card-text
+                        >Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit.</b-card-text
+                    >
+                </b-card>
+            </b-col>
+        </b-container>
     </b-container>
 </template>
 

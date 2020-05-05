@@ -1,12 +1,23 @@
 <template>
-    <b-row class="col-8 offset-2">
-        <el-col style="width: inherit" :span="12" class="text-center">
-            <div class="sub-title">{{ formdata.label }}</div>
+    <b-row class="col-8 offset-2 p-2">
+        <el-col style="width: inherit" :span="12" class="text-center m-1">
+            <div class="sub-title my-2">{{ formdata.label }}</div>
             <el-autocomplete
                 v-model="state1"
                 class="inline-input"
                 :fetch-suggestions="querySearch"
                 :placeholder="formdata.placeholder"
+                @select="handleSelect"
+            ></el-autocomplete>
+        </el-col>
+        <el-col :span="12">
+            <div class="sub-title">list suggestions on input</div>
+            <el-autocomplete
+                v-model="state2"
+                class="inline-input"
+                :fetch-suggestions="querySearch"
+                placeholder="Please Input"
+                :trigger-on-focus="false"
                 @select="handleSelect"
             ></el-autocomplete>
         </el-col>
