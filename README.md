@@ -110,3 +110,11 @@ heroku logs --tail -a YOUR_APP_NAME
 - It might be you! Feel free to contribute.
 
 [11]: https://hvitis.com
+
+
+#### Troubleshooting
+
+Running into pg_config executable not found on a fresh server? Check if you ran 
+```
+sudo apt install libpq-dev
+```
