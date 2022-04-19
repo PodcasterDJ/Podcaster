@@ -114,6 +114,10 @@ heroku logs --tail -a YOUR_APP_NAME
 
 #### Troubleshooting
 
+Setup on Hetzner Cloud. Simple Install:
+
+
+
 Running into pg_config executable not found on a fresh server? Check if you ran 
 ```
 sudo apt install libpq-dev
