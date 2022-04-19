@@ -14,7 +14,6 @@ python-dateutil==2.8.1
 pytz==2019.2
 s3transfer==0.2.1
 six==1.14.0
-sorl-thumbnail==12.6.3
 sqlparse==0.3.0
 urllib3==1.25.8
 whitenoise==4.1.3
