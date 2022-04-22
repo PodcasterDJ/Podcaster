@@ -120,6 +120,7 @@ Setup on Hetzner Cloud. Simple Install:
 
 Running into pg_config executable not found on a fresh server? Check if you ran 
 ```
-sudo apt install libpq-dev
+sudo apt install libpq-dev python3-setuptools python3.10 git
+python3 -m pip install django==4.0.4
 python3 -m pip install --upgrade Pillow
 ```
