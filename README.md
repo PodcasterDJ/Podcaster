@@ -128,5 +128,6 @@ source Podcaster/bin/activate
 pip install -r requirements.txt
 python3 -m pip install --upgrade Pillow
 python3 -m pip install --upgrade Django
+python3 -m pip install --upgrade django-summernote
 pip3 install djangorestframework
 ```
