@@ -118,9 +118,15 @@ Setup on Hetzner Cloud. Simple Install:
 
 
 
-Running into pg_config executable not found on a fresh server? Check if you ran 
+Fresh server? Just run it.
 ```
-sudo apt install libpq-dev python3-setuptools python3.10 git
-python3 -m pip install django==4.0.4
+sudo apt install libpq-dev python3-setuptools python3 git python3-dev python3-venv
+git clone https://github.com/pafend/Podcaster.git
+cd Podcaster
+python3 -m venv Podcaster
+source Podcaster/bin/activate
+pip install -r requirements.txt
 python3 -m pip install --upgrade Pillow
+python3 -m pip install --upgrade Django
+pip3 install djangorestframework
 ```
