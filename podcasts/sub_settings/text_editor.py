@@ -17,7 +17,7 @@ SUMMERNOTE_CONFIG = {
         'height': '820',
 
         # Use proper language setting automatically (default)
-        'lang': "es-ES",
+        'lang': "de-DE",
 
         # Or, set editor language/locale forcely
         # 'lang': 'ko-KR',
