@@ -19,104 +19,104 @@ msgstr ""
 
 #: podcasts/sub_settings/internationalization.py:12 templates/header.html:43
 msgid "German"
-msgstr ""
+msgstr "Deutsch"
 
 #: podcasts/sub_settings/internationalization.py:13 templates/header.html:42
 msgid "English"
-msgstr ""
+msgstr "Englisch"
 
 #: templates/about/about.html:21
 msgid "about"
-msgstr ""
+msgstr "Über"
 
 #: templates/about/about.html:35
 msgid "About my"
-msgstr ""
+msgstr "Über mein"
 
 #: templates/about/about.html:56
 msgid "Facts about the page"
-msgstr ""
+msgstr "Dinge über diese Seite"
 
 #: templates/about/about.html:82
 msgid "Podcast episodes"
-msgstr ""
+msgstr "Podcast Episoden"
 
 #: templates/about/about.html:93
 msgid "Blog Posts"
-msgstr ""
+msgstr "Blog Beiträge"
 
 #: templates/about/about.html:104
 msgid "Approx hours I've spent on mastering"
-msgstr ""
+msgstr "Geschätzte Anzahl an Stunden die ich benötigte es zu meistern"
 
 #: templates/about/about.html:122
 msgid "About Me"
-msgstr ""
+msgstr "Über mich"
 
 #: templates/about/about.html:149
 msgid "Support Me"
-msgstr ""
+msgstr "Unterstütze mich"
 
 #: templates/blog/blog_list.html:71
 msgid "By"
-msgstr ""
+msgstr "Durch"
 
 #: templates/blog/blog_list.html:75
 msgid "Read More"
-msgstr ""
+msgstr "Weiterlesen"
 
 #: templates/episodes/episode_list.html:15
 msgid "episodes"
-msgstr ""
+msgstr "Episoden"
 
 #: templates/footer.html:15
 msgid "Join my Newsletter"
-msgstr ""
+msgstr "Tritt meiner Newsletter bei"
 
 #: templates/footer.html:18
 msgid "Get latest posts, podcasts and giveaways informations."
-msgstr ""
+msgstr "Erhalte die neusten Posts, Podcasts und Informationen."
 
 #: templates/footer.html:32
 msgid "subscribe"
-msgstr ""
+msgstr "Subscribe"
 
 #: templates/footer.html:54
 msgid "Latest Podcasts"
-msgstr ""
+msgstr "Letzte Podcasts"
 
 #: templates/footer.html:89
 msgid "Latest Posts"
-msgstr ""
+msgstr "Letzte Beiträge"
 
 #: templates/footer.html:123 templates/tags_categories.html:18
 msgid "Tags"
-msgstr ""
+msgstr "Tags"
 
 #: templates/footer.html:132 templates/tags_categories.html:8
 msgid "Categories"
-msgstr ""
+msgstr "Kategorien"
 
 #: templates/header.html:35
 msgid "Podcasts"
-msgstr ""
+msgstr "Podcasts"
 
 #: templates/header.html:36
 msgid "Blog"
-msgstr ""
+msgstr "Blog"
 
 #: templates/header.html:37
 msgid "About"
-msgstr ""
+msgstr "Über"
 
 #: templates/home/home.html:50
 msgid "Transcription"
-msgstr ""
+msgstr "Mitschrift"
 
 #: templates/home/home.html:93
 msgid "Share"
-msgstr ""
+msgstr "Teile"
 
 #: templates/home/home.html:113
 msgid "browse shows"
-msgstr ""
+msgstr "durchsuche Shows"
