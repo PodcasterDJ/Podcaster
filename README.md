@@ -131,3 +131,11 @@ python3 -m pip install --upgrade Django
 python3 -m pip install --upgrade django-summernote
 pip3 install djangorestframework
 ```
+
+
+To run the localization (in case you need another language)
+
+```
+pip3 install python-gettext
+django-admin makemessages -l de
+```
