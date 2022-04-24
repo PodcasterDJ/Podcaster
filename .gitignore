@@ -13,3 +13,4 @@ Pipfile
 templates/_original
 media
 .DS_Store
+postdeploy-django.sh

@@ -1,0 +1,122 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-24 02:30+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: podcasts/sub_settings/internationalization.py:12 templates/header.html:43
+msgid "German"
+msgstr "Deutsch"
+
+#: podcasts/sub_settings/internationalization.py:13 templates/header.html:42
+msgid "English"
+msgstr "Englisch"
+
+#: templates/about/about.html:21
+msgid "about"
+msgstr "Über"
+
+#: templates/about/about.html:35
+msgid "About my"
+msgstr "Über mein"
+
+#: templates/about/about.html:56
+msgid "Facts about the page"
+msgstr "Dinge über diese Seite"
+
+#: templates/about/about.html:82
+msgid "Podcast episodes"
+msgstr "Podcast Episoden"
+
+#: templates/about/about.html:93
+msgid "Blog Posts"
+msgstr "Blog Beiträge"
+
+#: templates/about/about.html:104
+msgid "Approx hours I've spent on mastering"
+msgstr "Geschätzte Anzahl an Stunden die ich benötigte es zu meistern"
+
+#: templates/about/about.html:122
+msgid "About Me"
+msgstr "Über mich"
+
+#: templates/about/about.html:149
+msgid "Support Me"
+msgstr "Unterstütze mich"
+
+#: templates/blog/blog_list.html:71
+msgid "By"
+msgstr "Durch"
+
+#: templates/blog/blog_list.html:75
+msgid "Read More"
+msgstr "Weiterlesen"
+
+#: templates/episodes/episode_list.html:15
+msgid "episodes"
+msgstr "Episoden"
+
+#: templates/footer.html:15
+msgid "Join my Newsletter"
+msgstr "Tritt meiner Newsletter bei"
+
+#: templates/footer.html:18
+msgid "Get latest posts, podcasts and giveaways informations."
+msgstr "Erhalte die neusten Posts, Podcasts und Informationen."
+
+#: templates/footer.html:32
+msgid "subscribe"
+msgstr "Subscribe"
+
+#: templates/footer.html:54
+msgid "Latest Podcasts"
+msgstr "Letzte Podcasts"
+
+#: templates/footer.html:89
+msgid "Latest Posts"
+msgstr "Letzte Beiträge"
+
+#: templates/footer.html:123 templates/tags_categories.html:18
+msgid "Tags"
+msgstr "Tags"
+
+#: templates/footer.html:132 templates/tags_categories.html:8
+msgid "Categories"
+msgstr "Kategorien"
+
+#: templates/header.html:35
+msgid "Podcasts"
+msgstr "Podcasts"
+
+#: templates/header.html:36
+msgid "Blog"
+msgstr "Blog"
+
+#: templates/header.html:37
+msgid "About"
+msgstr "Über"
+
+#: templates/home/home.html:50
+msgid "Transcription"
+msgstr "Mitschrift"
+
+#: templates/home/home.html:93
+msgid "Share"
+msgstr "Teile"
+
+#: templates/home/home.html:113
+msgid "browse shows"
+msgstr "durchsuche Shows"

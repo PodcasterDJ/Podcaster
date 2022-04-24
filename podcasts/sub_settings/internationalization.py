@@ -5,11 +5,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'es-ES'
+LANGUAGE_CODE = 'de-DE'
 # List of activated
 DEFAULT_LANGUAGE = 1  # the first one in the list
 LANGUAGES = (
-    ('es-ES', _('Spanish')),
+    ('de-DE', _('German')),
     ('en-US', _('English')),
 )
 

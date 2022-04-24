@@ -110,3 +110,32 @@ heroku logs --tail -a YOUR_APP_NAME
 - It might be you! Feel free to contribute.
 
 [11]: https://hvitis.com
+
+
+#### Troubleshooting
+
+Setup on Hetzner Cloud. Simple Install:
+
+
+
+Fresh server? Just run it.
+```
+sudo apt install libpq-dev python3-setuptools python3 git python3-dev python3-venv
+git clone https://github.com/pafend/Podcaster.git
+cd Podcaster
+python3 -m venv Podcaster
+source Podcaster/bin/activate
+pip install -r requirements.txt
+python3 -m pip install --upgrade Pillow
+python3 -m pip install --upgrade Django
+python3 -m pip install --upgrade django-summernote
+pip3 install djangorestframework
+```
+
+
+To run the localization (in case you need another language)
+
+```
+pip3 install python-gettext
+django-admin makemessages -l de
+```

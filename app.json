@@ -1,12 +1,12 @@
 {
     "name": "Podcaster",
     "description": "Set-up FREE Django Podcasts & Blog page in seconds.",
-    "website": "http://hvitis.com",
-    "success_url": "https://hvitis.com/free-podcasts-blog-template-based-on-django",
+    "website": "http://pascalfend.de",
+    "success_url": "https://pascalfend.de/free-podcasts-blog-template-based-on-django",
     "addons": ["heroku-postgresql:hobby-dev",
     "bucketeer:hobbyist"
     ],
-    "repository": "https://github.com/hvitis/podcaster",
+    "repository": "https://github.com/pafend/podcaster",
     "logo": "https://i.ibb.co/QQNtj9j/Podcaster-Logo-Medium.png",
     "buildpacks": [{
         "url": "heroku/python"
